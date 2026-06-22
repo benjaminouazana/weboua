@@ -22,8 +22,18 @@ export default function Og() {
           fontFamily: 'sans-serif',
         }}
       >
-        <div style={{ display: 'flex', alignItems: 'center', fontSize: 40, fontWeight: 700 }}>
-          web<span style={{ color: '#58C28E' }}>◯</span>ua
+        <div style={{ display: 'flex', alignItems: 'center', fontSize: 44, fontWeight: 700 }}>
+          <span>web</span>
+          <span
+            style={{
+              width: 30,
+              height: 30,
+              margin: '0 4px',
+              borderRadius: '50%',
+              border: '5px solid #58C28E',
+            }}
+          />
+          <span>ua</span>
         </div>
         <div style={{ marginTop: 40, fontSize: 64, fontWeight: 800, lineHeight: 1.1, maxWidth: 900 }}>
           On construit des machines à clients.
