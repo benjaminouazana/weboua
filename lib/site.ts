@@ -30,6 +30,14 @@ export const clients: { name: string; url: string }[] = [
   { name: 'Agescom', url: 'https://agescom.fr' },
   { name: 'We-Search', url: 'https://we-search.fr' },
   { name: 'CV We-Search', url: 'https://cv.we-search.fr' },
+  { name: 'Mon Petit Parfait', url: 'https://monpetitparfait.fr' },
+  { name: 'WP Sauvetage', url: 'https://wp-sauvetage.fr' },
+  { name: 'ADE Solutions', url: 'https://ade-solutions.fr' },
+  { name: 'Paris Beauty Academy', url: 'https://parisbeautyacademy.com' },
+  { name: 'May Énergie', url: 'https://may-energie.fr' },
+  { name: 'Pure Salmon France', url: 'https://puresalmonfrance.com' },
+  { name: 'Lettershop', url: 'https://www.lettershop.fr' },
+  { name: 'Le Salon Dermo', url: 'https://lesalondermo.com' },
 ];
 
 export type NavItem = { label: string; href: string };

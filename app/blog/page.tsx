@@ -33,8 +33,8 @@ export default function BlogIndex() {
             href={`/blog/${featured.slug}`}
             className="group mt-14 block overflow-hidden rounded-4xl border border-line bg-cream shadow-soft transition-all hover:shadow-lift"
           >
-            <div className="grid gap-8 p-8 sm:p-10 lg:grid-cols-2 lg:items-center">
-              <div>
+            <div className="p-8 sm:p-10">
+              <div className="max-w-2xl">
                 <span className="eyebrow">À la une · {featured.category}</span>
                 <h2 className="mt-4 text-2xl sm:text-3xl">{featured.title}</h2>
                 <p className="mt-3 text-muted">{featured.description}</p>
@@ -47,9 +47,6 @@ export default function BlogIndex() {
                   Lire l'article
                   <Icon name="arrow" className="h-4 w-4 transition-transform group-hover:translate-x-1" />
                 </span>
-              </div>
-              <div className="hidden aspect-[4/3] rounded-3xl bg-forest lg:flex lg:items-center lg:justify-center">
-                <span className="font-display text-6xl text-mint/40">W</span>
               </div>
             </div>
           </Link>
