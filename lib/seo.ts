@@ -53,6 +53,7 @@ export function buildMetadata({
 
 /** Organization / professional service structured data for the site root. */
 export function organizationJsonLd() {
+  const sameAs = Object.values(site.social).filter(Boolean);
   return {
     '@context': 'https://schema.org',
     '@type': 'ProfessionalService',
@@ -69,6 +70,7 @@ export function organizationJsonLd() {
       'Campagnes de mailing',
       'Hébergement & serveurs',
     ],
-    sameAs: Object.values(site.social),
+    // N'inclure sameAs que si des profils sociaux sont renseignés.
+    ...(sameAs.length ? { sameAs } : {}),
   };
 }

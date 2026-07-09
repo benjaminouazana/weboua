@@ -14,10 +14,11 @@ export const site = {
   email: 'contact@weboua.com',
   locale: 'fr_FR',
   country: 'France',
-  foundedYear: 2016,
+  foundedYear: 2017,
   social: {
-    linkedin: 'https://www.linkedin.com/company/weboua',
-  },
+    // Ajoute ici tes vrais profils (ils alimentent le schema.org sameAs).
+    // Ex : linkedin: 'https://www.linkedin.com/company/ton-entreprise',
+  } as Record<string, string>,
 } as const;
 
 export type NavItem = { label: string; href: string };
@@ -34,7 +35,7 @@ export const services: {
     title: 'Création de sites internet',
     short: 'Des sites pensés pour convertir, pas pour décorer.',
     description:
-      "Sites vitrines, landing pages et plateformes sur-mesure codés à la main : rapides, sécurisés et optimisés pour transformer vos visiteurs en clients.",
+      "Sites vitrines qui convertissent, landing pages et plateformes sur-mesure codés à la main : rapides, sécurisés et pensés pour transformer vos visiteurs en clients.",
     icon: 'browser',
   },
   {
@@ -81,7 +82,7 @@ export const services: {
 
 export const mainNav: NavItem[] = [
   { label: 'Services', href: '/#services' },
-  { label: 'Réalisations', href: '/nos-succes' },
+  { label: 'Nos succès', href: '/nos-succes' },
   { label: 'Blog', href: '/blog' },
   { label: 'À propos', href: '/a-propos' },
   { label: 'Audit gratuit', href: '/audit-seo-performance' },

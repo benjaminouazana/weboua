@@ -7,7 +7,7 @@ import { buildMetadata } from '@/lib/seo';
 export const metadata = buildMetadata({
   title: 'Weboua — Agence Digitale Performance | Sites, SEO & Leads B2B',
   description:
-    "Agence web spécialisée en création de sites internet sur-mesure, SEO et génération de leads B2B. On ne fait pas de sites vitrines : on construit des machines à clients.",
+    "Agence web spécialisée en création de sites internet sur-mesure, SEO et génération de leads B2B. On ne fait pas de simples sites vitrines : on construit des machines à clients.",
   keywords: [
     'agence web',
     'création site internet',
@@ -27,9 +27,9 @@ export default function HomePage() {
         <div className="absolute -right-40 -top-40 -z-10 h-96 w-96 rounded-full bg-mint/20 blur-3xl" />
         <div className="container-page py-20 sm:py-28">
           <div className="mx-auto max-w-3xl text-center">
-            <Eyebrow>Agence Digitale Performance · depuis 2016</Eyebrow>
+            <Eyebrow>Agence Digitale Performance · depuis 2017</Eyebrow>
             <h1 className="mt-6 text-4xl font-bold leading-[1.05] sm:text-6xl">
-              On ne fait pas de sites vitrines.
+              On ne fait pas de simples sites vitrines.
               <span className="block text-emerald">On construit des machines à clients.</span>
             </h1>
             <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-muted">

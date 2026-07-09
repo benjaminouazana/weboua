@@ -1,0 +1,51 @@
+name: Publier un article SEO
+
+# L'agent tourne automatiquement 2x/semaine (mardi et vendredi à 08:00 UTC).
+# Tu peux aussi le déclencher à la main depuis l'onglet "Actions" (Run workflow).
+on:
+  schedule:
+    - cron: '0 8 * * 2,5'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Récupérer le repo
+        uses: actions/checkout@v4
+
+      - name: Installer Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Installer les dépendances
+        run: npm install --no-audit --no-fund
+
+      - name: Générer l'article
+        id: generate
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          ARTICLE_MODEL: ${{ vars.ARTICLE_MODEL }}
+        run: node tools/generate-article.mjs
+
+      # Filet de sécurité : on ne publie l'article que si le site compile.
+      # Si un article mal formé casse le build, le job échoue ici et rien
+      # n'est poussé en ligne.
+      - name: Valider le build
+        run: npm run build
+
+      - name: Commit & push
+        run: |
+          if [ -z "$(git status --porcelain)" ]; then
+            echo "Aucun changement à publier."
+            exit 0
+          fi
+          git config user.name "Weboua Bot"
+          git config user.email "bot@weboua.com"
+          git add content/
+          git commit -m "article: ${{ steps.generate.outputs.title || 'nouvel article SEO' }}"
+          git push
