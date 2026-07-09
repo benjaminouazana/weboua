@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Icon } from './Icon';
 
 type Status = 'idle' | 'loading' | 'success' | 'error';
@@ -18,6 +18,14 @@ const interests = [
 export function LeadForm({ source = 'site', compact = false }: { source?: string; compact?: boolean }) {
   const [status, setStatus] = useState<Status>('idle');
   const [error, setError] = useState<string>('');
+  // Campagne d'origine (ex: ?src=ecommerce depuis un cold email) — tracée avec le lead.
+  const [campaign, setCampaign] = useState<string>('');
+
+  useEffect(() => {
+    const params = new URLSearchParams(window.location.search);
+    const src = params.get('src') || params.get('utm_campaign') || params.get('utm_source') || '';
+    if (src) setCampaign(src.replace(/[^a-zA-Z0-9_-]/g, '').slice(0, 30));
+  }, []);
 
   async function onSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
@@ -31,7 +39,7 @@ export function LeadForm({ source = 'site', compact = false }: { source?: string
       const res = await fetch('/api/lead', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ ...data, source }),
+        body: JSON.stringify({ ...data, source: campaign ? `${source}:${campaign}` : source }),
       });
       if (!res.ok) {
         const body = await res.json().catch(() => ({}));
