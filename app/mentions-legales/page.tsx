@@ -10,46 +10,44 @@ export const metadata = buildMetadata({
 
 export default function MentionsLegales() {
   return (
-    <LegalLayout title="Mentions légales" updated="22 juin 2026">
+    <LegalLayout title="Mentions légales" updated="9 juillet 2026">
       <h2>Éditeur du site</h2>
       <p>
-        {/* À COMPLÉTER avec vos informations légales */}
-        <strong>{site.name}</strong> — {site.tagline}.
+        Le site <strong>weboua.com</strong> est édité par <strong>{site.name}</strong> — {site.tagline}.
         <br />
-        Raison sociale : <em>[à compléter]</em>
-        <br />
-        Forme juridique : <em>[à compléter]</em>
-        <br />
-        Capital social : <em>[à compléter]</em>
-        <br />
-        Siège social : <em>[adresse à compléter]</em>
-        <br />
-        SIRET : <em>[à compléter]</em> — RCS : <em>[à compléter]</em>
-        <br />
-        N° TVA intracommunautaire : <em>[à compléter]</em>
-        <br />
-        Email : {site.email}
+        Contact : <a href={`mailto:${site.email}`}>{site.email}</a>
       </p>
 
       <h2>Directeur de la publication</h2>
-      <p><em>[Nom du responsable légal à compléter]</em></p>
+      <p>La direction de {site.name}.</p>
 
       <h2>Hébergement</h2>
       <p>
-        Le site est hébergé par <em>[nom et adresse de l'hébergeur à compléter]</em>.
+        Le site est hébergé par <strong>Vercel Inc.</strong>, 440 N Barranca Ave #4133, Covina, CA 91723,
+        États-Unis — <a href="https://vercel.com" target="_blank" rel="noopener noreferrer">vercel.com</a>.
+      </p>
+      <p>
+        Le nom de domaine et les services de messagerie sont gérés par <strong>Hostinger International Ltd</strong> —{' '}
+        <a href="https://www.hostinger.fr" target="_blank" rel="noopener noreferrer">hostinger.fr</a>.
       </p>
 
       <h2>Propriété intellectuelle</h2>
       <p>
         L'ensemble des contenus présents sur ce site (textes, images, logos, code) est la propriété de {site.name},
         sauf mention contraire, et est protégé par le droit de la propriété intellectuelle. Toute reproduction sans
-        autorisation est interdite.
+        autorisation préalable écrite est interdite.
       </p>
 
       <h2>Responsabilité</h2>
       <p>
         {site.name} s'efforce d'assurer l'exactitude des informations diffusées sur ce site mais ne saurait être tenue
-        responsable des erreurs, omissions ou indisponibilités.
+        responsable des erreurs, omissions ou indisponibilités. Les liens externes proposés (notamment vers les sites
+        de nos clients) ne sauraient engager la responsabilité de {site.name} quant à leur contenu.
+      </p>
+
+      <h2>Contact</h2>
+      <p>
+        Pour toute question relative au site ou à ses contenus : <a href={`mailto:${site.email}`}>{site.email}</a>.
       </p>
     </LegalLayout>
   );

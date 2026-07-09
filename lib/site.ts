@@ -14,12 +14,23 @@ export const site = {
   email: 'contact@weboua.com',
   locale: 'fr_FR',
   country: 'France',
-  foundedYear: 2017,
+  foundedYear: 2014,
   social: {
     // Ajoute ici tes vrais profils (ils alimentent le schema.org sameAs).
     // Ex : linkedin: 'https://www.linkedin.com/company/ton-entreprise',
   } as Record<string, string>,
 } as const;
+
+/** Références clients affichées sur le site (liens sortants). */
+export const clients: { name: string; url: string }[] = [
+  { name: 'Groupe Optim', url: 'https://groupeoptim.fr' },
+  { name: 'Optim Énergie', url: 'https://optimenergie.fr' },
+  { name: 'Eden Green', url: 'https://eden.green' },
+  { name: 'AR Controls', url: 'https://arcontrols.fr' },
+  { name: 'Agescom', url: 'https://agescom.fr' },
+  { name: 'We-Search', url: 'https://we-search.fr' },
+  { name: 'CV We-Search', url: 'https://cv.we-search.fr' },
+];
 
 export type NavItem = { label: string; href: string };
 

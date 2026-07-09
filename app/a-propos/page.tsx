@@ -6,7 +6,7 @@ import { buildMetadata } from '@/lib/seo';
 export const metadata = buildMetadata({
   title: 'À propos — Une agence digitale obsédée par les résultats',
   description:
-    "Près de 10 ans d'expertise en création de sites, SEO et acquisition B2B. Découvrez la philosophie de l'agence Weboua : pas de blabla, des résultats.",
+    "12 ans d'expertise en création de sites, SEO et acquisition B2B. Découvrez la philosophie de l'agence Weboua : pas de blabla, des résultats.",
   path: '/a-propos',
 });
 
@@ -27,7 +27,7 @@ export default function AboutPage() {
             Une agence digitale obsédée par une seule chose : vos résultats
           </h1>
           <p className="mt-6 text-lg leading-relaxed text-muted">
-            Depuis bientôt 10 ans, on aide les entreprises à transformer leur présence en ligne en véritable moteur de
+            Depuis 12 ans, on aide les entreprises à transformer leur présence en ligne en véritable moteur de
             croissance. Sites internet, SEO, leads B2B : on maîtrise toute la chaîne, du premier clic au client signé.
           </p>
         </div>
@@ -35,9 +35,9 @@ export default function AboutPage() {
         <div className="mx-auto mt-16 max-w-4xl">
           <Stats
             items={[
-              { value: '~10 ans', label: "d'expérience" },
-              { value: '150+', label: 'projets livrés' },
+              { value: '12 ans', label: "d'expérience" },
               { value: '100%', label: 'sur-mesure' },
+              { value: 'B2B', label: 'notre spécialité' },
               { value: 'France', label: 'entreprises accompagnées' },
             ]}
           />

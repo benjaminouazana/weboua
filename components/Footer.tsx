@@ -38,7 +38,7 @@ export function Footer() {
       <div className="border-t border-white/10">
         <div className="container-page flex flex-col items-center justify-between gap-3 py-6 text-xs text-white/50 sm:flex-row">
           <p>© {new Date().getFullYear()} {site.legalName}. Tous droits réservés.</p>
-          <p>Fait avec exigence en {site.country}.</p>
+          <p>Au service des entreprises ambitieuses, en {site.country} et au-delà.</p>
         </div>
       </div>
     </footer>

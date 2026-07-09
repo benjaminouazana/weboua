@@ -86,7 +86,7 @@ export function ContactBlock({ source }: { source: string }) {
           <ul className="mt-8 space-y-4">
             {[
               'Un interlocuteur unique, pas de jargon',
-              'Près de 10 ans d’expérience web & SEO',
+              '12 ans d’expérience web & SEO',
               'Des résultats mesurables : trafic, leads, CA',
             ].map((t) => (
               <li key={t} className="flex items-start gap-3">

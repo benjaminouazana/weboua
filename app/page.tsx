@@ -27,7 +27,7 @@ export default function HomePage() {
         <div className="absolute -right-40 -top-40 -z-10 h-96 w-96 rounded-full bg-mint/20 blur-3xl" />
         <div className="container-page py-20 sm:py-28">
           <div className="mx-auto max-w-3xl text-center">
-            <Eyebrow>Agence Digitale Performance · depuis 2017</Eyebrow>
+            <Eyebrow>Agence Digitale Performance · 12 ans d'expertise</Eyebrow>
             <h1 className="mt-6 text-4xl font-bold leading-[1.05] sm:text-6xl">
               On ne fait pas de simples sites vitrines.
               <span className="block text-emerald">On construit des machines à clients.</span>
@@ -50,8 +50,8 @@ export default function HomePage() {
           <div className="mx-auto mt-16 max-w-4xl">
             <Stats
               items={[
-                { value: '~10 ans', label: "d'expérience web & SEO" },
-                { value: '150+', label: 'projets livrés' },
+                { value: '12 ans', label: "d'expérience web & SEO" },
+                { value: '100%', label: 'sur-mesure, zéro template' },
                 { value: 'Top 3', label: 'positions Google visées' },
                 { value: '24 h', label: 'délai de réponse' },
               ]}
