@@ -17,7 +17,7 @@ export default function SuccessPage() {
         <SectionHeading
           eyebrow="Nos succès"
           title="Ils nous font confiance"
-          intro="Des entreprises de l'énergie, de l'industrie, du recrutement ou de l'environnement nous confient leur croissance en ligne. Votre projet pourrait être le prochain."
+          intro="Des entreprises de l'énergie, de l'industrie, du recrutement ou de l'environnement nous confient leur croissance en ligne. Le meilleur moyen de juger notre travail : visitez leurs sites."
         />
 
         <div className="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">

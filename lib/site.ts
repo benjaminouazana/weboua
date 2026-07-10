@@ -101,6 +101,7 @@ export const services: {
 
 export const mainNav: NavItem[] = [
   { label: 'Services', href: '/#services' },
+  { label: 'Offres', href: '/offres' },
   { label: 'Nos succès', href: '/nos-succes' },
   { label: 'Blog', href: '/blog' },
   { label: 'À propos', href: '/a-propos' },
