@@ -70,12 +70,19 @@ ${links}
 5. Termine par un appel à l'action vers /contact ou /audit-seo-performance.
 6. Markdown uniquement (listes, gras, citations >). Pas d'images.
 
+En plus de l'article, rédige un post LinkedIn qui en fait la promotion :
+- 100 à 160 mots, première ligne = accroche percutante (le "hook")
+- Ton direct et expert, phrases courtes, sauts de ligne fréquents (style LinkedIn)
+- Termine par une question ou un appel à lire l'article, puis 3 hashtags maximum
+- N'inclus PAS le lien dans le texte (il sera ajouté automatiquement)
+
 Réponds STRICTEMENT avec un objet JSON valide (et rien d'autre, pas de texte autour, pas de balises de code) au format :
 {
   "title": "Titre final optimisé, max 60 caractères, contenant le mot-clé",
   "description": "Méta-description vendeuse de 140 à 160 caractères, contenant le mot-clé",
   "tags": ["tag1", "tag2", "tag3"],
-  "body": "Le corps de l'article en Markdown, commençant directement par un paragraphe d'introduction puis des sections ## ..."
+  "body": "Le corps de l'article en Markdown, commençant directement par un paragraphe d'introduction puis des sections ## ...",
+  "linkedin": "Le post LinkedIn complet"
 }`;
 }
 
@@ -163,6 +170,14 @@ async function main() {
     }) + String(article.body).trim() + '\n';
 
   fs.writeFileSync(file, content, 'utf-8');
+
+  // Post LinkedIn prêt à copier-coller (généré avec l'article).
+  if (article.linkedin) {
+    const liDir = path.join(ROOT, 'content', 'linkedin');
+    fs.mkdirSync(liDir, { recursive: true });
+    const liPost = `${String(article.linkedin).trim()}\n\n👉 https://weboua.com/blog/${slug}\n`;
+    fs.writeFileSync(path.join(liDir, `${slug}.md`), liPost, 'utf-8');
+  }
 
   topic.status = 'done';
   topic.publishedAt = todayISO();
