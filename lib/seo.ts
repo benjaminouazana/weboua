@@ -38,15 +38,15 @@ export function buildMetadata({
       locale: site.locale,
       type,
       ...(publishedTime ? { publishedTime } : {}),
-      // When no explicit image is given, Next falls back to the
-      // dynamic app/opengraph-image.tsx (branded card generated in code).
-      ...(image ? { images: [{ url: image, width: 1200, height: 630, alt: title }] } : {}),
+      // Carte de partage (LinkedIn, X, WhatsApp…) : par défaut le visuel
+      // de marque généré par app/opengraph-image.tsx, sur TOUTES les pages.
+      images: [{ url: image || `${site.url}/opengraph-image`, width: 1200, height: 630, alt: title }],
     },
     twitter: {
       card: 'summary_large_image',
       title: fullTitle,
       description,
-      ...(image ? { images: [image] } : {}),
+      images: [image || `${site.url}/opengraph-image`],
     },
   };
 }
