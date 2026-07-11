@@ -1,0 +1,62 @@
+[
+  {
+    "id": 1,
+    "label": "Lancement — J'ai refait mon propre site",
+    "status": "todo",
+    "text": "J'ai refait mon propre site de zéro.\n\n12 ans que je crée des sites pour les autres. Et le mien était lent, invisible sur Google, zéro lead. Le cordonnier mal chaussé, littéralement.\n\nAlors j'ai appliqué à ma propre boîte ce que je vends à mes clients.\n\nRésultat : un site qui charge en 0,25 seconde, un blog qui publie tout seul, et chaque demande qui tombe triée dans mon CRM.\n\nSi votre site vous sert de carte de visite au lieu de vous ramener des clients, on devrait parler.\n\n#agenceweb #SEO #leadgeneration"
+  },
+  {
+    "id": 2,
+    "label": "Contre-intuitif — Votre site n'a pas besoin d'être beau",
+    "status": "todo",
+    "text": "Votre site n'a pas besoin d'être beau.\n\nIl a besoin de convertir.\n\nJ'ai vu des sites magnifiques à 15 000 € qui ne génèrent pas un lead par mois. Et des pages simples qui remplissent des agendas.\n\nLa différence ? La promesse en 5 secondes. La preuve. Un formulaire sans friction. La vitesse.\n\nLe design sert la conversion. Jamais l'inverse.\n\n#conversion #siteinternet #B2B"
+  },
+  {
+    "id": 3,
+    "label": "SEO pédagogie — Le canal qui prend de la valeur",
+    "status": "todo",
+    "text": "Le SEO, c'est le seul canal marketing qui prend de la valeur avec le temps.\n\nLa pub s'arrête quand vous arrêtez de payer.\nLe cold email s'arrête quand vous arrêtez d'envoyer.\n\nUn article bien positionné, lui, vous ramène des prospects tous les mois. Pendant des années. Gratuitement.\n\nC'est lent au début. Puis ça compose, comme des intérêts.\n\nLe meilleur moment pour commencer, c'était il y a un an. Le deuxième meilleur : aujourd'hui.\n\n#SEO #referencement #croissance"
+  },
+  {
+    "id": 4,
+    "label": "Chiffre choc — 1 seconde = -7 % de conversions",
+    "status": "todo",
+    "text": "1 seconde de chargement en plus = 7 % de conversions en moins.\n\nVotre site met 4 secondes à charger ? Vous perdez probablement 1 client sur 4.\n\nTestez le vôtre : PageSpeed Insights, c'est gratuit.\n\nSi c'est rouge, vous savez ce qu'il vous reste à faire.\n\n#performance #webperf #conversion"
+  },
+  {
+    "id": 5,
+    "label": "Histoire client (à adapter avec un vrai cas !)",
+    "status": "todo",
+    "text": "Un client m'a dit : « On a un site, mais on n'a jamais eu un seul appel grâce à lui. »\n\n18 mois plus tard, son site est sa première source de rendez-vous.\n\nCe qu'on a changé : rien de magique.\n— Une vraie promesse en haut de page\n— Des pages pensées pour ses mots-clés métier\n— Un formulaire simple, visible partout\n— Un suivi de chaque demande\n\nLa « machine à clients », c'est une méthode, pas un miracle.\n\n#casclient #leadgeneration #B2B"
+  },
+  {
+    "id": 6,
+    "label": "Cold email expertise",
+    "status": "todo",
+    "text": "Le cold email n'est pas mort. Le mauvais cold email, si.\n\nCe qui ne marche plus : 500 mails identiques envoyés d'un coup depuis votre domaine principal.\n\nCe qui marche : un domaine dédié, chauffé 3 semaines. Un ciblage chirurgical. 4 lignes personnalisées. Une relance intelligente.\n\n5 à 15 % de réponses, c'est atteignable. Mais ça se construit.\n\n#coldemail #prospection #B2B"
+  },
+  {
+    "id": 7,
+    "label": "Le bon outil (techno-neutre)",
+    "status": "todo",
+    "text": "« Il nous faut un site. »\n\nNon. Il vous faut des clients.\n\nLe site, le CMS, la techno : ce sont des outils, pas des objectifs. Le bon choix dépend de VOTRE situation — votre équipe, votre budget, vos ambitions Google.\n\nMon travail, c'est de poser la bonne question avant de parler technique : « Qu'est-ce qui va vous apporter le plus de clients ? »\n\nPuis de construire ça. Peu importe l'outil — c'est le résultat qu'on mesure.\n\n#developpementweb #siteinternet #strategie"
+  },
+  {
+    "id": 8,
+    "label": "Google E-E-A-T",
+    "status": "todo",
+    "text": "Google ne classe plus des pages. Il classe de la confiance.\n\nExpérience. Expertise. Autorité. Fiabilité.\n\nConcrètement : montrez qui vous êtes, citez vos clients, publiez régulièrement sur votre métier, obtenez des liens sérieux.\n\nLes sites anonymes qui empilent des mots-clés, c'est terminé.\n\n#SEO #google #contenu"
+  },
+  {
+    "id": 9,
+    "label": "Coulisses IA — Mon blog se publie tout seul",
+    "status": "todo",
+    "text": "Mon blog publie 2 articles par semaine. Je n'écris aucun d'eux.\n\nJ'ai construit un système : une IA rédige selon mes règles SEO, vérifie que tout compile, publie, et Google est prévenu dans la minute.\n\nCoût : quelques centimes par article.\n\nL'IA ne remplace pas la stratégie. Mais elle exécute mieux que n'importe quel stagiaire.\n\nVous voulez le même système ? Ça se construit.\n\n#IA #SEO #automatisation"
+  },
+  {
+    "id": 10,
+    "label": "Offre directe — 5 audits gratuits (garder pour quand l'audience a grossi)",
+    "status": "todo",
+    "text": "J'offre 5 audits SEO complets ce mois-ci.\n\nCe que vous recevez : analyse technique de votre site, vos positions Google vs vos concurrents, et un plan d'action priorisé.\n\nGratuit, sans engagement. Pourquoi ? Parce que c'est ma meilleure démonstration.\n\nIntéressé ? Commentez « audit » ou envoyez-moi un message.\n\n#audit #SEO #offre"
+  }
+]

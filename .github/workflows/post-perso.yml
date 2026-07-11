@@ -1,0 +1,40 @@
+name: Post perso du jeudi
+
+# Chaque jeudi à 08:00 UTC (10h heure française en été) : envoie par email
+# le prochain post LinkedIn "perso" de la réserve. Déclenchable à la main aussi.
+on:
+  schedule:
+    - cron: '0 8 * * 4'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  send:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Récupérer le repo
+        uses: actions/checkout@v4
+
+      - name: Installer Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Envoyer le post perso
+        env:
+          RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
+        run: node tools/send-perso-post.mjs
+
+      - name: Sauvegarder l'état de la réserve
+        run: |
+          if [ -z "$(git status --porcelain)" ]; then
+            echo "Rien à sauvegarder."
+            exit 0
+          fi
+          git config user.name "Weboua Bot"
+          git config user.email "bot@weboua.com"
+          git add content/linkedin/posts-perso.json
+          git commit -m "post perso envoyé"
+          git push
