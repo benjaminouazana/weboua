@@ -29,6 +29,7 @@ jobs:
         id: generate
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
           ARTICLE_MODEL: ${{ vars.ARTICLE_MODEL }}
         run: node tools/generate-article.mjs
 

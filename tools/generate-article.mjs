@@ -127,6 +127,48 @@ function extractJson(text) {
   }
 }
 
+/**
+ * Envoie le post LinkedIn prêt à copier par email (via Resend).
+ * Nécessite RESEND_API_KEY dans les secrets GitHub — sinon, étape ignorée.
+ */
+async function emailLinkedInPost({ title, slug, linkedin }) {
+  const apiKey = process.env.RESEND_API_KEY;
+  if (!apiKey || !linkedin) {
+    if (!apiKey) console.warn('⚠️  RESEND_API_KEY absente — email non envoyé (le post reste sur GitHub).');
+    return;
+  }
+  const to = process.env.NOTIFY_EMAIL || 'contact@weboua.com';
+  const articleUrl = `https://weboua.com/blog/${slug}`;
+  const esc = (s) => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+
+  const html = `
+  <div style="font-family:Inter,Arial,sans-serif;max-width:600px;margin:auto">
+    <h2 style="color:#0C3A2E">📝 Ton post LinkedIn est prêt</h2>
+    <p style="color:#5B6B66">L'article « <strong>${esc(title)}</strong> » vient d'être publié sur le blog.
+    Voici le post à copier-coller (pense à retoucher la première ligne à ta sauce 😉) :</p>
+    <div style="background:#F6FAF8;border:1px solid #E4ECE8;border-radius:12px;padding:18px;white-space:pre-wrap;color:#0F1B18;font-size:15px;line-height:1.5">${esc(linkedin)}</div>
+    <p style="margin-top:16px;color:#5B6B66"><strong>À mettre en 1er commentaire</strong> (pas dans le post) :</p>
+    <p style="background:#F6FAF8;border-radius:8px;padding:10px;color:#1F8A6B">👉 ${articleUrl}</p>
+    <p style="color:#8aa39b;font-size:12px">Rappel : copie le post → colle sur LinkedIn → publie → colle le lien en commentaire. 5 minutes.</p>
+  </div>`;
+
+  const res = await fetch('https://api.resend.com/emails', {
+    method: 'POST',
+    headers: { 'content-type': 'application/json', authorization: `Bearer ${apiKey}` },
+    body: JSON.stringify({
+      from: process.env.FROM_EMAIL || 'Weboua Bot <leads@weboua.com>',
+      to,
+      subject: `📝 Post LinkedIn prêt — ${title}`,
+      html,
+    }),
+  });
+  if (!res.ok) {
+    console.warn(`⚠️  Envoi email échoué (${res.status}) — le post reste disponible sur GitHub.`);
+  } else {
+    console.log(`📨 Post LinkedIn envoyé par email à ${to}`);
+  }
+}
+
 function frontmatter(fields) {
   const esc = (s) => String(s).replace(/"/g, '\\"');
   return [
@@ -185,6 +227,9 @@ async function main() {
   topic.publishedAt = todayISO();
   topic.publishedSlug = slug;
   fs.writeFileSync(TOPICS_FILE, JSON.stringify(topics, null, 2) + '\n', 'utf-8');
+
+  // Notification email avec le post LinkedIn prêt à copier.
+  await emailLinkedInPost({ title: article.title, slug, linkedin: article.linkedin });
 
   console.log(`✅ Article créé : content/blog/${slug}.mdx`);
   // Expose le slug pour le workflow (message de commit)
