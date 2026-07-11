@@ -19,7 +19,7 @@ const plans = [
     popular: false,
     features: [
       'Design 100 % sur-mesure, zéro template',
-      'Développement codé à la main (sans WordPress)',
+      'Développement codé à la main, performance maximale',
       'Optimisation vitesse & Core Web Vitals',
       'SEO technique inclus (structure, balisage, sitemap)',
       'Formulaires connectés à vos outils',
@@ -81,7 +81,7 @@ const faqs = [
   },
   {
     q: "Travaillez-vous avec mon site WordPress existant ?",
-    a: "Oui — on peut l'auditer, le réparer ou le faire évoluer. Mais si votre objectif est la performance et les leads, on vous montrera aussi ce qu'un site codé sur-mesure changerait. Chiffres à l'appui, décision chez vous.",
+    a: "Bien sûr — audit, réparation, sécurisation, maintenance, évolution : on accompagne de nombreux sites WordPress. Et selon vos objectifs, on vous conseille la meilleure approche technique, chiffres à l'appui. La décision reste chez vous.",
   },
   {
     q: "L'audit gratuit, c'est vraiment gratuit ?",

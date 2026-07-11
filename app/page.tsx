@@ -91,8 +91,8 @@ export default function HomePage() {
             <Eyebrow>Pourquoi Weboua</Eyebrow>
             <h2 className="mt-4 text-3xl sm:text-4xl">Le SEO et la conversion dans le code, dès la première ligne</h2>
             <p className="mt-4 text-lg text-muted">
-              On a quitté WordPress et les usines à gaz. Nos sites sont codés à la main : ultra-rapides, sécurisés,
-              parfaitement structurés pour Google. Résultat : vous montez dans les résultats et vous convertissez plus.
+              Nos sites sont codés à la main : ultra-rapides, sécurisés, parfaitement structurés pour Google.
+              Résultat : vous montez dans les résultats et vous convertissez plus.
             </p>
             <div className="mt-8 space-y-5">
               {[

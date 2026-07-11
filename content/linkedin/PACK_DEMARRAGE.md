@@ -15,15 +15,13 @@
 ## 10 posts prêts à publier (copier-coller, adapte si besoin)
 
 ### 1 — Lancement (à poster en premier)
-J'ai supprimé WordPress de mon propre site.
+J'ai refait mon propre site de zéro.
 
-12 ans que je crée des sites pour les autres. Et le mien était lent, invisible sur Google, zéro lead.
+12 ans que je crée des sites pour les autres. Et le mien était lent, invisible sur Google, zéro lead. Le cordonnier mal chaussé, littéralement.
 
-Alors j'ai tout refait. 100 % codé sur-mesure.
+Alors j'ai appliqué à ma propre boîte ce que je vends à mes clients.
 
-Résultat : un site qui charge en 0,25 seconde, un blog qui publie tout seul, et chaque formulaire qui tombe directement dans mon CRM.
-
-Le cordonnier n'est plus mal chaussé.
+Résultat : un site qui charge en 0,25 seconde, un blog qui publie tout seul, et chaque demande qui tombe triée dans mon CRM.
 
 Si votre site vous sert de carte de visite au lieu de vous ramener des clients, on devrait parler.
 
@@ -93,18 +91,18 @@ Ce qui marche : un domaine dédié, chauffé 3 semaines. Un ciblage chirurgical.
 
 #coldemail #prospection #B2B
 
-### 7 — Anti-WordPress
-« Il nous faut un WordPress. »
+### 7 — Le bon outil
+« Il nous faut un site. »
 
 Non. Il vous faut des clients.
 
-WordPress est un outil, pas un objectif. Et pour beaucoup d'entreprises, c'est le mauvais : lent, vulnérable, dépendant de 30 plugins.
+Le site, le CMS, la techno : ce sont des outils, pas des objectifs. Le bon choix dépend de VOTRE situation — votre équipe, votre budget, vos ambitions Google.
 
-Un site codé sur-mesure : plus rapide, plus sûr, mieux référencé.
+Mon travail, c'est de poser la bonne question avant de parler technique : « Qu'est-ce qui va vous apporter le plus de clients ? »
 
-Posez la question autrement : « Qu'est-ce qui va m'apporter le plus de clients ? »
+Puis de construire ça. Peu importe l'outil — c'est le résultat qu'on mesure.
 
-#wordpress #developpementweb #siteinternet
+#developpementweb #siteinternet #strategie
 
 ### 8 — Google E-E-A-T
 Google ne classe plus des pages. Il classe de la confiance.

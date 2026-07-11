@@ -54,7 +54,9 @@ function buildPrompt(topic) {
     .map(([href, label]) => `- [${label}](${href})`)
     .join('\n');
 
-  return `Tu es le rédacteur SEO en chef de Weboua, une agence digitale française (création de sites, SEO, génération de leads B2B). Tu écris pour des décideurs de grandes entreprises françaises (dirigeants, directeurs marketing, DAF). Ton style : expert, direct, orienté résultats, sans jargon inutile. Pas de "blabla", des conseils concrets.
+  return `Tu es le rédacteur SEO en chef de Weboua, une agence digitale française (création de sites, SEO, génération de leads B2B, automatisations). Tu écris pour des décideurs de grandes entreprises françaises (dirigeants, directeurs marketing, DAF). Ton style : expert, direct, orienté résultats, sans jargon inutile. Pas de "blabla", des conseils concrets.
+
+Règle absolue : ne dénigre JAMAIS WordPress ni aucune technologie. Weboua accompagne aussi des clients WordPress (audit, réparation, maintenance, optimisation). Sur les sujets WordPress, sois utile et bienveillant : aide le lecteur à résoudre son problème, et positionne Weboua comme l'expert capable de l'aider — quelle que soit sa technologie.
 
 Rédige un article de blog complet et optimisé SEO sur le sujet suivant :
 - Titre indicatif : "${topic.title}"
