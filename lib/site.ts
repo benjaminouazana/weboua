@@ -12,6 +12,7 @@ export const site = {
   // Production URL — override via NEXT_PUBLIC_SITE_URL
   url: process.env.NEXT_PUBLIC_SITE_URL || 'https://weboua.com',
   email: 'contact@weboua.com',
+  calendly: 'https://calendly.com/ben-weboua',
   locale: 'fr_FR',
   country: 'France',
   foundedYear: 2014,

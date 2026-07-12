@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from 'react';
 import { Icon } from './Icon';
+import { site } from '@/lib/site';
 
 type Status = 'idle' | 'loading' | 'success' | 'error';
 
@@ -69,6 +70,10 @@ export function LeadForm({ source = 'site', compact = false }: { source?: string
         <p className="mt-2 text-muted">
           Merci ! On revient vers vous sous 24 h ouvrées avec une première analyse de votre projet.
         </p>
+        <a href={site.calendly} target="_blank" rel="noopener noreferrer" className="btn-primary mt-5">
+          Ou réservez un appel maintenant
+          <Icon name="arrow" className="h-4 w-4" />
+        </a>
       </div>
     );
   }

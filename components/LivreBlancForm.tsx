@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from 'react';
 import { Icon } from './Icon';
+import { site } from '@/lib/site';
 
 type Status = 'idle' | 'loading' | 'success' | 'error';
 
@@ -77,6 +78,13 @@ export function LivreBlancForm({ slug, pdfUrl, title }: LivreBlancFormProps) {
           Télécharger le livre blanc
           <Icon name="arrow" className="h-4 w-4" />
         </a>
+        <div className="mt-6 border-t border-mint/30 pt-5">
+          <p className="text-sm font-medium text-forest">Vous préférez en parler de vive voix ?</p>
+          <a href={site.calendly} target="_blank" rel="noopener noreferrer" className="btn-ghost mt-3">
+            Réserver un appel gratuit
+            <Icon name="arrow" className="h-4 w-4" />
+          </a>
+        </div>
         <p className="mt-4 text-xs text-muted">
           Vous recevrez aussi nos meilleurs conseils web &amp; SEO par email. Désinscription en 1 clic.
         </p>
