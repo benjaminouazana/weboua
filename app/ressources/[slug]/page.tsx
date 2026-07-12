@@ -3,7 +3,7 @@ import { Icon } from '@/components/Icon';
 import { Eyebrow } from '@/components/ui';
 import { LivreBlancForm } from '@/components/LivreBlancForm';
 import { buildMetadata } from '@/lib/seo';
-import { clients, site } from '@/lib/site';
+import { site } from '@/lib/site';
 import { getLivreBlanc, getAllLivreBlancSlugs } from '@/lib/livres-blancs';
 
 export const dynamicParams = false;
@@ -65,12 +65,7 @@ export default function RessourcePage({ params }: { params: { slug: string } }) 
             </div>
 
             <div className="mt-10 border-t border-line pt-6">
-              <p className="text-sm text-muted">Écrit par Weboua. Ils nous font confiance :</p>
-              <div className="mt-3 flex flex-wrap gap-x-5 gap-y-1 text-sm font-medium text-forest/70">
-                {clients.slice(0, 6).map((c) => (
-                  <span key={c.url}>{c.name}</span>
-                ))}
-              </div>
+              <p className="text-sm text-muted">Guide rédigé par Weboua — agence web, SEO &amp; automatisation.</p>
             </div>
           </div>
 
