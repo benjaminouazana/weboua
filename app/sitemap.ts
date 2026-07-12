@@ -12,6 +12,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { path: '/offres', priority: 0.9 },
     { path: '/nos-succes', priority: 0.8 },
     { path: '/blog', priority: 0.8 },
+    { path: '/livre-blanc', priority: 0.8 },
     { path: '/contact', priority: 0.9 },
     { path: '/mentions-legales', priority: 0.3 },
     { path: '/politique-de-confidentialite', priority: 0.3 },
