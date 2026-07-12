@@ -85,7 +85,7 @@ export default function HomePage() {
       </section>
 
       {/* WHY US */}
-      <section className="container-page py-20">
+      <section className="container-page py-12">
         <div className="grid items-center gap-14 lg:grid-cols-2">
           <div>
             <Eyebrow>Pourquoi Weboua</Eyebrow>

@@ -55,7 +55,7 @@ export default function ServicePage({ params }: { params: { service: string } })
       {/* HERO */}
       <section className="relative overflow-hidden bg-gradient-to-b from-cream to-white">
         <div className="absolute -left-32 top-0 -z-10 h-80 w-80 rounded-full bg-mint/15 blur-3xl" />
-        <div className="container-page py-20">
+        <div className="container-page py-14">
           <div className="max-w-3xl">
             <Eyebrow>{c.hero.eyebrow}</Eyebrow>
             <h1 className="mt-5 text-4xl font-bold leading-tight sm:text-5xl">{c.hero.title}</h1>
@@ -74,7 +74,7 @@ export default function ServicePage({ params }: { params: { service: string } })
       </section>
 
       {/* INTRO + BENEFITS */}
-      <section className="container-page py-16">
+      <section className="container-page py-10">
         <p className="mx-auto max-w-3xl text-center text-xl leading-relaxed text-forest">{c.intro}</p>
         <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {c.benefits.map((b) => (
@@ -125,7 +125,7 @@ export default function ServicePage({ params }: { params: { service: string } })
       </section>
 
       {/* FAQ */}
-      <section id="faq" className="container-page scroll-mt-24 py-16">
+      <section id="faq" className="container-page scroll-mt-24 py-10">
         <SectionHeading eyebrow="FAQ" title="Vos questions, nos réponses" />
         <div className="mx-auto mt-10 max-w-3xl divide-y divide-line">
           {c.faqs.map((f) => (
@@ -143,7 +143,7 @@ export default function ServicePage({ params }: { params: { service: string } })
       <ContactBlock source={c.slug} />
 
       {/* CROSS-SELL */}
-      <section className="container-page py-12">
+      <section className="container-page py-10">
         <SectionHeading title="Nos autres expertises" center />
         <div className="mt-10 grid gap-6 sm:grid-cols-3">
           {others.map((s) => (

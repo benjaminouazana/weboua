@@ -53,7 +53,7 @@ export function CTABand({
   subtitle?: string;
 }) {
   return (
-    <section className="container-page my-24">
+    <section className="container-page my-16">
       <div className="overflow-hidden rounded-4xl bg-forest px-6 py-14 text-center sm:px-12">
         <h2 className="mx-auto max-w-2xl text-3xl text-white sm:text-4xl">{title}</h2>
         <p className="mx-auto mt-4 max-w-xl text-white/70">{subtitle}</p>
@@ -74,7 +74,7 @@ export function CTABand({
 /** Standard contact block: copy on the left, lead form on the right. */
 export function ContactBlock({ source }: { source: string }) {
   return (
-    <section className="container-page my-24">
+    <section className="container-page my-16">
       <div className="grid items-start gap-12 lg:grid-cols-2">
         <div>
           <Eyebrow>Parlons de votre projet</Eyebrow>
@@ -86,7 +86,7 @@ export function ContactBlock({ source }: { source: string }) {
           <ul className="mt-8 space-y-4">
             {[
               'Un interlocuteur unique, pas de jargon',
-              '12 ans d’expérience web & SEO',
+              'Un site rapide, sécurisé et pensé pour convertir',
               'Des résultats mesurables : trafic, leads, CA',
             ].map((t) => (
               <li key={t} className="flex items-start gap-3">
