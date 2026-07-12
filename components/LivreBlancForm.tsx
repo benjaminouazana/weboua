@@ -3,16 +3,23 @@
 import { useEffect, useState } from 'react';
 import { Icon } from './Icon';
 
-const PDF_URL = '/livre-blanc-weboua-refaire-son-site-2026.pdf';
-
 type Status = 'idle' | 'loading' | 'success' | 'error';
 
+type LivreBlancFormProps = {
+  /** Slug du livre blanc — sert à tracer la source du lead (lb:<slug>). */
+  slug: string;
+  /** Chemin du PDF à ouvrir après capture (dans /public). */
+  pdfUrl: string;
+  /** Titre du livre blanc, injecté dans l'email de notification. */
+  title: string;
+};
+
 /**
- * Formulaire de capture du livre blanc.
- * Capture nom + email (source "livre-blanc" + campagne éventuelle ?src=),
+ * Formulaire de capture d'un livre blanc.
+ * Capture nom + email (source "lb:<slug>" + campagne éventuelle ?src=),
  * puis révèle le bouton de téléchargement + note newsletter.
  */
-export function LivreBlancForm() {
+export function LivreBlancForm({ slug, pdfUrl, title }: LivreBlancFormProps) {
   const [status, setStatus] = useState<Status>('idle');
   const [error, setError] = useState('');
   const [campaign, setCampaign] = useState('');
@@ -35,9 +42,9 @@ export function LivreBlancForm() {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
           ...data,
-          interest: 'Livre blanc — Refaire son site 2026',
-          message: data.message || 'Téléchargement du livre blanc « Pourquoi refaire son site en 2026 ».',
-          source: campaign ? `livre-blanc:${campaign}` : 'livre-blanc',
+          interest: `Livre blanc — ${title}`,
+          message: data.message || `Téléchargement du livre blanc « ${title} ».`,
+          source: campaign ? `lb:${slug}:${campaign}` : `lb:${slug}`,
         }),
       });
       if (!res.ok) {
@@ -46,7 +53,7 @@ export function LivreBlancForm() {
       }
       setStatus('success');
       // Ouvre le PDF automatiquement.
-      window.open(PDF_URL, '_blank', 'noopener');
+      window.open(pdfUrl, '_blank', 'noopener');
     } catch (err) {
       setStatus('error');
       setError(err instanceof Error ? err.message : 'Une erreur est survenue.');
@@ -61,7 +68,7 @@ export function LivreBlancForm() {
         </div>
         <h3 className="text-xl">C'est envoyé 🎉</h3>
         <p className="mt-2 text-muted">Votre livre blanc s'ouvre dans un nouvel onglet. Sinon, cliquez ci-dessous.</p>
-        <a href={PDF_URL} target="_blank" rel="noopener noreferrer" className="btn-primary mt-5">
+        <a href={pdfUrl} target="_blank" rel="noopener noreferrer" className="btn-primary mt-5">
           Télécharger le livre blanc
           <Icon name="arrow" className="h-4 w-4" />
         </a>

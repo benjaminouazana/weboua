@@ -1,6 +1,7 @@
 import type { MetadataRoute } from 'next';
 import { site, services } from '@/lib/site';
 import { getAllPosts } from '@/lib/blog';
+import { livresBlancs } from '@/lib/livres-blancs';
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const base = site.url;
@@ -12,7 +13,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { path: '/offres', priority: 0.9 },
     { path: '/nos-succes', priority: 0.8 },
     { path: '/blog', priority: 0.8 },
-    { path: '/livre-blanc', priority: 0.8 },
+    { path: '/ressources', priority: 0.8 },
     { path: '/contact', priority: 0.9 },
     { path: '/mentions-legales', priority: 0.3 },
     { path: '/politique-de-confidentialite', priority: 0.3 },
@@ -38,5 +39,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.7,
   }));
 
-  return [...staticRoutes, ...serviceRoutes, ...postRoutes];
+  const ressourceRoutes = livresBlancs.map((lb) => ({
+    url: `${base}/ressources/${lb.slug}`,
+    lastModified: now,
+    changeFrequency: 'monthly' as const,
+    priority: 0.8,
+  }));
+
+  return [...staticRoutes, ...serviceRoutes, ...postRoutes, ...ressourceRoutes];
 }

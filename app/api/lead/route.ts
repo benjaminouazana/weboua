@@ -1,6 +1,7 @@
 import { NextResponse } from 'next/server';
 import { z } from 'zod';
 import { appendLeadToSheet, emailLeadCopy, type Lead } from '@/lib/leads';
+import { addContactToAudience } from '@/lib/newsletter';
 
 export const runtime = 'nodejs';
 export const dynamic = 'force-dynamic';
@@ -68,13 +69,20 @@ export async function POST(req: Request) {
     createdAt: new Date().toISOString(),
   };
 
-  // Persist + notify in parallel; never lose a lead because one channel failed.
-  const results = await Promise.allSettled([appendLeadToSheet(lead), emailLeadCopy(lead)]);
+  // Persist + notify + inscription newsletter en parallèle ; on ne perd jamais
+  // un lead parce qu'un canal a échoué. L'ajout à l'audience est "best effort".
+  const results = await Promise.allSettled([
+    appendLeadToSheet(lead),
+    emailLeadCopy(lead),
+    addContactToAudience(lead.email, lead.name),
+  ]);
   results.forEach((r) => {
     if (r.status === 'rejected') console.error('[lead] channel failed:', r.reason);
   });
 
-  if (results.every((r) => r.status === 'rejected')) {
+  // On considère l'enregistrement en échec seulement si Sheet ET email ont échoué
+  // (l'audience newsletter est secondaire).
+  if (results[0].status === 'rejected' && results[1].status === 'rejected') {
     return NextResponse.json(
       { error: "Impossible d'enregistrer votre demande pour le moment. Écrivez-nous directement." },
       { status: 502 },

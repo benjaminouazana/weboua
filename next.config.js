@@ -6,6 +6,12 @@ const nextConfig = {
   images: {
     formats: ['image/avif', 'image/webp'],
   },
+  async redirects() {
+    return [
+      // L'ancienne LP unique pointe désormais vers sa fiche dans la bibliothèque.
+      { source: '/livre-blanc', destination: '/ressources/refaire-son-site-en-2026', permanent: true },
+    ];
+  },
   async headers() {
     return [
       {

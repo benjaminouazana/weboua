@@ -1,0 +1,36 @@
+name: Newsletter Weboua
+
+# Rédige et prépare la newsletter le 1ᵉʳ et le 15 de chaque mois à 08:00 UTC.
+# Déclenchable à la main depuis l'onglet "Actions" (Run workflow).
+# Par défaut la broadcast est créée en BROUILLON dans Resend (tu l'envoies toi).
+# Mets la variable NEWSLETTER_AUTOSEND=true pour un envoi automatique.
+on:
+  schedule:
+    - cron: '0 8 1,15 * *'
+  workflow_dispatch:
+
+jobs:
+  newsletter:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Récupérer le repo
+        uses: actions/checkout@v4
+
+      - name: Installer Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Installer les dépendances
+        run: npm install --no-audit --no-fund
+
+      - name: Rédiger et préparer la newsletter
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
+          RESEND_AUDIENCE_ID: ${{ secrets.RESEND_AUDIENCE_ID }}
+          NEWSLETTER_FROM: ${{ vars.NEWSLETTER_FROM }}
+          NEWSLETTER_MODEL: ${{ vars.NEWSLETTER_MODEL }}
+          NEWSLETTER_AUTOSEND: ${{ vars.NEWSLETTER_AUTOSEND }}
+          NOTIFY_EMAIL: ${{ vars.NOTIFY_EMAIL }}
+        run: node tools/generate-newsletter.mjs
