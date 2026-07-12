@@ -35,6 +35,12 @@ export function LeadForm({ source = 'site', compact = false }: { source?: string
     const form = e.currentTarget;
     const data = Object.fromEntries(new FormData(form).entries());
 
+    if (String(data.phone || '').trim().length < 6) {
+      setStatus('error');
+      setError('Merci d’indiquer un numéro de téléphone.');
+      return;
+    }
+
     try {
       const res = await fetch('/api/lead', {
         method: 'POST',
@@ -85,8 +91,8 @@ export function LeadForm({ source = 'site', compact = false }: { source?: string
         <Field label="Entreprise">
           <input name="businessName" placeholder="Nom de la société" className="input" />
         </Field>
-        <Field label="Téléphone">
-          <input name="phone" type="tel" placeholder="06 12 34 56 78" className="input" />
+        <Field label="Téléphone *">
+          <input name="phone" type="tel" required placeholder="06 12 34 56 78" className="input" />
         </Field>
       </div>
 

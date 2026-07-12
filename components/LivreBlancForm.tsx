@@ -36,6 +36,11 @@ export function LivreBlancForm({ slug, pdfUrl, title }: LivreBlancFormProps) {
     setError('');
     const form = e.currentTarget;
     const data = Object.fromEntries(new FormData(form).entries());
+    if (String(data.phone || '').trim().length < 6) {
+      setStatus('error');
+      setError('Merci d’indiquer un numéro de téléphone.');
+      return;
+    }
     try {
       const res = await fetch('/api/lead', {
         method: 'POST',
@@ -89,6 +94,10 @@ export function LivreBlancForm({ slug, pdfUrl, title }: LivreBlancFormProps) {
       <label className="block">
         <span className="mb-1.5 block text-sm font-medium text-forest">Email professionnel *</span>
         <input name="email" type="email" required placeholder="vous@entreprise.com" className="lb-input" />
+      </label>
+      <label className="block">
+        <span className="mb-1.5 block text-sm font-medium text-forest">Téléphone *</span>
+        <input name="phone" type="tel" required placeholder="06 12 34 56 78" className="lb-input" />
       </label>
       <label className="block">
         <span className="mb-1.5 block text-sm font-medium text-forest">Entreprise</span>

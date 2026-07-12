@@ -10,7 +10,7 @@ const schema = z.object({
   name: z.string().trim().min(2, 'Nom requis').max(120),
   email: z.string().trim().email('Email invalide').max(160),
   businessName: z.string().trim().max(160).optional().or(z.literal('')),
-  phone: z.string().trim().max(40).optional().or(z.literal('')),
+  phone: z.string().trim().min(6, 'Numéro de téléphone requis').max(40),
   interest: z.string().trim().max(80).optional().or(z.literal('')),
   budget: z.string().trim().max(40).optional().or(z.literal('')),
   message: z.string().trim().min(5, 'Message trop court').max(4000),
