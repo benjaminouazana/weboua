@@ -191,9 +191,15 @@ async function notifyDraftReady(subject, broadcastId) {
 }
 
 async function main() {
-  if (!API_KEY) fail('ANTHROPIC_API_KEY manquante (secrets GitHub).');
-  if (!RESEND_KEY) fail('RESEND_API_KEY manquante (secrets GitHub).');
-  if (!AUDIENCE_ID) fail('RESEND_AUDIENCE_ID manquante — crée une audience dans Resend et ajoute son id.');
+  // Newsletter en veille tant qu'elle n'est pas configurée : on s'arrête SANS erreur
+  // (pas d'email d'échec). Dès que les 3 variables sont là, le robot se réactive seul.
+  const skip = (v) => {
+    console.log(`ℹ️  Newsletter en pause : ${v} non configuré. Aucune erreur — ajoute le secret pour l'activer.`);
+    process.exit(0);
+  };
+  if (!API_KEY) skip('ANTHROPIC_API_KEY');
+  if (!RESEND_KEY) skip('RESEND_API_KEY');
+  if (!AUDIENCE_ID) skip('RESEND_AUDIENCE_ID');
 
   const posts = recentPosts(4);
   if (!posts.length) fail('Aucun article publié dans content/blog — rien à mettre en newsletter.');
