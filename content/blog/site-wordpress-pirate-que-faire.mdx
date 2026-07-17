@@ -1,0 +1,133 @@
+---
+title: "Site WordPress piraté : que faire immédiatement"
+description: "Votre site WordPress piraté ? Suivez ce plan d'action immédiat pour reprendre le contrôle, nettoyer l'infection et éviter que ça recommence."
+date: "2026-07-17"
+author: "Weboua"
+category: "Hébergement"
+tags: ["sécurité WordPress", "site piraté", "maintenance WordPress"]
+draft: false
+---
+Votre site WordPress piraté : c'est le scénario que personne ne veut vivre, mais qui arrive plus souvent qu'on ne le croit. Redirections suspectes, pages défigurées, alerte Google, suspension par l'hébergeur… Les signaux varient, mais le stress est toujours le même. Voici un plan d'action structuré pour reprendre le contrôle rapidement — et surtout, pour ne plus jamais revivre cette situation.
+
+## Reconnaître qu'un site WordPress a été piraté
+
+Avant d'agir, encore faut-il identifier ce qui s'est passé. Les attaques ne sont pas toujours visibles à l'œil nu.
+
+### Les signes qui ne trompent pas
+
+- **Redirections automatiques** vers des sites douteux (pharmacies en ligne, jeux d'argent, contenus adultes)
+- **Alerte dans Google Search Console** : site signalé comme dangereux
+- **Votre hébergeur suspend votre compte** pour activité malveillante
+- **Des pages inconnues apparaissent** dans les résultats de recherche (spam SEO)
+- **Des utilisateurs administrateurs inconnus** sont présents dans WordPress
+- **Votre navigateur affiche un avertissement** de sécurité à l'ouverture du site
+
+> Si vous constatez l'un de ces signes, ne perdez pas de temps. Chaque heure compte : un site compromis continue d'être exploité, et Google dégrade son référencement rapidement.
+
+## Les premières actions à mener dans les 24 heures
+
+### 1. Passez votre site en mode maintenance
+
+Premier réflexe : limiter l'exposition. Mettez le site hors ligne ou activez un mode maintenance via votre hébergeur. Cela protège vos visiteurs et stoppe la propagation éventuelle.
+
+### 2. Changez tous les mots de passe immédiatement
+
+Sans exception :
+- Compte administrateur WordPress
+- Accès FTP / SFTP
+- Base de données (MySQL)
+- Compte hébergeur
+- Adresse email associée au site
+
+Utilisez des mots de passe longs, aléatoires, uniques. Un gestionnaire de mots de passe (Bitwarden, 1Password) est indispensable.
+
+### 3. Faites une sauvegarde de l'état compromis
+
+Cela peut sembler contre-intuitif, mais conserver une copie de l'état infecté permet de comprendre l'attaque, d'identifier les fichiers modifiés et de constituer une preuve si nécessaire.
+
+### 4. Identifiez le vecteur d'attaque
+
+Les causes les plus fréquentes d'un site WordPress piraté :
+
+- **Plugin ou thème vulnérable** (souvent non mis à jour ou téléchargé depuis une source non officielle)
+- **Mot de passe faible** ou réutilisé
+- **Hébergement mutualisé mal configuré** (contamination entre sites voisins)
+- **Compte FTP compromis**
+- **Fichier `wp-config.php` exposé**
+
+## Nettoyer le site : méthode rigoureuse
+
+### Option 1 : restaurer une sauvegarde saine
+
+Si vous disposez d'une sauvegarde datant d'avant l'infection, c'est la solution la plus rapide et la plus fiable. Condition : vérifier que la sauvegarde est bien propre (certaines infections remontent à plusieurs semaines avant d'être détectées).
+
+Restaurez ensuite dans cet ordre :
+1. Fichiers WordPress (core, thème, plugins)
+2. Base de données
+3. Réinitialisez immédiatement tous les mots de passe
+
+### Option 2 : nettoyage manuel des fichiers infectés
+
+Si aucune sauvegarde fiable n'est disponible, le nettoyage manuel est incontournable. Il exige une maîtrise technique sérieuse :
+
+- **Réinstallez WordPress en version propre** (fichiers core uniquement, sans toucher `wp-content` ni `wp-config.php`)
+- **Analysez `wp-content/uploads`** : les hackers y cachent souvent des scripts PHP déguisés en images
+- **Vérifiez les fichiers `.htaccess`** : les redirections malveillantes y sont fréquemment injectées
+- **Scannez la base de données** à la recherche d'injections (liens, scripts, iframes cachés)
+- **Supprimez les comptes administrateurs inconnus**
+
+Outils de scan recommandés : **Wordfence** (plugin), **MalCare**, ou **Sucuri SiteCheck** pour un premier diagnostic externe.
+
+### Option 3 : faire appel à un expert
+
+Si l'infection est complexe, si vous n'avez pas les compétences techniques en interne, ou si votre site génère du chiffre d'affaires significatif, déléguer le nettoyage à un professionnel est le choix le plus sûr. Un expert limitera la durée d'interruption et s'assurera qu'aucune backdoor ne subsiste.
+
+## Après le nettoyage : sécuriser durablement WordPress
+
+Nettoyer un site piraté sans renforcer sa sécurité, c'est repeindre une porte sans changer la serrure. Voici les mesures non négociables.
+
+### Mises à jour systématiques
+
+**WordPress, thèmes et plugins doivent être mis à jour dès qu'une nouvelle version est disponible.** La majorité des attaques exploitent des vulnérabilités connues et déjà corrigées par les éditeurs. Un site non maintenu est une cible facile.
+
+Supprimez également tout plugin ou thème inactif : même désactivé, un plugin vulnérable reste un vecteur d'attaque.
+
+### Authentification renforcée
+
+- **Double authentification (2FA)** sur tous les comptes administrateurs
+- **Limitation des tentatives de connexion** (plugin Login Lockdown ou équivalent)
+- **Changement de l'URL de connexion** (`/wp-admin` est la cible systématique des bots)
+- **Interdire l'accès XML-RPC** si vous ne l'utilisez pas
+
+### Sauvegardes automatiques et externalisées
+
+Une sauvegarde stockée sur le même serveur que votre site ne vaut rien si le serveur est compromis. Configurez des sauvegardes quotidiennes vers un stockage externe : Google Drive, Amazon S3, ou un serveur dédié.
+
+Testez régulièrement la restauration. Une sauvegarde non testée est une fausse sécurité.
+
+### Hébergement de qualité
+
+L'hébergement mutualisé bas de gamme reste l'une des causes sous-estimées des piratages WordPress. Un hébergeur sérieux propose : isolation des comptes, pare-feu applicatif (WAF), détection automatique de malwares, et support réactif en cas d'incident.
+
+## L'impact SEO d'un site WordPress piraté
+
+Un aspect souvent négligé : un piratage détruit votre référencement naturel. Google déréférence rapidement les sites signalés comme dangereux, et récupérer sa position prend du temps — parfois plusieurs mois.
+
+Après nettoyage, il est indispensable de :
+
+- **Demander un réexamen dans Google Search Console** (si le site a été signalé)
+- **Vérifier l'index Google** pour identifier d'éventuelles pages de spam encore indexées
+- **Auditer les backlinks** pour détecter des liens toxiques créés par les hackers
+
+Si vous n'avez pas encore de suivi SEO en place, un [audit SEO gratuit](/audit-seo-performance) peut révéler l'étendue des dégâts et les priorités de récupération.
+
+Par ailleurs, si l'incident vous amène à repenser votre infrastructure digitale dans son ensemble — performances, sécurité, autonomie — notre équipe peut vous accompagner dans une [création de site internet](/creation-de-sites-internet) sur des bases solides et sécurisées.
+
+## Ce qu'il faut retenir
+
+- **Agir vite** : chaque heure de site compromis aggrave les dégâts (SEO, réputation, données)
+- **Nettoyer ne suffit pas** : la sécurisation post-incident est aussi importante que le nettoyage
+- **La maintenance régulière est la meilleure prévention** : mises à jour, sauvegardes, authentification forte
+- **Un expert vous fait gagner du temps et des certitudes** : pas de backdoor oublié, pas de récidive dans les semaines suivantes
+
+Votre site WordPress a été piraté, ou vous voulez éviter d'en arriver là ? [Contactez notre équipe](/contact) : nous réalisons un diagnostic de sécurité, nettoyons les infections et mettons en place un plan de maintenance adapté à votre activité.
