@@ -2,6 +2,7 @@ import Link from 'next/link';
 import { Icon } from '@/components/Icon';
 import { Eyebrow, SectionHeading, Stats, CTABand, ContactBlock } from '@/components/ui';
 import { Reveal } from '@/components/Reveal';
+import { MethodePinned } from '@/components/MethodePinned';
 import { services } from '@/lib/site';
 import { buildMetadata } from '@/lib/seo';
 
@@ -98,70 +99,46 @@ export default function HomePage() {
 
       {/* WHY US */}
       <section className="container-page py-12">
-        <div className="grid items-center gap-14 lg:grid-cols-2">
-          <Reveal variant="left">
-            <Eyebrow>Pourquoi Weboua</Eyebrow>
-            <h2 className="mt-4 text-3xl sm:text-4xl">Le SEO et la conversion dans le code, dès la première ligne</h2>
-            <p className="mt-4 text-lg text-muted">
-              Nos sites sont codés à la main : ultra-rapides, sécurisés, parfaitement structurés pour Google.
-              Résultat : vous montez dans les résultats et vous convertissez plus.
-            </p>
-            <div className="mt-8 space-y-5">
-              {[
-                {
-                  icon: 'bolt',
-                  title: 'Performance brute',
-                  text: 'Chargement sous la seconde, Core Web Vitals au vert. Google vous remonte, et vos visiteurs ne partent plus avant d’avoir vu votre offre.',
-                },
-                {
-                  icon: 'search',
-                  title: 'SEO natif',
-                  text: 'Structure sémantique et balisage schema.org écrits dans le code, pas rajoutés après coup par un plugin. Vous ciblez les requêtes qui rapportent.',
-                },
-                {
-                  icon: 'shield',
-                  title: 'Fiabilité totale',
-                  text: 'Hébergement infogéré, sauvegardes automatiques, monitoring. Si quelque chose bouge, on le voit avant vous.',
-                },
-              ].map((f, i) => (
-                <Reveal key={f.title} delay={i * 100}>
-                  <div className="flex gap-4">
-                    <span className="flex h-11 w-11 flex-none items-center justify-center rounded-2xl bg-mint/15 text-emerald">
-                      <Icon name={f.icon} className="h-5 w-5" />
-                    </span>
-                    <div>
-                      <h3 className="text-lg">{f.title}</h3>
-                      <p className="mt-1 text-muted">{f.text}</p>
-                    </div>
-                  </div>
-                </Reveal>
-              ))}
-            </div>
-          </Reveal>
-
-          <Reveal variant="right">
-            <div className="rounded-4xl bg-forest p-8 text-white shadow-lift sm:p-10">
-              <p className="text-sm font-semibold uppercase tracking-wider text-mint">La méthode Weboua</p>
-              <ol className="mt-6 space-y-6">
-                {[
-                  { n: '01', t: 'Audit & stratégie', d: 'On analyse votre marché, vos concurrents et vos opportunités.' },
-                  { n: '02', t: 'Conception & code', d: 'Design sur-mesure et développement orientés conversion.' },
-                  { n: '03', t: 'SEO & lancement', d: 'Optimisation technique et sémantique, puis mise en ligne.' },
-                  { n: '04', t: 'Croissance', d: 'Contenus, leads et optimisation continue. Les résultats s’accumulent.' },
-                ].map((step) => (
-                  <li key={step.n} className="flex gap-4">
-                    <span className="font-display text-2xl font-bold text-mint/60">{step.n}</span>
-                    <div>
-                      <h4 className="text-white">{step.t}</h4>
-                      <p className="mt-1 text-sm text-white/70">{step.d}</p>
-                    </div>
-                  </li>
-                ))}
-              </ol>
-            </div>
-          </Reveal>
+        <Reveal>
+          <SectionHeading
+            eyebrow="Pourquoi Weboua"
+            title="Le SEO et la conversion dans le code, dès la première ligne"
+            intro="Nos sites sont codés à la main : ultra-rapides, sécurisés, parfaitement structurés pour Google. Vous montez dans les résultats, et vous convertissez plus."
+          />
+        </Reveal>
+        <div className="mt-14 grid gap-6 md:grid-cols-3">
+          {[
+            {
+              icon: 'bolt',
+              title: 'Performance brute',
+              text: 'Chargement sous la seconde, Core Web Vitals au vert. Google vous remonte, et vos visiteurs ne partent plus avant d’avoir vu votre offre.',
+            },
+            {
+              icon: 'search',
+              title: 'SEO natif',
+              text: 'Structure sémantique et balisage schema.org écrits dans le code, pas rajoutés après coup par un plugin. Vous ciblez les requêtes qui rapportent.',
+            },
+            {
+              icon: 'shield',
+              title: 'Fiabilité totale',
+              text: 'Hébergement infogéré, sauvegardes automatiques, monitoring. Si quelque chose bouge, on le voit avant vous.',
+            },
+          ].map((f, i) => (
+            <Reveal key={f.title} variant="up" delay={i * 100} className="h-full">
+              <div className="card h-full transition-all hover:-translate-y-1 hover:border-mint hover:shadow-lift">
+                <span className="flex h-11 w-11 items-center justify-center rounded-2xl bg-mint/15 text-emerald">
+                  <Icon name={f.icon} className="h-5 w-5" />
+                </span>
+                <h3 className="mt-4 text-lg">{f.title}</h3>
+                <p className="mt-2 text-muted">{f.text}</p>
+              </div>
+            </Reveal>
+          ))}
         </div>
       </section>
+
+      {/* MÉTHODE — section épinglée (scrollytelling façon Apple) */}
+      <MethodePinned />
 
       {/* RÉALISATIONS — preuve réelle, sans dévoiler de noms */}
       <section className="container-page py-12">
