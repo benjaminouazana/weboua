@@ -2,6 +2,7 @@ import { notFound } from 'next/navigation';
 import Link from 'next/link';
 import { Icon } from '@/components/Icon';
 import { Eyebrow, SectionHeading, ContactBlock, CTABand } from '@/components/ui';
+import { Reveal } from '@/components/Reveal';
 import { servicesContent, getServiceContent } from '@/lib/services-content';
 import { services } from '@/lib/site';
 import { buildMetadata } from '@/lib/seo';
@@ -54,13 +55,16 @@ export default function ServicePage({ params }: { params: { service: string } })
 
       {/* HERO */}
       <section className="relative overflow-hidden bg-gradient-to-b from-cream to-white">
-        <div className="absolute -left-32 top-0 -z-10 h-80 w-80 rounded-full bg-mint/15 blur-3xl" />
+        <div className="blob-float absolute -left-32 top-0 -z-10 h-80 w-80 rounded-full bg-mint/15 blur-3xl" />
+        <div className="blob-float-slow absolute -right-24 top-24 -z-10 h-72 w-72 rounded-full bg-emerald/10 blur-3xl" />
         <div className="container-page py-14">
           <div className="max-w-3xl">
-            <Eyebrow>{c.hero.eyebrow}</Eyebrow>
-            <h1 className="mt-5 text-4xl font-bold leading-tight sm:text-5xl">{c.hero.title}</h1>
-            <p className="mt-5 text-lg leading-relaxed text-muted">{c.hero.subtitle}</p>
-            <div className="mt-8 flex flex-wrap gap-3">
+            <div className="hero-in">
+              <Eyebrow>{c.hero.eyebrow}</Eyebrow>
+            </div>
+            <h1 className="hero-in mt-5 text-4xl font-bold leading-tight sm:text-5xl" style={{ animationDelay: '80ms' }}>{c.hero.title}</h1>
+            <p className="hero-in mt-5 text-lg leading-relaxed text-muted" style={{ animationDelay: '160ms' }}>{c.hero.subtitle}</p>
+            <div className="hero-in mt-8 flex flex-wrap gap-3" style={{ animationDelay: '240ms' }}>
               <Link href="/contact" className="btn-primary">
                 Démarrer maintenant
                 <Icon name="arrow" className="h-4 w-4" />
@@ -77,14 +81,16 @@ export default function ServicePage({ params }: { params: { service: string } })
       <section className="container-page py-10">
         <p className="mx-auto max-w-3xl text-center text-xl leading-relaxed text-forest">{c.intro}</p>
         <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-          {c.benefits.map((b) => (
-            <div key={b.title} className="card">
-              <div className="flex h-11 w-11 items-center justify-center rounded-2xl bg-mint/15 text-emerald">
-                <Icon name={b.icon} className="h-5 w-5" />
+          {c.benefits.map((b, i) => (
+            <Reveal key={b.title} variant="up" delay={i * 90} className="h-full">
+              <div className="card h-full transition-all hover:-translate-y-1 hover:border-mint hover:shadow-lift">
+                <div className="flex h-11 w-11 items-center justify-center rounded-2xl bg-mint/15 text-emerald">
+                  <Icon name={b.icon} className="h-5 w-5" />
+                </div>
+                <h3 className="mt-4 text-lg">{b.title}</h3>
+                <p className="mt-2 text-sm text-muted">{b.text}</p>
               </div>
-              <h3 className="mt-4 text-lg">{b.title}</h3>
-              <p className="mt-2 text-sm text-muted">{b.text}</p>
-            </div>
+            </Reveal>
           ))}
         </div>
       </section>
@@ -146,14 +152,16 @@ export default function ServicePage({ params }: { params: { service: string } })
       <section className="container-page py-10">
         <SectionHeading title="Nos autres expertises" center />
         <div className="mt-10 grid gap-6 sm:grid-cols-3">
-          {others.map((s) => (
-            <Link key={s.slug} href={`/${s.slug}`} className="card group hover:-translate-y-1 hover:border-mint">
-              <div className="flex h-11 w-11 items-center justify-center rounded-2xl bg-forest text-mint">
-                <Icon name={s.icon} className="h-5 w-5" />
-              </div>
-              <h3 className="mt-4 text-lg">{s.title}</h3>
-              <p className="mt-2 text-sm text-muted">{s.short}</p>
-            </Link>
+          {others.map((s, i) => (
+            <Reveal key={s.slug} delay={i * 90} className="h-full">
+              <Link href={`/${s.slug}`} className="card group block h-full hover:-translate-y-1 hover:border-mint hover:shadow-lift">
+                <div className="flex h-11 w-11 items-center justify-center rounded-2xl bg-forest text-mint">
+                  <Icon name={s.icon} className="h-5 w-5" />
+                </div>
+                <h3 className="mt-4 text-lg">{s.title}</h3>
+                <p className="mt-2 text-sm text-muted">{s.short}</p>
+              </Link>
+            </Reveal>
           ))}
         </div>
       </section>

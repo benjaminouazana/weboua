@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { Icon } from '@/components/Icon';
 import { Eyebrow, SectionHeading, CTABand, ContactBlock } from '@/components/ui';
+import { Reveal } from '@/components/Reveal';
 import { buildMetadata } from '@/lib/seo';
 import { site } from '@/lib/site';
 
@@ -111,11 +112,11 @@ export default function OffresPage() {
           intro="Un projet ponctuel ou un partenaire de croissance : choisissez la formule, on s'occupe du reste."
         />
 
-        <div className="mt-14 grid gap-6 lg:grid-cols-3">
-          {plans.map((p) => (
+        <div className="mt-14 grid items-stretch gap-6 lg:grid-cols-3">
+          {plans.map((p, i) => (
+            <Reveal key={p.name} delay={i * 110} className="h-full">
             <div
-              key={p.name}
-              className={`card relative flex flex-col ${
+              className={`card relative flex h-full flex-col hover:-translate-y-1 hover:shadow-lift ${
                 p.popular ? 'border-emerald shadow-lift ring-1 ring-emerald' : ''
               }`}
             >
@@ -145,6 +146,7 @@ export default function OffresPage() {
               </Link>
               <p className="mt-3 text-center text-xs text-muted">{p.note}</p>
             </div>
+            </Reveal>
           ))}
         </div>
 

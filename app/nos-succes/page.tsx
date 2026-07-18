@@ -1,5 +1,6 @@
 import { Eyebrow, SectionHeading, Stats, CTABand } from '@/components/ui';
 import { Icon } from '@/components/Icon';
+import { Reveal } from '@/components/Reveal';
 import { clients } from '@/lib/site';
 import { buildMetadata } from '@/lib/seo';
 
@@ -21,22 +22,23 @@ export default function SuccessPage() {
         />
 
         <div className="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-          {clients.map((c) => (
-            <a
-              key={c.url}
-              href={c.url}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="card group flex items-center justify-between gap-4 hover:-translate-y-1 hover:border-mint"
-            >
-              <div>
-                <h3 className="text-lg">{c.name}</h3>
-                <p className="mt-1 text-sm text-muted">{c.url.replace('https://', '')}</p>
-              </div>
-              <span className="flex h-10 w-10 flex-none items-center justify-center rounded-full bg-mint/15 text-emerald transition-colors group-hover:bg-emerald group-hover:text-white">
-                <Icon name="arrow" className="h-5 w-5 -rotate-45" />
-              </span>
-            </a>
+          {clients.map((c, i) => (
+            <Reveal key={c.url} delay={(i % 3) * 90} className="h-full">
+              <a
+                href={c.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="card group flex h-full items-center justify-between gap-4 hover:-translate-y-1 hover:border-mint hover:shadow-lift"
+              >
+                <div>
+                  <h3 className="text-lg">{c.name}</h3>
+                  <p className="mt-1 text-sm text-muted">{c.url.replace('https://', '')}</p>
+                </div>
+                <span className="flex h-10 w-10 flex-none items-center justify-center rounded-full bg-mint/15 text-emerald transition-colors group-hover:bg-emerald group-hover:text-white">
+                  <Icon name="arrow" className="h-5 w-5 -rotate-45" />
+                </span>
+              </a>
+            </Reveal>
           ))}
         </div>
 
@@ -51,10 +53,10 @@ export default function SuccessPage() {
           <div className="mt-8 [&_dt]:text-mint [&_dd]:text-white/70">
             <Stats
               items={[
-                { value: '12 ans', label: "d'expérience" },
-                { value: '100%', label: 'sur-mesure' },
-                { value: 'Top 3', label: 'positions visées' },
-                { value: '24 h', label: 'délai de réponse' },
+                { value: '12 ans', label: 'de métier' },
+                { value: '100%', label: 'codé à la main' },
+                { value: '< 1 s', label: 'de chargement' },
+                { value: '15+', label: 'entreprises accompagnées' },
               ]}
             />
           </div>

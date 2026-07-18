@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { Icon } from '@/components/Icon';
 import { Eyebrow, Stats, CTABand } from '@/components/ui';
+import { Reveal } from '@/components/Reveal';
 import { buildMetadata } from '@/lib/seo';
 
 export const metadata = buildMetadata({
@@ -35,10 +36,10 @@ export default function AboutPage() {
         <div className="mx-auto mt-16 max-w-4xl">
           <Stats
             items={[
-              { value: '12 ans', label: "d'expérience" },
-              { value: '100%', label: 'sur-mesure' },
-              { value: 'B2B', label: 'notre spécialité' },
-              { value: 'France', label: 'entreprises accompagnées' },
+              { value: '12 ans', label: 'de métier, du site au SEO' },
+              { value: '100%', label: 'codé à la main, zéro template' },
+              { value: '< 1 s', label: 'de chargement, mobile compris' },
+              { value: '15+', label: 'entreprises accompagnées' },
             ]}
           />
         </div>
@@ -69,14 +70,16 @@ export default function AboutPage() {
           </div>
 
           <div className="grid gap-5 sm:grid-cols-2">
-            {values.map((v) => (
-              <div key={v.title} className="card">
-                <div className="flex h-11 w-11 items-center justify-center rounded-2xl bg-mint/15 text-emerald">
-                  <Icon name={v.icon} className="h-5 w-5" />
+            {values.map((v, i) => (
+              <Reveal key={v.title} variant="scale" delay={i * 90} className="h-full">
+                <div className="card h-full transition-all hover:-translate-y-1 hover:border-mint hover:shadow-lift">
+                  <div className="flex h-11 w-11 items-center justify-center rounded-2xl bg-mint/15 text-emerald">
+                    <Icon name={v.icon} className="h-5 w-5" />
+                  </div>
+                  <h3 className="mt-4 text-lg">{v.title}</h3>
+                  <p className="mt-2 text-sm text-muted">{v.text}</p>
                 </div>
-                <h3 className="mt-4 text-lg">{v.title}</h3>
-                <p className="mt-2 text-sm text-muted">{v.text}</p>
-              </div>
+              </Reveal>
             ))}
           </div>
         </div>
