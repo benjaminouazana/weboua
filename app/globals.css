@@ -61,3 +61,22 @@
 .prose-weboua {
   @apply prose prose-lg max-w-none prose-headings:font-display prose-headings:text-forest prose-a:text-emerald prose-a:no-underline hover:prose-a:underline prose-strong:text-forest prose-blockquote:border-l-mint prose-code:text-emerald prose-code:before:content-none prose-code:after:content-none;
 }
+
+/* --- Animations "vivantes" (style Apple) --- */
+@keyframes floatBlob {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(26px, -30px) scale(1.07); }
+}
+.blob-float { animation: floatBlob 16s ease-in-out infinite; }
+.blob-float-slow { animation: floatBlob 24s ease-in-out infinite reverse; }
+
+@keyframes heroIn {
+  from { opacity: 0; transform: translateY(22px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.hero-in { animation: heroIn 0.9s cubic-bezier(0.22, 1, 0.36, 1) both; }
+
+@media (prefers-reduced-motion: reduce) {
+  .blob-float, .blob-float-slow, .hero-in { animation: none !important; }
+  html { scroll-behavior: auto; }
+}

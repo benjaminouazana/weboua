@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { Icon } from '@/components/Icon';
 import { Eyebrow, SectionHeading, Stats, CTABand, ContactBlock } from '@/components/ui';
+import { Reveal } from '@/components/Reveal';
 import { services } from '@/lib/site';
 import { buildMetadata } from '@/lib/seo';
 
@@ -24,19 +25,23 @@ export default function HomePage() {
       {/* HERO */}
       <section className="relative overflow-hidden">
         <div className="absolute inset-0 -z-10 bg-gradient-to-b from-cream to-white" />
-        <div className="absolute -right-40 -top-40 -z-10 h-96 w-96 rounded-full bg-mint/20 blur-3xl" />
+        <div className="blob-float absolute -right-40 -top-40 -z-10 h-96 w-96 rounded-full bg-mint/20 blur-3xl" />
+        <div className="blob-float-slow absolute -left-32 top-40 -z-10 h-80 w-80 rounded-full bg-emerald/10 blur-3xl" />
         <div className="container-page py-20 sm:py-28">
           <div className="mx-auto max-w-3xl text-center">
-            <Eyebrow>Agence Digitale Performance · 12 ans d'expertise</Eyebrow>
-            <h1 className="mt-6 text-4xl font-bold leading-[1.05] sm:text-6xl">
+            <div className="hero-in">
+              <Eyebrow>Agence Digitale Performance · 12 ans d'expertise</Eyebrow>
+            </div>
+            <h1 className="hero-in mt-6 text-4xl font-bold leading-[1.05] sm:text-6xl" style={{ animationDelay: '80ms' }}>
               On ne fait pas de simples sites vitrines.
               <span className="block text-emerald">On construit des machines à clients.</span>
             </h1>
-            <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-muted">
-              Sites internet codés sur-mesure, SEO qui domine Google et campagnes de leads B2B. Tout ce qu'il faut
-              pour remplir votre agenda de prospects qualifiés. Sans blabla — des résultats.
+            <p className="hero-in mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-muted" style={{ animationDelay: '160ms' }}>
+              On code chaque site à la main : il charge en moins d'une seconde, il grimpe sur Google, et il
+              transforme vos visiteurs en demandes de devis. Pas une brochure en ligne — un commercial qui
+              travaille pour vous 24/7.
             </p>
-            <div className="mt-9 flex flex-wrap justify-center gap-3">
+            <div className="hero-in mt-9 flex flex-wrap justify-center gap-3" style={{ animationDelay: '240ms' }}>
               <Link href="/contact" className="btn-primary">
                 Lancer mon projet
                 <Icon name="arrow" className="h-4 w-4" />
@@ -47,13 +52,13 @@ export default function HomePage() {
             </div>
           </div>
 
-          <div className="mx-auto mt-16 max-w-4xl">
+          <div className="hero-in mx-auto mt-16 max-w-4xl" style={{ animationDelay: '340ms' }}>
             <Stats
               items={[
-                { value: '12 ans', label: "d'expérience web & SEO" },
-                { value: '100%', label: 'sur-mesure, zéro template' },
-                { value: 'Top 3', label: 'positions Google visées' },
-                { value: '24 h', label: 'délai de réponse' },
+                { value: '12 ans', label: 'de métier, du site au SEO' },
+                { value: '100%', label: 'codé à la main, zéro template' },
+                { value: '< 1 s', label: 'de chargement, mobile compris' },
+                { value: '15+', label: 'entreprises accompagnées' },
               ]}
             />
           </div>
@@ -62,24 +67,31 @@ export default function HomePage() {
 
       {/* SERVICES */}
       <section id="services" className="container-page scroll-mt-24 py-12">
-        <SectionHeading
-          eyebrow="Nos services"
-          title="Une chaîne complète, de la première visite au client signé"
-          intro="Site, référencement, prospection : chaque brique est pensée pour générer du chiffre d'affaires, pas juste du trafic."
-        />
+        <Reveal>
+          <SectionHeading
+            eyebrow="Nos services"
+            title="Une chaîne complète, de la première visite au client signé"
+            intro="Site, référencement, prospection : chaque brique est pensée pour générer du chiffre d'affaires, pas juste du trafic."
+          />
+        </Reveal>
         <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {services.map((s) => (
-            <Link key={s.slug} href={`/${s.slug}`} className="card group hover:-translate-y-1 hover:border-mint">
-              <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-forest text-mint transition-colors group-hover:bg-emerald group-hover:text-white">
-                <Icon name={s.icon} className="h-6 w-6" />
-              </div>
-              <h3 className="mt-5 text-xl">{s.title}</h3>
-              <p className="mt-2 text-muted">{s.short}</p>
-              <span className="mt-5 inline-flex items-center gap-1.5 text-sm font-semibold text-emerald">
-                En savoir plus
-                <Icon name="arrow" className="h-4 w-4 transition-transform group-hover:translate-x-1" />
-              </span>
-            </Link>
+          {services.map((s, i) => (
+            <Reveal key={s.slug} variant="up" delay={i * 90}>
+              <Link
+                href={`/${s.slug}`}
+                className="card group block h-full hover:-translate-y-2 hover:border-mint hover:shadow-lift"
+              >
+                <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-forest text-mint transition-colors group-hover:bg-emerald group-hover:text-white">
+                  <Icon name={s.icon} className="h-6 w-6" />
+                </div>
+                <h3 className="mt-5 text-xl">{s.title}</h3>
+                <p className="mt-2 text-muted">{s.short}</p>
+                <span className="mt-5 inline-flex items-center gap-1.5 text-sm font-semibold text-emerald">
+                  En savoir plus
+                  <Icon name="arrow" className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+                </span>
+              </Link>
+            </Reveal>
           ))}
         </div>
       </section>
@@ -87,7 +99,7 @@ export default function HomePage() {
       {/* WHY US */}
       <section className="container-page py-12">
         <div className="grid items-center gap-14 lg:grid-cols-2">
-          <div>
+          <Reveal variant="left">
             <Eyebrow>Pourquoi Weboua</Eyebrow>
             <h2 className="mt-4 text-3xl sm:text-4xl">Le SEO et la conversion dans le code, dès la première ligne</h2>
             <p className="mt-4 text-lg text-muted">
@@ -96,24 +108,38 @@ export default function HomePage() {
             </p>
             <div className="mt-8 space-y-5">
               {[
-                { icon: 'bolt', title: 'Performance brute', text: 'Temps de chargement éclair, Core Web Vitals au vert. Google adore, vos visiteurs aussi.' },
-                { icon: 'search', title: 'SEO natif', text: 'Structure sémantique, balisage schema.org, contenus optimisés. Le référencement est intégré, pas ajouté après.' },
-                { icon: 'shield', title: 'Fiabilité totale', text: 'Hébergement infogéré, sauvegardes, monitoring. Votre site tourne, vous dormez.' },
-              ].map((f) => (
-                <div key={f.title} className="flex gap-4">
-                  <span className="flex h-11 w-11 flex-none items-center justify-center rounded-2xl bg-mint/15 text-emerald">
-                    <Icon name={f.icon} className="h-5 w-5" />
-                  </span>
-                  <div>
-                    <h3 className="text-lg">{f.title}</h3>
-                    <p className="mt-1 text-muted">{f.text}</p>
+                {
+                  icon: 'bolt',
+                  title: 'Performance brute',
+                  text: 'Chargement sous la seconde, Core Web Vitals au vert. Google vous remonte, et vos visiteurs ne partent plus avant d’avoir vu votre offre.',
+                },
+                {
+                  icon: 'search',
+                  title: 'SEO natif',
+                  text: 'Structure sémantique et balisage schema.org écrits dans le code, pas rajoutés après coup par un plugin. Vous ciblez les requêtes qui rapportent.',
+                },
+                {
+                  icon: 'shield',
+                  title: 'Fiabilité totale',
+                  text: 'Hébergement infogéré, sauvegardes automatiques, monitoring. Si quelque chose bouge, on le voit avant vous.',
+                },
+              ].map((f, i) => (
+                <Reveal key={f.title} delay={i * 100}>
+                  <div className="flex gap-4">
+                    <span className="flex h-11 w-11 flex-none items-center justify-center rounded-2xl bg-mint/15 text-emerald">
+                      <Icon name={f.icon} className="h-5 w-5" />
+                    </span>
+                    <div>
+                      <h3 className="text-lg">{f.title}</h3>
+                      <p className="mt-1 text-muted">{f.text}</p>
+                    </div>
                   </div>
-                </div>
+                </Reveal>
               ))}
             </div>
-          </div>
+          </Reveal>
 
-          <div className="relative">
+          <Reveal variant="right">
             <div className="rounded-4xl bg-forest p-8 text-white shadow-lift sm:p-10">
               <p className="text-sm font-semibold uppercase tracking-wider text-mint">La méthode Weboua</p>
               <ol className="mt-6 space-y-6">
@@ -133,8 +159,30 @@ export default function HomePage() {
                 ))}
               </ol>
             </div>
-          </div>
+          </Reveal>
         </div>
+      </section>
+
+      {/* RÉALISATIONS — preuve réelle, sans dévoiler de noms */}
+      <section className="container-page py-12">
+        <Reveal variant="scale">
+          <div className="relative overflow-hidden rounded-4xl border border-line bg-gradient-to-br from-cream to-mint/10 p-10 text-center sm:p-14">
+            <div className="blob-float absolute -right-24 -top-24 -z-0 h-64 w-64 rounded-full bg-mint/20 blur-3xl" />
+            <div className="relative">
+              <Eyebrow>Réalisations</Eyebrow>
+              <h2 className="mx-auto mt-4 max-w-2xl text-3xl sm:text-4xl">Nos sites sont déjà en ligne, dans tous les secteurs</h2>
+              <p className="mx-auto mt-4 max-w-2xl text-lg text-muted">
+                Énergie, industrie, beauté, formation, e-commerce, recrutement… Plus de 15 entreprises tournent
+                avec un site signé Weboua. La meilleure preuve, ce n’est pas une capture d’écran : c’est d’aller
+                les voir tourner.
+              </p>
+              <Link href="/nos-succes" className="btn-primary mt-8">
+                Voir nos réalisations
+                <Icon name="arrow" className="h-4 w-4" />
+              </Link>
+            </div>
+          </div>
+        </Reveal>
       </section>
 
       <ContactBlock source="home" />
