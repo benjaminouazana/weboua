@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { Icon } from '@/components/Icon';
 import { Eyebrow, SectionHeading, ContactBlock, CTABand } from '@/components/ui';
 import { Reveal } from '@/components/Reveal';
+import { LeadTunnelPinned } from '@/components/LeadTunnelPinned';
 import { servicesContent, getServiceContent } from '@/lib/services-content';
 import { services } from '@/lib/site';
 import { buildMetadata } from '@/lib/seo';
@@ -94,6 +95,9 @@ export default function ServicePage({ params }: { params: { service: string } })
           ))}
         </div>
       </section>
+
+      {/* TUNNEL DE LEADS — section épinglée, uniquement sur la page leads-b2b */}
+      {c.slug === 'leads-b2b' && <LeadTunnelPinned />}
 
       {/* DELIVERABLES + PROCESS */}
       <section className="container-page py-12">

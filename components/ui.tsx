@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { Icon } from './Icon';
 import { LeadForm } from './LeadForm';
+import { CountUp } from './CountUp';
 
 export function Eyebrow({ children }: { children: React.ReactNode }) {
   return (
@@ -36,7 +37,9 @@ export function Stats({ items }: { items: { value: string; label: string }[] }) 
     <dl className="grid grid-cols-2 gap-x-6 gap-y-10 sm:grid-cols-4">
       {items.map((s) => (
         <div key={s.label}>
-          <dt className="font-display text-4xl font-bold text-emerald sm:text-5xl">{s.value}</dt>
+          <dt className="font-display text-4xl font-bold text-emerald sm:text-5xl">
+            <CountUp value={s.value} />
+          </dt>
           <dd className="mt-1 text-sm text-muted">{s.label}</dd>
         </div>
       ))}
