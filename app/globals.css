@@ -80,3 +80,6 @@
   .blob-float, .blob-float-slow, .hero-in { animation: none !important; }
   html { scroll-behavior: auto; }
 }
+
+/* Le sommaire scrolle vers les titres sans les cacher sous le header fixe. */
+.prose-weboua :is(h2, h3) { scroll-margin-top: 100px; }

@@ -78,11 +78,14 @@ En plus de l'article, rédige un post LinkedIn qui en fait la promotion :
 - Termine par une question ou un appel à lire l'article, puis 3 hashtags maximum
 - N'inclus PAS le lien dans le texte (il sera ajouté automatiquement)
 
+En plus, rédige "L'essentiel à retenir" : 5 à 6 points clés, courts et autoportants (chacun se comprend seul, avec le chiffre ou le fait précis). C'est ce que les IA (ChatGPT, Google) citent en priorité — sois factuel et concret.
+
 Réponds STRICTEMENT avec un objet JSON valide (et rien d'autre, pas de texte autour, pas de balises de code) au format :
 {
   "title": "Titre final optimisé, max 60 caractères, contenant le mot-clé",
   "description": "Méta-description vendeuse de 140 à 160 caractères, contenant le mot-clé",
   "tags": ["tag1", "tag2", "tag3"],
+  "takeaways": ["point clé 1", "point clé 2", "point clé 3", "point clé 4", "point clé 5"],
   "body": "Le corps de l'article en Markdown, commençant directement par un paragraphe d'introduction puis des sections ## ...",
   "linkedin": "Le post LinkedIn complet"
 }`;
@@ -171,6 +174,7 @@ async function emailLinkedInPost({ title, slug, linkedin }) {
 
 function frontmatter(fields) {
   const esc = (s) => String(s).replace(/"/g, '\\"');
+  const takeaways = Array.isArray(fields.takeaways) ? fields.takeaways.filter(Boolean) : [];
   return [
     '---',
     `title: "${esc(fields.title)}"`,
@@ -179,6 +183,7 @@ function frontmatter(fields) {
     `author: "Weboua"`,
     `category: "${esc(fields.category)}"`,
     `tags: [${(fields.tags || []).map((t) => `"${esc(t)}"`).join(', ')}]`,
+    ...(takeaways.length ? ['takeaways:', ...takeaways.map((t) => `  - "${esc(t)}"`)] : []),
     `draft: false`,
     '---',
     '',
@@ -211,6 +216,7 @@ async function main() {
       date: todayISO(),
       category: topic.category,
       tags: article.tags,
+      takeaways: article.takeaways,
     }) + String(article.body).trim() + '\n';
 
   fs.writeFileSync(file, content, 'utf-8');

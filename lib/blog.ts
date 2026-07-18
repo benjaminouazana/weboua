@@ -2,6 +2,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import matter from 'gray-matter';
 import readingTime from 'reading-time';
+import GithubSlugger from 'github-slugger';
 import { site } from './site';
 
 const BLOG_DIR = path.join(process.cwd(), 'content', 'blog');
@@ -17,9 +18,36 @@ export type PostMeta = {
   cover?: string;
   readingMinutes: number;
   draft: boolean;
+  takeaways: string[];
 };
 
 export type Post = PostMeta & { content: string };
+
+export type Heading = { id: string; text: string };
+
+/**
+ * Extrait les titres de niveau 2 (## ) de l'article pour construire le sommaire.
+ * Utilise github-slugger — le MÊME algo que rehype-slug — pour que les ancres
+ * du sommaire correspondent exactement aux id des titres rendus.
+ */
+export function getHeadings(content: string): Heading[] {
+  const slugger = new GithubSlugger();
+  const headings: Heading[] = [];
+  let inCode = false;
+  for (const line of content.split('\n')) {
+    if (line.trim().startsWith('```')) {
+      inCode = !inCode;
+      continue;
+    }
+    if (inCode) continue;
+    const m = /^##\s+(.+?)\s*$/.exec(line); // h2 uniquement (### ne matche pas)
+    if (m) {
+      const text = m[1].replace(/[*_`]/g, '').trim();
+      headings.push({ id: slugger.slug(text), text });
+    }
+  }
+  return headings;
+}
 
 function ensureDir(): string[] {
   if (!fs.existsSync(BLOG_DIR)) return [];
@@ -42,6 +70,7 @@ function parseFile(file: string): Post {
     cover: data.cover,
     readingMinutes: Math.max(1, Math.round(readingTime(content).minutes)),
     draft: Boolean(data.draft),
+    takeaways: Array.isArray(data.takeaways) ? data.takeaways.map(String) : [],
     content,
   };
 }
