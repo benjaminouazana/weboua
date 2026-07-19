@@ -14,7 +14,8 @@ const nextConfig = {
       // --- Anciennes URL WordPress (avant refonte) → 301 vers le nouveau site.
       // Évite les 404 remontées par la Search Console et préserve le jus SEO.
       { source: '/contactez-nous', destination: '/contact', permanent: true },
-      { source: '/nos-realisations', destination: '/nos-succes', permanent: true },
+      { source: '/nos-realisations', destination: '/', permanent: true },
+      { source: '/nos-succes', destination: '/', permanent: true },
       { source: '/blog/3', destination: '/blog', permanent: true },
       { source: '/blog/5', destination: '/blog', permanent: true },
       { source: '/blog/6', destination: '/blog', permanent: true },

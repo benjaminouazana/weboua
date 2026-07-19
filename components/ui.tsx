@@ -65,8 +65,8 @@ export function CTABand({
             Demander mon audit gratuit
             <Icon name="arrow" className="h-4 w-4" />
           </Link>
-          <Link href="/nos-succes" className="btn border border-white/30 text-white hover:bg-white/10">
-            Voir nos résultats
+          <Link href="/offres" className="btn border border-white/30 text-white hover:bg-white/10">
+            Voir nos offres
           </Link>
         </div>
       </div>

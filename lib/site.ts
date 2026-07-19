@@ -103,7 +103,6 @@ export const services: {
 export const mainNav: NavItem[] = [
   { label: 'Services', href: '/#services' },
   { label: 'Offres', href: '/offres' },
-  { label: 'Nos succès', href: '/nos-succes' },
   { label: 'Ressources', href: '/ressources' },
   { label: 'Blog', href: '/blog' },
   { label: 'À propos', href: '/a-propos' },
@@ -119,7 +118,6 @@ export const footerNav: { title: string; items: NavItem[] }[] = [
     title: 'Agence',
     items: [
       { label: 'À propos', href: '/a-propos' },
-      { label: 'Nos succès', href: '/nos-succes' },
       { label: 'Ressources', href: '/ressources' },
       { label: 'Blog', href: '/blog' },
       { label: 'Contact', href: '/contact' },

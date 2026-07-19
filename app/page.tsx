@@ -150,11 +150,10 @@ export default function HomePage() {
               <h2 className="mx-auto mt-4 max-w-2xl text-3xl sm:text-4xl">Nos sites sont déjà en ligne, dans tous les secteurs</h2>
               <p className="mx-auto mt-4 max-w-2xl text-lg text-muted">
                 Énergie, industrie, beauté, formation, e-commerce, recrutement… Plus de 15 entreprises tournent
-                avec un site signé Weboua. La meilleure preuve, ce n’est pas une capture d’écran : c’est d’aller
-                les voir tourner.
+                avec un site signé Weboua : rapides, visibles sur Google, et pensés pour convertir chaque jour.
               </p>
-              <Link href="/nos-succes" className="btn-primary mt-8">
-                Voir nos réalisations
+              <Link href="/offres" className="btn-primary mt-8">
+                Découvrir nos offres
                 <Icon name="arrow" className="h-4 w-4" />
               </Link>
             </div>
