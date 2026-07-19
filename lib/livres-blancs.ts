@@ -31,8 +31,8 @@ export const livresBlancs: LivreBlanc[] = [
     metaDescription:
       "Le guide des dirigeants pour transformer un site-vitrine en machine à clients : les 7 signes qu'il faut refaire, le coût d'un site dépassé, la méthode. PDF gratuit.",
     keywords: ['refaire son site internet', 'refonte site web', 'livre blanc site internet', 'site web 2026'],
-    pdf: '/livre-blanc-weboua-refaire-son-site-2026.pdf',
-    cover: '/livre-blanc-cover.jpg',
+    pdf: '/livre-blanc-weboua-refaire-son-site-2026-v2.pdf',
+    cover: '/livre-blanc-cover-refaire-v2.jpg',
     pages: 4,
     publishedAt: '2026-07',
     inside: [
@@ -53,8 +53,8 @@ export const livresBlancs: LivreBlanc[] = [
     metaDescription:
       "Le SEO ne suffit plus : apprenez à apparaître dans les réponses de ChatGPT, Perplexity et Google (GEO). Le test ChatGPT, les 4 leviers, la méthode. PDF gratuit.",
     keywords: ['seo 2026', 'geo', 'référencement ia', 'visible sur chatgpt', 'generative engine optimization'],
-    pdf: '/livre-blanc-weboua-visible-google-chatgpt-2026.pdf',
-    cover: '/livre-blanc-cover-visible-google-chatgpt.jpg',
+    pdf: '/livre-blanc-weboua-visible-google-chatgpt-2026-v2.pdf',
+    cover: '/livre-blanc-cover-visible-google-chatgpt-v2.jpg',
     pages: 4,
     publishedAt: '2026-08',
     inside: [
@@ -75,8 +75,8 @@ export const livresBlancs: LivreBlanc[] = [
     metaDescription:
       "Relances, devis, factures, avis, reporting : découvrez les 10 tâches qui devraient tourner toutes seules, ce que l'oubli vous coûte, et la méthode. PDF gratuit.",
     keywords: ['automatisation entreprise', 'automatiser pme', 'gagner du temps', 'automatisation relances', 'reporting automatique'],
-    pdf: '/livre-blanc-weboua-10-taches-a-automatiser.pdf',
-    cover: '/livre-blanc-cover-10-taches.jpg',
+    pdf: '/livre-blanc-weboua-10-taches-a-automatiser-v2.pdf',
+    cover: '/livre-blanc-cover-10-taches-v2.jpg',
     pages: 4,
     publishedAt: '2026-09',
     inside: [
@@ -97,8 +97,8 @@ export const livresBlancs: LivreBlanc[] = [
     metaDescription:
       "Ne dépendez plus du bouche-à-oreille : ciblage, cold email, aimants à leads et nurturing. Les 4 piliers d'un flux de rendez-vous B2B prévisible. PDF gratuit.",
     keywords: ['leads b2b', 'rendez-vous qualifiés', 'prospection b2b', 'cold email', 'génération de leads'],
-    pdf: '/livre-blanc-weboua-rendez-vous-qualifies-b2b.pdf',
-    cover: '/livre-blanc-cover-rendez-vous-qualifies.jpg',
+    pdf: '/livre-blanc-weboua-rendez-vous-qualifies-b2b-v2.pdf',
+    cover: '/livre-blanc-cover-rendez-vous-qualifies-v2.jpg',
     pages: 4,
     publishedAt: '2026-10',
     inside: [

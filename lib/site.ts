@@ -101,7 +101,6 @@ export const services: {
 ];
 
 export const mainNav: NavItem[] = [
-  { label: 'Services', href: '/#services' },
   { label: 'Offres', href: '/offres' },
   { label: 'Ressources', href: '/ressources' },
   { label: 'Blog', href: '/blog' },
