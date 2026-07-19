@@ -109,6 +109,94 @@ export const livresBlancs: LivreBlanc[] = [
       'La checklist « Votre acquisition est-elle sous contrôle ? »',
     ],
   },
+  {
+    slug: 'cout-page-2-google',
+    eyebrow: 'Livre blanc gratuit · SEO · 2026',
+    title: 'Combien vous coûte la page 2 de Google',
+    subtitle:
+      "Personne ne va en page 2. Le trafic — et le chiffre d'affaires — que vous laissez à vos concurrents, et comment le récupérer.",
+    metaTitle: 'Livre blanc gratuit — Combien vous coûte la page 2 de Google',
+    metaDescription:
+      "Être en page 2 de Google, c'est être invisible. Découvrez le trafic et le CA que vous perdez, et la méthode pour passer en page 1. PDF gratuit.",
+    keywords: ['seo', 'page 2 google', 'référencement page 1', 'trafic organique', 'positionnement google'],
+    pdf: '/livre-blanc-weboua-cout-page-2-google.pdf',
+    cover: '/livre-blanc-cover-page-2-google.jpg',
+    pages: 4,
+    publishedAt: '2026-11',
+    inside: [
+      'Pourquoi la page 2 = invisible',
+      'Le trafic (et le CA) que vous laissez aux concurrents',
+      'Les 4 leviers pour passer en page 1',
+      "La méthode, de l'audit au suivi des positions",
+      'La checklist « Où en êtes-vous ? »',
+    ],
+  },
+  {
+    slug: 'seo-local-numero-1-ville',
+    eyebrow: 'Livre blanc gratuit · SEO local · 2026',
+    title: 'SEO local : devenir le n°1 de votre ville',
+    subtitle:
+      "Vos clients cherchent « votre métier + votre ville ». Le guide pour truster le pack local de Google et Google Maps sur votre zone.",
+    metaTitle: 'Livre blanc gratuit — SEO local : devenir le n°1 de votre ville',
+    metaDescription:
+      "46 % des recherches Google sont locales. Le guide pour apparaître dans le pack local, optimiser votre fiche Google et vos avis. PDF gratuit.",
+    keywords: ['seo local', 'référencement local', 'google my business', 'pack local', 'fiche google'],
+    pdf: '/livre-blanc-weboua-seo-local.pdf',
+    cover: '/livre-blanc-cover-seo-local.jpg',
+    pages: 4,
+    publishedAt: '2026-12',
+    inside: [
+      'Le pack local : là où tout se joue',
+      'Les 6 signes que le local vous échappe',
+      'Fiche Google, avis, pages locales : les leviers',
+      'La méthode pour dominer votre zone',
+      'La checklist « Êtes-vous visible en local ? »',
+    ],
+  },
+  {
+    slug: 'cold-email-anti-spam-2026',
+    eyebrow: 'Livre blanc gratuit · Prospection · 2026',
+    title: "Le cold email qui n'atterrit pas en spam",
+    subtitle:
+      "Vos emails de prospection finissent en spam ? La technique et le RGPD pour être lu, obtenir des réponses, sans griller votre domaine.",
+    metaTitle: "Livre blanc gratuit — Le cold email qui n'atterrit pas en spam",
+    metaDescription:
+      "Délivrabilité, SPF/DKIM/DMARC, warm-up, RGPD : le guide pour que vos cold emails arrivent en boîte de réception et obtiennent des réponses. PDF gratuit.",
+    keywords: ['cold email', 'délivrabilité email', 'spf dkim dmarc', 'prospection email', 'email en spam'],
+    pdf: '/livre-blanc-weboua-cold-email-anti-spam.pdf',
+    cover: '/livre-blanc-cover-cold-email.jpg',
+    pages: 4,
+    publishedAt: '2027-01',
+    inside: [
+      'Pourquoi vos emails tombent en spam',
+      'Les 6 erreurs qui grillent votre domaine',
+      'SPF, DKIM, DMARC, warm-up : les fondations',
+      "La méthode d'envoi qui obtient des réponses",
+      'La checklist « Votre cold email est-il prêt ? »',
+    ],
+  },
+  {
+    slug: 'hebergement-securite-site',
+    eyebrow: 'Livre blanc gratuit · Hébergement · 2026',
+    title: 'Le guide du site qui ne tombe jamais',
+    subtitle:
+      "Vitesse, sauvegardes, sécurité : ce qu'un dirigeant doit vérifier pour un site rapide, fiable et à l'abri des piratages.",
+    metaTitle: 'Livre blanc gratuit — Hébergement & sécurité : le site qui ne tombe jamais',
+    metaDescription:
+      "Hébergement, sauvegardes, HTTPS, monitoring : le guide du dirigeant pour un site rapide, fiable et protégé contre les piratages. PDF gratuit.",
+    keywords: ['hébergement site', 'sécurité site web', 'sauvegarde site', 'site rapide', 'maintenance site'],
+    pdf: '/livre-blanc-weboua-hebergement-securite.pdf',
+    cover: '/livre-blanc-cover-hebergement.jpg',
+    pages: 4,
+    publishedAt: '2027-02',
+    inside: [
+      'Pourquoi un site en ligne reste fragile',
+      'Les 6 signes que votre site est exposé',
+      'Vitesse, sauvegardes, sécurité, monitoring',
+      'La méthode pour un site fiable 24/7',
+      "La checklist « Votre site est-il à l'abri ? »",
+    ],
+  },
 ];
 
 export function getLivreBlanc(slug: string): LivreBlanc | null {
