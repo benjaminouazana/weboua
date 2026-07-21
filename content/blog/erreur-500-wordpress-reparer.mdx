@@ -1,0 +1,122 @@
+---
+title: "Erreur 500 WordPress : diagnostic et réparation"
+description: "Erreur 500 sur WordPress ? Découvrez comment identifier la cause exacte et réparer votre site rapidement. Guide complet par les experts Weboua."
+date: "2026-07-21"
+author: "Weboua"
+category: "Hébergement"
+tags: ["WordPress", "Hébergement", "Maintenance"]
+takeaways:
+  - "L'erreur 500 WordPress (HTTP 500 Internal Server Error) n'a pas une seule cause : fichier .htaccess corrompu, mémoire PHP insuffisante, plugin défaillant ou thème incompatible sont les 4 suspects principaux."
+  - "Augmenter la limite mémoire PHP à 256 Mo dans wp-config.php suffit à résoudre l'erreur 500 dans environ 30 % des cas."
+  - "Désactiver tous les plugins en renommant le dossier /wp-content/plugins/ via FTP permet d'identifier un conflit sans accès à l'admin WordPress."
+  - "Le fichier journal d'erreurs du serveur (error.log) est la source d'information la plus fiable pour diagnostiquer une erreur 500 : il indique la ligne exacte du code fautif."
+  - "Une erreur 500 non résolue en moins de 2 heures peut faire chuter le référencement naturel d'un site : Google interprète les erreurs serveur répétées comme un signal de faible fiabilité."
+  - "Faire appel à un prestataire expert WordPress permet de traiter l'erreur 500 à la racine, sans risquer d'aggraver la situation en manipulant des fichiers serveur critiques."
+draft: false
+---
+Votre site WordPress affiche une page blanche ou un message « Internal Server Error » ? L'**erreur 500 WordPress** est l'une des pannes les plus redoutées par les équipes digitales : elle bloque totalement l'accès au site, sans donner la moindre indication sur ce qui a mal tourné. Bonne nouvelle : dans la grande majorité des cas, elle est identifiable et réparable en quelques étapes méthodiques. Ce guide vous explique comment procéder — et quand déléguer à un expert.
+
+## Qu'est-ce que l'erreur 500 WordPress exactement ?
+
+L'erreur HTTP 500, ou *Internal Server Error*, signifie que le serveur a rencontré une condition inattendue qui l'a empêché de traiter la requête. Contrairement à une erreur 404 (page introuvable) qui cible une URL précise, l'erreur 500 peut toucher l'ensemble du site — front-end et back-office compris.
+
+Elle n'est pas spécifique à WordPress : c'est une réponse standard du protocole HTTP. Mais WordPress, de par son architecture (PHP, base de données, plugins, thèmes, fichiers de configuration), multiplie les points de défaillance potentiels.
+
+> **À retenir :** une erreur 500 non corrigée rapidement nuit à votre [référencement naturel](/seo-referencement-naturel). Google interprète les erreurs serveur répétées comme un signal de faible fiabilité et peut déclasser vos pages.
+
+## Les 4 causes les plus fréquentes
+
+### 1. Le fichier .htaccess corrompu
+
+Le fichier `.htaccess` gère les règles de réécriture d'URL et les directives serveur Apache. Une mise à jour de WordPress, un plugin ou une modification manuelle maladroite peut le corrompre.
+
+**Comment vérifier :** accédez à la racine de votre site via FTP, renommez le fichier `.htaccess` en `.htaccess_old`. Si le site revient, le fichier était bien la cause. Régénérez-en un propre depuis *Réglages > Permaliens* dans l'administration WordPress.
+
+### 2. La limite mémoire PHP dépassée
+
+WordPress et ses extensions consomment de la mémoire PHP. Si votre hébergeur fixe une limite trop basse (souvent 64 Mo ou 128 Mo), certaines opérations font planter le serveur.
+
+**Comment corriger :** ouvrez le fichier `wp-config.php` via FTP et ajoutez (ou modifiez) cette ligne avant `/* That's all, stop editing! */` :
+
+
+define('WP_MEMORY_LIMIT', '256M');
+
+
+Si votre hébergeur bloque cette modification, contactez son support ou envisagez une montée en gamme de votre offre.
+
+### 3. Un plugin ou un thème défaillant
+
+C'est la cause la plus courante après une mise à jour. Un plugin mal codé, incompatible avec la version de PHP ou de WordPress, peut provoquer une erreur fatale qui se traduit par un 500.
+
+**Comment diagnostiquer :** si vous n'avez plus accès au tableau de bord, passez par FTP. Renommez le dossier `/wp-content/plugins/` en `/wp-content/plugins_old/`. WordPress ne trouvant plus les plugins, il les désactivera tous automatiquement. Si le site revient, réactivez les plugins un par un depuis l'administration pour identifier le coupable.
+
+Même logique pour le thème : renommez le dossier de votre thème actif — WordPress basculera sur le thème par défaut.
+
+### 4. Un problème de permissions de fichiers
+
+Les fichiers WordPress doivent respecter des permissions précises :
+- **Dossiers :** 755
+- **Fichiers :** 644
+- **wp-config.php :** 600
+
+Des permissions trop permissives ou trop restrictives (souvent après une migration ou une intervention manuelle) peuvent provoquer une erreur 500. Vérifiez via votre gestionnaire de fichiers FTP ou en ligne de commande SSH.
+
+## Comment lire les logs d'erreur pour aller plus vite
+
+Avant de tester chaque hypothèse à l'aveugle, consultez les journaux d'erreur de votre serveur. C'est la méthode la plus efficace : le log indique souvent la ligne exacte du fichier qui a planté et le type d'erreur (classe non trouvée, mémoire épuisée, timeout…).
+
+**Où les trouver ?**
+- Dans cPanel ou Plesk : section *Journaux d'erreurs*
+- Via FTP : fichier `error.log` ou `php_error.log` à la racine ou dans `/logs/`
+- En activant le mode débogage WordPress : ajoutez dans `wp-config.php` :
+
+
+define('WP_DEBUG', true);
+define('WP_DEBUG_LOG', true);
+define('WP_DEBUG_DISPLAY', false);
+
+
+Les erreurs seront consignées dans `/wp-content/debug.log`. **Pensez à désactiver ce mode une fois le problème résolu** — afficher les erreurs en production expose votre site.
+
+## Checklist de diagnostic étape par étape
+
+Voici la séquence à suivre dans l'ordre :
+
+1. **Consultez les logs** → identifiez le fichier et la ligne fautifs
+2. **Régénérez le .htaccess** → renommez l'ancien, régénérez via les Permaliens
+3. **Augmentez la mémoire PHP** → ajoutez `WP_MEMORY_LIMIT` dans wp-config.php
+4. **Désactivez les plugins** → renommez le dossier via FTP, réactivez un par un
+5. **Changez de thème temporairement** → basculez sur Twenty Twenty-Four
+6. **Vérifiez les permissions** → 755 pour les dossiers, 644 pour les fichiers
+7. **Contactez votre hébergeur** → si rien n'y fait, le problème peut venir du serveur lui-même
+
+## Quand faire appel à un expert ?
+
+Certaines situations sortent du périmètre d'une intervention bricolée :
+
+- L'erreur revient après chaque correction
+- Les logs pointent vers des erreurs PHP complexes ou des conflits de versions
+- Votre site e-commerce ou votre outil métier est hors ligne depuis plus d'une heure
+- Vous n'avez pas les accès FTP ou vous n'êtes pas à l'aise avec la manipulation de fichiers serveur
+
+Dans ces cas, vouloir résoudre seul peut aggraver la situation — notamment si vous modifiez `wp-config.php` ou les permissions sans méthode.
+
+Weboua intervient sur des audits et des réparations WordPress, quelle que soit la nature du problème : erreurs serveur, migrations ratées, sites lents ou compromis. Nous travaillons aussi bien sur des WordPress que sur des technologies sur mesure, et notre objectif est toujours le même : remettre votre outil en ligne rapidement, sans casse.
+
+Si votre site souffre de problèmes de performance ou de stabilité récurrents, un [audit SEO gratuit](/audit-seo-performance) peut également révéler des problèmes techniques sous-jacents qui fragilisent votre référencement — au-delà de la seule erreur 500.
+
+## Prévenir plutôt que guérir
+
+Une fois l'erreur résolue, quelques bonnes pratiques limitent le risque de récidive :
+
+- **Mettez à jour WordPress, les thèmes et les plugins régulièrement** — mais sur un environnement de staging avant la production
+- **Faites des sauvegardes automatiques quotidiennes** (UpdraftPlus, BlogVault, ou solution hébergeur)
+- **Choisissez un hébergeur avec PHP 8.x et une limite mémoire d'au moins 256 Mo**
+- **Limitez le nombre de plugins actifs** — chaque plugin est un point de défaillance potentiel
+- **Surveillez votre site** avec un outil de monitoring (UptimeRobot, Better Uptime) qui vous alerte en cas de panne
+
+Un site WordPress bien maintenu est un site stable, rapide et optimisé pour le référencement. C'est aussi un outil de [création de site internet](/creation-de-sites-internet) qui travaille pour vous — pas contre vous.
+
+---
+
+**Votre site WordPress rencontre une erreur 500 ou des problèmes de stabilité récurrents ?** L'équipe Weboua peut diagnostiquer et réparer votre site rapidement. [Contactez-nous](/contact) pour un premier échange sans engagement.
