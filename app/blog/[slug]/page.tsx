@@ -5,9 +5,9 @@ import remarkGfm from 'remark-gfm';
 import rehypeSlug from 'rehype-slug';
 import rehypeAutolinkHeadings from 'rehype-autolink-headings';
 import { Icon } from '@/components/Icon';
-import { CTABand } from '@/components/ui';
 import { KeyTakeaways } from '@/components/KeyTakeaways';
 import { ArticleToc } from '@/components/ArticleToc';
+import { LeadForm } from '@/components/LeadForm';
 import { getPost, getAllSlugs, getHeadings, formatDate } from '@/lib/blog';
 import { buildMetadata } from '@/lib/seo';
 import { site } from '@/lib/site';
@@ -85,7 +85,6 @@ export default function ArticlePage({ params }: { params: { slug: string } }) {
           </header>
 
           <div className="mt-10 gap-12 lg:grid lg:grid-cols-[230px_minmax(0,1fr)]">
-            {/* Sommaire latéral (scroll-spy) — masqué sur mobile */}
             {headings.length >= 2 && (
               <aside className="hidden lg:block">
                 <div className="sticky top-24">
@@ -94,7 +93,6 @@ export default function ArticlePage({ params }: { params: { slug: string } }) {
               </aside>
             )}
 
-            {/* Contenu */}
             <div className="min-w-0">
               <KeyTakeaways items={post.takeaways} />
 
@@ -116,7 +114,23 @@ export default function ArticlePage({ params }: { params: { slug: string } }) {
         </div>
       </article>
 
-      <CTABand title="Cet article vous a parlé ? Passons à l'action." subtitle="Recevez un audit gratuit de votre site et de votre SEO. On vous dit exactement quoi améliorer." />
+      <section className="border-t border-line bg-cream/40 py-16">
+        <div className="container-page">
+          <div className="mx-auto max-w-2xl">
+            <div className="text-center">
+              <span className="eyebrow">Parlons de votre projet</span>
+              <h2 className="mt-4 text-3xl sm:text-4xl">Un audit gratuit de votre site &amp; SEO</h2>
+              <p className="mt-3 text-muted">
+                On analyse votre site, votre référencement et votre acquisition — et on vous dit
+                exactement quoi améliorer. Réponse sous 24 h ouvrées.
+              </p>
+            </div>
+            <div className="mt-8 rounded-3xl border border-line bg-white p-6 shadow-sm sm:p-8">
+              <LeadForm source={`blog:${post.slug}`} compact />
+            </div>
+          </div>
+        </div>
+      </section>
     </>
   );
 }
