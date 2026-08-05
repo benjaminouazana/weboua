@@ -14,16 +14,27 @@ export function Header() {
       <div className="container-page flex h-16 items-center justify-between">
         <Logo />
 
-        <nav className="hidden items-center gap-8 md:flex">
-          {mainNav.map((item) => (
-            <Link
-              key={item.href}
-              href={item.href}
-              className="text-sm font-medium text-muted transition-colors hover:text-forest"
-            >
-              {item.label}
-            </Link>
-          ))}
+        <nav className="hidden items-center gap-7 md:flex">
+          {mainNav.map((item) =>
+            item.highlight ? (
+              <Link
+                key={item.href}
+                href={item.href}
+                className="inline-flex items-center gap-1.5 rounded-full border border-emerald/30 bg-mint/10 px-3.5 py-1.5 text-sm font-semibold text-emerald transition-colors hover:bg-mint/20"
+              >
+                <span className="h-1.5 w-1.5 rounded-full bg-emerald" />
+                {item.label}
+              </Link>
+            ) : (
+              <Link
+                key={item.href}
+                href={item.href}
+                className="text-sm font-medium text-muted transition-colors hover:text-forest"
+              >
+                {item.label}
+              </Link>
+            ),
+          )}
         </nav>
 
         <div className="hidden md:block">
@@ -54,8 +65,13 @@ export function Header() {
                 key={item.href}
                 href={item.href}
                 onClick={() => setOpen(false)}
-                className="rounded-xl px-3 py-2.5 text-base font-medium text-forest hover:bg-cream"
+                className={
+                  item.highlight
+                    ? 'flex items-center gap-2 rounded-xl bg-mint/10 px-3 py-2.5 text-base font-semibold text-emerald'
+                    : 'rounded-xl px-3 py-2.5 text-base font-medium text-forest hover:bg-cream'
+                }
               >
+                {item.highlight && <span className="h-1.5 w-1.5 rounded-full bg-emerald" />}
                 {item.label}
               </Link>
             ))}

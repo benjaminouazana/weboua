@@ -41,7 +41,7 @@ export const clients: { name: string; url: string }[] = [
   { name: 'Le Salon Dermo', url: 'https://lesalondermo.com' },
 ];
 
-export type NavItem = { label: string; href: string };
+export type NavItem = { label: string; href: string; highlight?: boolean };
 
 export const services: {
   slug: string;
@@ -50,6 +50,14 @@ export const services: {
   description: string;
   icon: string;
 }[] = [
+  {
+    slug: 'automatisation',
+    title: 'Automatisation & IA',
+    short: 'Déléguez à un robot ce qui vous fait perdre du temps.',
+    description:
+      "Relances, devis, factures, prise de rendez-vous, reporting : on connecte vos outils et on met en place des automatisations et des agents IA pour vous rendre des heures chaque semaine.",
+    icon: 'bolt',
+  },
   {
     slug: 'creation-de-sites-internet',
     title: 'Création de sites internet',
@@ -73,14 +81,6 @@ export const services: {
     description:
       "Campagnes de prospection ciblées et tunnels de conversion pour alimenter votre commercial en rendez-vous qualifiés, mois après mois.",
     icon: 'target',
-  },
-  {
-    slug: 'automatisation',
-    title: 'Automatisation & IA',
-    short: 'Déléguez à un robot ce qui vous fait perdre du temps.',
-    description:
-      "Relances, devis, factures, prise de rendez-vous, reporting : on connecte vos outils et on met en place des automatisations et des agents IA pour vous rendre des heures chaque semaine.",
-    icon: 'bolt',
   },
   {
     slug: 'campagnes-email',
@@ -109,6 +109,7 @@ export const services: {
 ];
 
 export const mainNav: NavItem[] = [
+  { label: 'Automatisation & IA', href: '/automatisation', highlight: true },
   { label: 'Offres', href: '/offres' },
   { label: 'Ressources', href: '/ressources' },
   { label: 'Blog', href: '/blog' },
