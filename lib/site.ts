@@ -75,6 +75,14 @@ export const services: {
     icon: 'target',
   },
   {
+    slug: 'automatisation',
+    title: 'Automatisation & IA',
+    short: 'Déléguez à un robot ce qui vous fait perdre du temps.',
+    description:
+      "Relances, devis, factures, prise de rendez-vous, reporting : on connecte vos outils et on met en place des automatisations et des agents IA pour vous rendre des heures chaque semaine.",
+    icon: 'bolt',
+  },
+  {
     slug: 'campagnes-email',
     title: 'Campagnes de mailing',
     short: 'Des emails qui ouvrent des portes.',

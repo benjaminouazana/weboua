@@ -17,6 +17,47 @@ export type ServiceContent = {
 };
 
 export const servicesContent: Record<string, ServiceContent> = {
+  automatisation: {
+    slug: 'automatisation',
+    metaTitle: 'Automatisation & IA pour entreprises — Agence Weboua',
+    metaDescription:
+      "Automatisez les tâches répétitives de votre entreprise : relances, devis, factures, prise de rendez-vous, reporting. Gagnez des heures chaque semaine avec des workflows et des agents IA sur-mesure.",
+    keywords: ['automatisation entreprise', 'automatisation PME', 'agent IA entreprise', 'automatiser les tâches', 'workflow automation', 'Make Zapier n8n'],
+    hero: {
+      eyebrow: 'Automatisation & IA',
+      title: "Arrêtez de faire à la main ce qu'un robot fait mieux",
+      subtitle:
+        "On automatise les tâches répétitives de votre entreprise — relances, devis, factures, prise de rendez-vous, reporting — pour vous rendre des heures chaque semaine et arrêter de perdre des clients par simple oubli.",
+    },
+    intro:
+      "Chaque tâche répétitive que vous faites à la main, c'est du temps volé à votre vrai métier — et un risque d'oubli à chaque fois. On identifie ces tâches, on connecte vos outils et on met en place des automatisations fiables qui tournent toutes seules, 24 h/24.",
+    benefits: [
+      { icon: 'gauge', title: 'Des heures récupérées', text: 'Les tâches chronophages tournent en arrière-plan. Vous vous concentrez sur ce qui rapporte.' },
+      { icon: 'target', title: 'Zéro oubli', text: 'Relance, devis, facture : plus rien ne passe à la trappe. Chaque étape se déclenche toute seule.' },
+      { icon: 'server', title: 'Vos outils connectés', text: 'CRM, boîte mail, agenda, facturation, tableur : on fait parler vos logiciels entre eux.' },
+      { icon: 'bolt', title: 'Des agents IA sur-mesure', text: "L'IA prend en charge le répétitif (réponses, tri, rédaction) — pas votre métier." },
+    ],
+    deliverables: [
+      'Audit de vos tâches automatisables (le « test du post-it »)',
+      'Cartographie de vos outils et de vos flux de travail',
+      'Mise en place des automatisations (Make, Zapier, n8n…)',
+      'Agents IA connectés à vos données, quand c’est pertinent',
+      'Relances, devis, factures et reporting automatisés',
+      'Documentation et suivi pour que tout tourne sans vous',
+    ],
+    process: [
+      { title: 'Diagnostic', text: 'On liste ensemble les tâches répétitives qui vous coûtent le plus de temps.' },
+      { title: 'Priorisation', text: 'On cible les automatisations à plus fort impact et rapides à mettre en place.' },
+      { title: 'Mise en place', text: 'On connecte vos outils et on construit les workflows, testés de bout en bout.' },
+      { title: 'Suivi', text: 'On surveille, on ajuste, et on automatise de nouvelles tâches au fil du temps.' },
+    ],
+    faqs: [
+      { q: 'Faut-il changer mes logiciels actuels ?', a: "Non. On part de vos outils existants (CRM, mail, agenda, facturation) et on les connecte entre eux. On ajoute de l'automatisation, on ne remplace pas tout." },
+      { q: "L'automatisation va-t-elle remplacer mes salariés ?", a: "Non. Elle remplace les tâches répétitives que personne n'aime faire — pas les gens. Vos équipes se concentrent sur ce qui a de la valeur : vendre, créer, servir vos clients." },
+      { q: 'Par où commencer ?', a: "Par un diagnostic gratuit : on identifie 2 ou 3 tâches à automatiser en priorité, avec le temps récupéré à la clé. Vous voyez le retour sur investissement avant de vous engager." },
+    ],
+  },
+
   'creation-de-sites-internet': {
     slug: 'creation-de-sites-internet',
     metaTitle: 'Création de site internet sur-mesure — Agence web',
