@@ -22,6 +22,94 @@ export type LivreBlanc = {
 
 export const livresBlancs: LivreBlanc[] = [
   {
+    slug: 'entreprise-qui-tourne-sans-vous',
+    eyebrow: 'Livre blanc gratuit · Automatisation · 2026',
+    title: "L'entreprise qui tourne sans vous",
+    subtitle:
+      "Le guide des dirigeants pour déléguer les tâches répétitives à des systèmes automatiques — récupérer du temps, sans embaucher.",
+    metaTitle: "Livre blanc gratuit — L'entreprise qui tourne sans vous",
+    metaDescription:
+      "Déléguez les tâches répétitives à des systèmes automatiques : les signes que ça vous concerne, les systèmes à automatiser en premier, la méthode. PDF gratuit.",
+    keywords: ['automatisation entreprise', 'automatiser sa pme', 'gagner du temps', 'déléguer les tâches', 'workflow automation'],
+    pdf: '/livre-blanc-weboua-automatisation-entreprise-tourne-sans-vous.pdf',
+    cover: '/livre-blanc-cover-automatisation-entreprise-tourne-sans-vous.jpg',
+    pages: 4,
+    publishedAt: '2027-06',
+    inside: [
+      'Les 5 signes que vous perdez du temps sur des tâches automatisables',
+      'Le coût réel des tâches manuelles dans une entreprise',
+      'Les systèmes à automatiser en premier : relances, données, RDV, reporting',
+      'La méthode pour démarrer sans usine à gaz',
+      'La checklist de démarrage',
+    ],
+  },
+  {
+    slug: 'automatiser-relances-devis-factures',
+    eyebrow: 'Livre blanc gratuit · Automatisation · 2026',
+    title: 'Zéro relance oubliée',
+    subtitle:
+      "Relances, devis, factures : la méthode pour ne plus jamais laisser d'argent sur la table par simple oubli.",
+    metaTitle: 'Livre blanc gratuit — Zéro relance oubliée (relances, devis, factures)',
+    metaDescription:
+      "Ne perdez plus d'argent par oubli : automatisez la relance de devis, le suivi de factures et l'après-vente. La méthode complète. PDF gratuit.",
+    keywords: ['relance client automatique', 'automatiser devis factures', 'relance devis', 'facture impayée', 'automatisation commerciale'],
+    pdf: '/livre-blanc-weboua-automatisation-relances-devis-factures.pdf',
+    cover: '/livre-blanc-cover-automatisation-relances-devis-factures.jpg',
+    pages: 4,
+    publishedAt: '2027-05',
+    inside: [
+      'Ce que les oublis de relance vous coûtent vraiment',
+      "Les 5 signes d'un suivi commercial qui fuit",
+      'La relance de devis et le suivi de factures automatisés',
+      'La génération de devis et factures sans ressaisie',
+      'La checklist « zéro oubli »',
+    ],
+  },
+  {
+    slug: 'agent-ia-entreprise',
+    eyebrow: 'Livre blanc gratuit · Automatisation & IA · 2026',
+    title: 'Un agent IA dans votre entreprise',
+    subtitle:
+      "Ce qu'un agent IA peut vraiment faire pour une PME — les cas d'usage concrets, et comment le mettre en place sans risque.",
+    metaTitle: "Livre blanc gratuit — Un agent IA dans votre entreprise",
+    metaDescription:
+      "Au-delà du buzz : ce qu'un agent IA change concrètement pour une PME. Les cas d'usage réels (réponse, tri, rédaction, qualification) et la méthode. PDF gratuit.",
+    keywords: ['agent IA entreprise', 'IA pour PME', 'automatiser service client IA', "cas d'usage IA entreprise", 'assistant IA'],
+    pdf: '/livre-blanc-weboua-automatisation-agent-ia-entreprise.pdf',
+    cover: '/livre-blanc-cover-automatisation-agent-ia-entreprise.jpg',
+    pages: 4,
+    publishedAt: '2027-04',
+    inside: [
+      "Ce qu'est (et n'est pas) un agent IA",
+      'Là où un agent IA vous fait gagner du temps',
+      "Les 4 cas d'usage concrets pour une PME",
+      'Comment le déployer sans risque, avec un humain dans la boucle',
+      'La checklist de mise en place',
+    ],
+  },
+  {
+    slug: 'automatiser-rdv-service-client',
+    eyebrow: 'Livre blanc gratuit · Automatisation · 2026',
+    title: 'Votre agenda se remplit tout seul',
+    subtitle:
+      "Prise de rendez-vous et réponses clients 24/7 : capter et servir vos prospects sans y passer vos journées.",
+    metaTitle: 'Livre blanc gratuit — Votre agenda se remplit tout seul',
+    metaDescription:
+      "Ne perdez plus un prospect faute de réponse : prise de RDV autonome, réponses 24/7, qualification et suivi automatiques. La méthode. PDF gratuit.",
+    keywords: ['automatiser prise de rendez-vous', 'prise de rdv en ligne', 'réponse client automatique', 'chatbot rendez-vous', 'qualification leads automatique'],
+    pdf: '/livre-blanc-weboua-automatisation-rdv-service-client.pdf',
+    cover: '/livre-blanc-cover-automatisation-rdv-service-client.jpg',
+    pages: 4,
+    publishedAt: '2027-03',
+    inside: [
+      'Ce que la lenteur de réponse vous coûte en ventes',
+      'Les 5 signes que des prospects vous filent entre les doigts',
+      'La prise de RDV autonome et la réponse instantanée 24/7',
+      'La qualification et le suivi automatiques des demandes',
+      'La checklist « agenda plein »',
+    ],
+  },
+  {
     slug: 'refaire-son-site-en-2026',
     eyebrow: 'Livre blanc gratuit · Édition 2026',
     title: 'Pourquoi refaire son site internet en 2026',
