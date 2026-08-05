@@ -1,6 +1,7 @@
 import { Eyebrow } from '@/components/ui';
 import { Icon } from '@/components/Icon';
 import { LeadForm } from '@/components/LeadForm';
+import { Reveal } from '@/components/Reveal';
 import { buildMetadata } from '@/lib/seo';
 import { site } from '@/lib/site';
 
@@ -15,7 +16,7 @@ export default function ContactPage() {
   return (
     <section className="container-page py-16">
       <div className="grid items-start gap-14 lg:grid-cols-2">
-        <div>
+        <Reveal variant="left">
           <Eyebrow>Contact</Eyebrow>
           <h1 className="mt-5 text-4xl font-bold sm:text-5xl">Discutons de votre croissance</h1>
           <p className="mt-5 text-lg text-muted">
@@ -43,11 +44,11 @@ export default function ContactPage() {
               </span>
             </div>
           </div>
-        </div>
+        </Reveal>
 
-        <div className="rounded-4xl border border-line bg-cream p-6 shadow-soft sm:p-8">
+        <Reveal variant="right" className="rounded-4xl border border-line bg-cream p-6 shadow-soft sm:p-8">
           <LeadForm source="contact" />
-        </div>
+        </Reveal>
       </div>
     </section>
   );

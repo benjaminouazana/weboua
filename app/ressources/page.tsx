@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { Icon } from '@/components/Icon';
 import { SectionHeading } from '@/components/ui';
+import { Reveal } from '@/components/Reveal';
 import { buildMetadata } from '@/lib/seo';
 import { livresBlancs } from '@/lib/livres-blancs';
 
@@ -32,28 +33,29 @@ export default function RessourcesPage() {
 
       <section className="container-page py-12">
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {items.map((lb) => (
-            <Link
-              key={lb.slug}
-              href={`/ressources/${lb.slug}`}
-              className="card group flex flex-col hover:-translate-y-1 hover:border-mint"
-            >
-              <div className="mb-5 flex h-56 items-center justify-center overflow-hidden rounded-2xl bg-gradient-to-br from-cream to-mint/10 ring-1 ring-black/5">
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img
-                  src={lb.cover}
-                  alt={`Couverture du livre blanc « ${lb.title} »`}
-                  className="h-48 -rotate-1 rounded-lg shadow-lift ring-1 ring-black/5 transition-transform duration-300 group-hover:rotate-0 group-hover:scale-[1.03]"
-                />
-              </div>
-              <p className="text-xs font-medium uppercase tracking-wide text-emerald">{lb.eyebrow}</p>
-              <h2 className="mt-2 text-xl leading-snug">{lb.title}</h2>
-              <p className="mt-2 flex-1 text-sm text-muted">{lb.subtitle}</p>
-              <span className="mt-5 inline-flex items-center gap-2 font-medium text-forest group-hover:text-emerald">
-                Télécharger gratuitement
-                <Icon name="arrow" className="h-4 w-4 transition-transform group-hover:translate-x-1" />
-              </span>
-            </Link>
+          {items.map((lb, i) => (
+            <Reveal key={lb.slug} variant="up" delay={(i % 3) * 90} className="h-full">
+              <Link
+                href={`/ressources/${lb.slug}`}
+                className="card group flex h-full flex-col hover:-translate-y-1 hover:border-mint"
+              >
+                <div className="mb-5 flex h-56 items-center justify-center overflow-hidden rounded-2xl bg-gradient-to-br from-cream to-mint/10 ring-1 ring-black/5">
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img
+                    src={lb.cover}
+                    alt={`Couverture du livre blanc « ${lb.title} »`}
+                    className="h-48 -rotate-1 rounded-lg shadow-lift ring-1 ring-black/5 transition-transform duration-300 group-hover:rotate-0 group-hover:scale-[1.03]"
+                  />
+                </div>
+                <p className="text-xs font-medium uppercase tracking-wide text-emerald">{lb.eyebrow}</p>
+                <h2 className="mt-2 text-xl leading-snug">{lb.title}</h2>
+                <p className="mt-2 flex-1 text-sm text-muted">{lb.subtitle}</p>
+                <span className="mt-5 inline-flex items-center gap-2 font-medium text-forest group-hover:text-emerald">
+                  Télécharger gratuitement
+                  <Icon name="arrow" className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+                </span>
+              </Link>
+            </Reveal>
           ))}
         </div>
       </section>

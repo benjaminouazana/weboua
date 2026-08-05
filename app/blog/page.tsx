@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { Icon } from '@/components/Icon';
 import { SectionHeading, CTABand } from '@/components/ui';
+import { Reveal } from '@/components/Reveal';
 import { getAllPosts, formatDate } from '@/lib/blog';
 import { buildMetadata } from '@/lib/seo';
 
@@ -29,9 +30,10 @@ export default function BlogIndex() {
         )}
 
         {featured && (
+          <Reveal variant="up" className="mt-14 block">
           <Link
             href={`/blog/${featured.slug}`}
-            className="group mt-14 block overflow-hidden rounded-4xl border border-line bg-cream shadow-soft transition-all hover:shadow-lift"
+            className="group block overflow-hidden rounded-4xl border border-line bg-cream shadow-soft transition-all hover:shadow-lift"
           >
             <div className="p-8 sm:p-10">
               <div className="max-w-2xl">
@@ -50,21 +52,24 @@ export default function BlogIndex() {
               </div>
             </div>
           </Link>
+          </Reveal>
         )}
 
         {rest.length > 0 && (
           <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {rest.map((post) => (
-              <Link key={post.slug} href={`/blog/${post.slug}`} className="card group flex flex-col hover:-translate-y-1 hover:border-mint">
-                <span className="text-xs font-semibold uppercase tracking-wider text-emerald">{post.category}</span>
-                <h3 className="mt-3 text-lg leading-snug">{post.title}</h3>
-                <p className="mt-2 flex-1 text-sm text-muted">{post.description}</p>
-                <div className="mt-5 flex items-center gap-2 text-xs text-muted">
-                  <span>{formatDate(post.date)}</span>
-                  <span aria-hidden>·</span>
-                  <span>{post.readingMinutes} min</span>
-                </div>
-              </Link>
+            {rest.map((post, i) => (
+              <Reveal key={post.slug} variant="up" delay={(i % 3) * 90} className="h-full">
+                <Link href={`/blog/${post.slug}`} className="card group flex h-full flex-col hover:-translate-y-1 hover:border-mint">
+                  <span className="text-xs font-semibold uppercase tracking-wider text-emerald">{post.category}</span>
+                  <h3 className="mt-3 text-lg leading-snug">{post.title}</h3>
+                  <p className="mt-2 flex-1 text-sm text-muted">{post.description}</p>
+                  <div className="mt-5 flex items-center gap-2 text-xs text-muted">
+                    <span>{formatDate(post.date)}</span>
+                    <span aria-hidden>·</span>
+                    <span>{post.readingMinutes} min</span>
+                  </div>
+                </Link>
+              </Reveal>
             ))}
           </div>
         )}
