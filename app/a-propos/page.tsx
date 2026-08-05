@@ -1,7 +1,8 @@
 import Link from 'next/link';
 import { Icon } from '@/components/Icon';
-import { Eyebrow, Stats, CTABand } from '@/components/ui';
+import { Eyebrow, Stats } from '@/components/ui';
 import { Reveal } from '@/components/Reveal';
+import { LeadForm } from '@/components/LeadForm';
 import { buildMetadata } from '@/lib/seo';
 
 export const metadata = buildMetadata({
@@ -85,7 +86,23 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <CTABand />
+      <section className="border-t border-line bg-cream/40 py-16">
+        <div className="container-page">
+          <div className="mx-auto max-w-2xl">
+            <div className="text-center">
+              <Eyebrow>Parlons de votre projet</Eyebrow>
+              <h2 className="mt-5 text-3xl sm:text-4xl">On regarde votre site ensemble ?</h2>
+              <p className="mt-3 text-muted">
+                Un audit gratuit de votre site, de votre SEO et de votre acquisition. On vous dit
+                exactement quoi améliorer. Réponse sous 24 h ouvrées.
+              </p>
+            </div>
+            <div className="mt-8 rounded-3xl border border-line bg-white p-6 shadow-sm sm:p-8">
+              <LeadForm source="a-propos" compact />
+            </div>
+          </div>
+        </div>
+      </section>
     </>
   );
 }
