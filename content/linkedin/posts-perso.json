@@ -23,8 +23,9 @@
   {
     "id": 4,
     "label": "Chiffre choc — 1 seconde = -7 % de conversions",
-    "status": "todo",
-    "text": "1 seconde de chargement en plus = 7 % de conversions en moins.\n\nVotre site met 4 secondes à charger ? Vous perdez probablement 1 client sur 4.\n\nTestez le vôtre : PageSpeed Insights, c'est gratuit.\n\nSi c'est rouge, vous savez ce qu'il vous reste à faire.\n\n#performance #webperf #conversion"
+    "status": "done",
+    "text": "1 seconde de chargement en plus = 7 % de conversions en moins.\n\nVotre site met 4 secondes à charger ? Vous perdez probablement 1 client sur 4.\n\nTestez le vôtre : PageSpeed Insights, c'est gratuit.\n\nSi c'est rouge, vous savez ce qu'il vous reste à faire.\n\n#performance #webperf #conversion",
+    "sentAt": "2026-08-06"
   },
   {
     "id": 5,
