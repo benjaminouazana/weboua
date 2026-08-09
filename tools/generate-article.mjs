@@ -19,7 +19,7 @@ import path from 'node:path';
 const ROOT = process.cwd();
 const TOPICS_FILE = path.join(ROOT, 'content', 'topics.json');
 const BLOG_DIR = path.join(ROOT, 'content', 'blog');
-const MODEL = process.env.ARTICLE_MODEL || 'claude-sonnet-4-6';
+const MODEL = process.env.ARTICLE_MODEL || 'claude-sonnet-5';
 const API_KEY = process.env.ANTHROPIC_API_KEY;
 
 const INTERNAL_LINKS = {
