@@ -101,7 +101,7 @@ async function callClaude(prompt) {
     },
     body: JSON.stringify({
       model: MODEL,
-      max_tokens: 8000,
+      max_tokens: 12000,
       messages: [{ role: 'user', content: prompt }],
     }),
   });
@@ -112,6 +112,7 @@ async function callClaude(prompt) {
   }
 
   const data = await res.json();
+  globalThis.__stop = data?.stop_reason;
   const text = (data?.content || []).filter((b) => b.type === 'text').map((b) => b.text || '').join('').trim();
   if (!text) fail(`Réponse vide. stop_reason=${data?.stop_reason} | ${JSON.stringify(data).slice(0, 700)}`);
   return text;
@@ -122,7 +123,7 @@ function extractJson(text) {
   const cleaned = text.replace(/```json/gi, '').replace(/```/g, '').trim();
   const start = cleaned.indexOf('{');
   const end = cleaned.lastIndexOf('}');
-  if (start === -1 || end === -1) fail('Aucun JSON trouvé dans la réponse.');
+  if (start === -1 || end === -1) fail('Aucun JSON. stop=' + (globalThis.__stop||'?') + ' | reponse brute (800): ' + cleaned.slice(0, 800));
   try {
     return JSON.parse(cleaned.slice(start, end + 1));
   } catch (e) {
