@@ -101,7 +101,7 @@ async function callClaude(prompt) {
     },
     body: JSON.stringify({
       model: MODEL,
-      max_tokens: 4000,
+      max_tokens: 8000,
       messages: [{ role: 'user', content: prompt }],
     }),
   });
@@ -112,8 +112,8 @@ async function callClaude(prompt) {
   }
 
   const data = await res.json();
-  const text = data?.content?.map((b) => b.text || '').join('') ?? '';
-  if (!text) fail('Réponse vide de l\'API.');
+  const text = (data?.content || []).filter((b) => b.type === 'text').map((b) => b.text || '').join('').trim();
+  if (!text) fail(`Réponse vide. stop_reason=${data?.stop_reason} | ${JSON.stringify(data).slice(0, 700)}`);
   return text;
 }
 
