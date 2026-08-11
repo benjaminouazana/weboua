@@ -94,7 +94,9 @@
     "title": "Automatiser son entreprise : par où commencer sans usine à gaz",
     "keyword": "automatiser son entreprise",
     "category": "Automatisation",
-    "status": "todo"
+    "status": "done",
+    "publishedAt": "2026-08-11",
+    "publishedSlug": "automatiser-son-entreprise-par-ou-commencer"
   },
   {
     "slug": "relances-clients-automatiques",
