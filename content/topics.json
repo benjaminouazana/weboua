@@ -103,7 +103,9 @@
     "title": "Relances clients automatiques : arrêter de courir après les paiements",
     "keyword": "relance client automatique",
     "category": "Automatisation",
-    "status": "todo"
+    "status": "done",
+    "publishedAt": "2026-08-14",
+    "publishedSlug": "relances-clients-automatiques"
   },
   {
     "slug": "agent-ia-entreprise-cas-usage",
