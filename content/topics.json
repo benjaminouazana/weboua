@@ -112,7 +112,9 @@
     "title": "Agents IA en entreprise : les cas d'usage concrets qui font gagner du temps",
     "keyword": "agent IA entreprise",
     "category": "Automatisation",
-    "status": "todo"
+    "status": "done",
+    "publishedAt": "2026-08-18",
+    "publishedSlug": "agent-ia-entreprise-cas-usage"
   },
   {
     "slug": "automatiser-prise-de-rendez-vous",
