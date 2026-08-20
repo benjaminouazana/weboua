@@ -37,8 +37,9 @@
   {
     "id": 6,
     "label": "Cold email expertise",
-    "status": "todo",
-    "text": "Le cold email n'est pas mort. Le mauvais cold email, si.\n\nCe qui ne marche plus : 500 mails identiques envoyés d'un coup depuis votre domaine principal.\n\nCe qui marche : un domaine dédié, chauffé 3 semaines. Un ciblage chirurgical. 4 lignes personnalisées. Une relance intelligente.\n\n5 à 15 % de réponses, c'est atteignable. Mais ça se construit.\n\n#coldemail #prospection #B2B"
+    "status": "done",
+    "text": "Le cold email n'est pas mort. Le mauvais cold email, si.\n\nCe qui ne marche plus : 500 mails identiques envoyés d'un coup depuis votre domaine principal.\n\nCe qui marche : un domaine dédié, chauffé 3 semaines. Un ciblage chirurgical. 4 lignes personnalisées. Une relance intelligente.\n\n5 à 15 % de réponses, c'est atteignable. Mais ça se construit.\n\n#coldemail #prospection #B2B",
+    "sentAt": "2026-08-20"
   },
   {
     "id": 7,
