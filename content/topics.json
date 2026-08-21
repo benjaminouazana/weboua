@@ -121,7 +121,9 @@
     "title": "Automatiser la prise de rendez-vous : remplir son agenda sans y penser",
     "keyword": "automatiser prise de rendez-vous",
     "category": "Automatisation",
-    "status": "todo"
+    "status": "done",
+    "publishedAt": "2026-08-21",
+    "publishedSlug": "automatiser-prise-de-rendez-vous"
   },
   {
     "slug": "devis-factures-automatiques",
