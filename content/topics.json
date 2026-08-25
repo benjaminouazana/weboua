@@ -130,7 +130,9 @@
     "title": "Devis et factures automatiques : récupérer une journée par semaine",
     "keyword": "automatiser devis et factures",
     "category": "Automatisation",
-    "status": "todo"
+    "status": "done",
+    "publishedAt": "2026-08-25",
+    "publishedSlug": "devis-factures-automatiques"
   },
   {
     "slug": "make-zapier-n8n-quel-outil",
