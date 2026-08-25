@@ -111,6 +111,7 @@ export const services: {
 export const mainNav: NavItem[] = [
   { label: 'Automatisation & IA', href: '/automatisation', highlight: true },
   { label: 'Offres', href: '/offres' },
+  { label: 'Réalisations', href: '/realisations' },
   { label: 'Ressources', href: '/ressources' },
   { label: 'Blog', href: '/blog' },
   { label: 'À propos', href: '/a-propos' },

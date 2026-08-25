@@ -152,10 +152,13 @@ export default function HomePage() {
                 Énergie, industrie, beauté, formation, e-commerce, recrutement… Plus de 15 entreprises tournent
                 avec un site signé Weboua : rapides, visibles sur Google, et pensés pour convertir chaque jour.
               </p>
-              <Link href="/offres" className="btn-primary mt-8">
-                Découvrir nos offres
-                <Icon name="arrow" className="h-4 w-4" />
-              </Link>
+              <div className="mt-8 flex flex-wrap justify-center gap-3">
+                <Link href="/realisations" className="btn-primary">
+                  Voir nos réalisations
+                  <Icon name="arrow" className="h-4 w-4" />
+                </Link>
+                <Link href="/offres" className="btn-ghost">Découvrir nos offres</Link>
+              </div>
             </div>
           </div>
         </Reveal>
