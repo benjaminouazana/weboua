@@ -139,7 +139,9 @@
     "title": "Make, Zapier ou n8n : quel outil d'automatisation choisir en 2026",
     "keyword": "Make Zapier n8n",
     "category": "Automatisation",
-    "status": "todo"
+    "status": "done",
+    "publishedAt": "2026-09-01",
+    "publishedSlug": "make-zapier-n8n-quel-outil"
   },
   {
     "slug": "generer-leads-b2b-linkedin-cold-email",
