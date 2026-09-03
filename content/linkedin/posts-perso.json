@@ -51,8 +51,9 @@
   {
     "id": 8,
     "label": "Google E-E-A-T",
-    "status": "todo",
-    "text": "Google ne classe plus des pages. Il classe de la confiance.\n\nExpérience. Expertise. Autorité. Fiabilité.\n\nConcrètement : montrez qui vous êtes, citez vos clients, publiez régulièrement sur votre métier, obtenez des liens sérieux.\n\nLes sites anonymes qui empilent des mots-clés, c'est terminé.\n\n#SEO #google #contenu"
+    "status": "done",
+    "text": "Google ne classe plus des pages. Il classe de la confiance.\n\nExpérience. Expertise. Autorité. Fiabilité.\n\nConcrètement : montrez qui vous êtes, citez vos clients, publiez régulièrement sur votre métier, obtenez des liens sérieux.\n\nLes sites anonymes qui empilent des mots-clés, c'est terminé.\n\n#SEO #google #contenu",
+    "sentAt": "2026-09-03"
   },
   {
     "id": 9,
