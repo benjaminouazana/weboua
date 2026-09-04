@@ -148,7 +148,9 @@
     "title": "Générer des leads B2B avec LinkedIn et le cold email : le duo gagnant",
     "keyword": "leads B2B LinkedIn cold email",
     "category": "Acquisition B2B",
-    "status": "todo"
+    "status": "done",
+    "publishedAt": "2026-09-04",
+    "publishedSlug": "generer-leads-b2b-linkedin-cold-email"
   },
   {
     "slug": "core-web-vitals-impact-conversion",
