@@ -157,7 +157,9 @@
     "title": "Core Web Vitals : pourquoi la vitesse de votre site impacte vos ventes",
     "keyword": "Core Web Vitals conversion",
     "category": "Performance",
-    "status": "todo"
+    "status": "done",
+    "publishedAt": "2026-09-08",
+    "publishedSlug": "core-web-vitals-impact-conversion"
   },
   {
     "slug": "audit-seo-checklist-complete",
