@@ -58,8 +58,9 @@
   {
     "id": 9,
     "label": "Coulisses IA — Mon blog se publie tout seul",
-    "status": "todo",
-    "text": "Mon blog publie 2 articles par semaine. Je n'écris aucun d'eux.\n\nJ'ai construit un système : une IA rédige selon mes règles SEO, vérifie que tout compile, publie, et Google est prévenu dans la minute.\n\nCoût : quelques centimes par article.\n\nL'IA ne remplace pas la stratégie. Mais elle exécute mieux que n'importe quel stagiaire.\n\nVous voulez le même système ? Ça se construit.\n\n#IA #SEO #automatisation"
+    "status": "done",
+    "text": "Mon blog publie 2 articles par semaine. Je n'écris aucun d'eux.\n\nJ'ai construit un système : une IA rédige selon mes règles SEO, vérifie que tout compile, publie, et Google est prévenu dans la minute.\n\nCoût : quelques centimes par article.\n\nL'IA ne remplace pas la stratégie. Mais elle exécute mieux que n'importe quel stagiaire.\n\nVous voulez le même système ? Ça se construit.\n\n#IA #SEO #automatisation",
+    "sentAt": "2026-09-10"
   },
   {
     "id": 10,
