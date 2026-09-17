@@ -65,7 +65,8 @@
   {
     "id": 10,
     "label": "Offre directe — 5 audits gratuits (garder pour quand l'audience a grossi)",
-    "status": "todo",
-    "text": "J'offre 5 audits SEO complets ce mois-ci.\n\nCe que vous recevez : analyse technique de votre site, vos positions Google vs vos concurrents, et un plan d'action priorisé.\n\nGratuit, sans engagement. Pourquoi ? Parce que c'est ma meilleure démonstration.\n\nIntéressé ? Commentez « audit » ou envoyez-moi un message.\n\n#audit #SEO #offre"
+    "status": "done",
+    "text": "J'offre 5 audits SEO complets ce mois-ci.\n\nCe que vous recevez : analyse technique de votre site, vos positions Google vs vos concurrents, et un plan d'action priorisé.\n\nGratuit, sans engagement. Pourquoi ? Parce que c'est ma meilleure démonstration.\n\nIntéressé ? Commentez « audit » ou envoyez-moi un message.\n\n#audit #SEO #offre",
+    "sentAt": "2026-09-17"
   }
 ]
