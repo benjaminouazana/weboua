@@ -1,0 +1,103 @@
+---
+title: "Délivrabilité cold email : ne finissez plus en spam"
+description: "Guide complet pour améliorer votre délivrabilité cold email : SPF, DKIM, DMARC, warm-up IP, contenu et rythme d'envoi. Atteignez enfin la boîte de réception."
+date: "2026-09-18"
+author: "Weboua"
+category: "Acquisition B2B"
+tags: ["cold email", "délivrabilité", "acquisition B2B", "génération de leads"]
+takeaways:
+  - "Sans SPF, DKIM et DMARC correctement configurés, jusqu'à 80% des cold emails peuvent être filtrés avant même d'atteindre la boîte de réception."
+  - "Un domaine d'envoi doit être 'chauffé' progressivement pendant 2 à 4 semaines avant une campagne de volume, sous peine de blacklistage immédiat."
+  - "Le taux de spam signalé ne doit jamais dépasser 0,1% des envois : au-delà, les fournisseurs (Gmail, Outlook) dégradent la réputation du domaine."
+  - "Utiliser un domaine secondaire dédié au cold email (et non le domaine principal de l'entreprise) protège la réputation globale de la marque."
+  - "Un rythme d'envoi progressif (50 à 100 emails/jour au démarrage) est plus efficace qu'un envoi massif ponctuel pour préserver la délivrabilité."
+  - "Le taux d'ouverture est un meilleur indicateur de délivrabilité que le taux de clic, car il reflète directement l'arrivée en boîte principale."
+draft: false
+---
+La délivrabilité cold email est le facteur qui détermine si vos messages de prospection atteignent réellement la boîte de réception de vos prospects, ou s'ils disparaissent dans les spams sans jamais être lus. C'est le nerf de la guerre en acquisition B2B : une campagne parfaitement rédigée envoyée à un taux de délivrabilité de 40% produira toujours de mauvais résultats. Ce guide détaille les leviers techniques et comportementaux à activer pour sécuriser vos envois.
+
+## Pourquoi la délivrabilité cold email est le vrai enjeu (pas le contenu)
+
+Beaucoup de directions commerciales et marketing se concentrent sur la rédaction du message : l'objet, l'accroche, le call-to-action. C'est nécessaire, mais insuffisant. Si votre email n'arrive pas en boîte principale, aucun contenu, même excellent, ne convertira.
+
+Les fournisseurs de messagerie (Gmail, Outlook, Yahoo) ont durci leurs filtres anti-spam depuis 2024, notamment sous la pression des nouvelles exigences de Google et Yahoo sur l'authentification des expéditeurs. Résultat : une entreprise qui envoie des cold emails sans configuration technique rigoureuse voit sa délivrabilité chuter en quelques semaines, parfois de manière irréversible sur le domaine concerné.
+
+> La délivrabilité n'est pas un détail technique réservé aux développeurs. C'est un actif commercial qui conditionne directement votre pipeline de leads.
+
+## Les fondations techniques : SPF, DKIM, DMARC
+
+Avant toute campagne, trois protocoles doivent être configurés sur votre domaine d'envoi :
+
+- **SPF (Sender Policy Framework)** : indique aux serveurs de réception quels serveurs sont autorisés à envoyer des emails pour votre domaine.
+- **DKIM (DomainKeys Identified Mail)** : signe cryptographiquement vos emails pour prouver qu'ils n'ont pas été altérés.
+- **DMARC (Domain-based Message Authentication)** : définit la politique à appliquer si SPF ou DKIM échouent (quarantaine, rejet).
+
+Sans ces trois éléments correctement paramétrés dans les enregistrements DNS, une part significative de vos envois sera filtrée automatiquement, indépendamment de la qualité du contenu.
+
+### DNS et réputation de domaine
+
+La réputation de votre domaine se construit sur la durée. Chaque signalement en spam, chaque bounce (email non délivré) et chaque plainte dégrade cette réputation auprès des fournisseurs de messagerie. À l'inverse, un historique d'envois propres, avec un faible taux de rebond et peu de signalements, améliore progressivement votre score de confiance.
+
+C'est pourquoi il est recommandé d'utiliser un domaine secondaire dédié à la prospection (par exemple votreentreprise-contact.com) plutôt que le domaine principal de l'entreprise. Cela protège votre marque en cas d'incident de délivrabilité, sans impacter vos emails transactionnels ou votre site web principal.
+
+## La réputation IP et le warm-up
+
+Envoyer 500 emails dès le premier jour depuis une adresse ou un domaine neuf est le meilleur moyen de finir en spam. Les fournisseurs de messagerie surveillent les comportements d'envoi et considèrent un volume soudain comme un signal suspect.
+
+La bonne pratique consiste à "chauffer" progressivement le domaine et l'adresse IP d'envoi :
+
+1. Semaine 1-2 : 10 à 30 emails par jour, avec des interactions réelles (réponses, ouvertures).
+2. Semaine 3-4 : montée progressive à 50-100 emails par jour.
+3. À partir du mois 2 : volume de croisière selon votre stratégie commerciale.
+
+Cette montée en charge permet aux fournisseurs de messagerie d'associer votre domaine à un comportement légitime plutôt qu'à une opération de spam massif.
+
+## Le contenu qui déclenche (ou évite) les filtres spam
+
+Certains éléments de contenu déclenchent systématiquement les filtres anti-spam :
+
+- Les mots surutilisés en marketing agressif ("gratuit", "promotion exceptionnelle", "cliquez ici maintenant").
+- Les liens raccourcis ou provenant de domaines peu fiables.
+- Les pièces jointes non sollicitées dès le premier contact.
+- Un ratio texte/image déséquilibré (trop d'images, peu de texte).
+
+À l'inverse, un email au format texte simple, personnalisé, avec un ton conversationnel proche d'un email écrit à la main, passe mieux les filtres et génère de meilleurs taux d'engagement. C'est aussi ce qui fonctionne le mieux commercialement : un cold email qui ressemble à une prise de contact humaine convertit davantage qu'une plaquette commerciale déguisée en email.
+
+Si vous structurez une stratégie complète de [campagnes email](/campagnes-email), pensez la délivrabilité comme un prérequis technique au même niveau que le ciblage ou le copywriting.
+
+## Le rythme d'envoi et la segmentation
+
+Le volume n'est pas le seul facteur : la régularité compte autant. Un envoi irrégulier (300 emails un lundi, zéro pendant deux semaines, puis 500 le mois suivant) envoie des signaux incohérents aux fournisseurs de messagerie.
+
+Quelques règles opérationnelles :
+
+- Maintenir un taux de signalement spam inférieur à 0,1% des envois.
+- Segmenter vos listes pour éviter d'envoyer le même message identique à des centaines de contacts le même jour.
+- Espacer les relances d'au moins 3 à 5 jours ouvrés.
+- Nettoyer régulièrement les adresses invalides ou inactives de votre base.
+
+Cette discipline opérationnelle est directement liée à la qualité de votre [génération de leads B2B](/leads-b2b) : une base propre et bien segmentée délivre mieux et convertit mieux.
+
+## Comment mesurer et surveiller sa délivrabilité
+
+Trois indicateurs doivent être suivis en continu :
+
+- **Taux de bounce** (emails non délivrés) : doit rester sous 2%.
+- **Taux d'ouverture** : un indicateur fiable de l'arrivée en boîte principale (un taux inférieur à 20% signale souvent un problème de délivrabilité, pas seulement un problème d'objet).
+- **Taux de plainte spam** : à surveiller via les outils Postmaster de Google et Microsoft SNDS.
+
+Des outils comme Google Postmaster Tools, Mail-Tester ou GlockApps permettent de tester la délivrabilité avant le lancement d'une campagne et de détecter les blacklistages en amont.
+
+## Cas WordPress et infrastructure email
+
+Beaucoup d'entreprises utilisent WordPress pour leur site vitrine, avec un système d'envoi d'emails transactionnels géré par un plugin ou l'hébergeur par défaut. C'est un choix parfaitement viable pour les emails transactionnels (confirmation de formulaire, notifications), mais ce n'est pas l'infrastructure adaptée pour du cold email en volume.
+
+La recommandation : séparer clairement l'envoi transactionnel de votre [création de site internet](/creation-de-sites-internet) et l'envoi de prospection commerciale, qui doit passer par un outil dédié (Instantly, Lemlist, Smartlead) avec des domaines et IP distincts. Cette séparation protège la délivrabilité de vos emails critiques (factures, confirmations) même si votre domaine de prospection rencontre un incident.
+
+Si votre site WordPress actuel présente des problèmes de délivrabilité sur ses emails automatiques, un [audit SEO gratuit](/audit-seo-performance) permet souvent d'identifier des erreurs de configuration DNS ou de plugin qui affectent aussi votre réputation d'envoi globale.
+
+## Passez à l'action
+
+La délivrabilité cold email ne se résout pas avec une astuce isolée : c'est la combinaison d'une configuration technique rigoureuse (SPF, DKIM, DMARC), d'une montée en charge progressive et d'une discipline d'envoi sur la durée. Les entreprises qui négligent ce sujet voient leur pipeline commercial se dégrader sans en comprendre la cause.
+
+Chez Weboua, nous auditons votre infrastructure d'envoi, configurons vos domaines et construisons des stratégies d'acquisition B2B où la délivrabilité est traitée comme un prérequis, pas comme une option. [Contactez-nous](/contact) pour un diagnostic de votre configuration actuelle et un plan d'action concret.

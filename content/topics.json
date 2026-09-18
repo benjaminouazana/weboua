@@ -175,7 +175,9 @@
     "title": "Cold email : le guide de la délivrabilité pour ne plus finir en spam",
     "keyword": "délivrabilité cold email",
     "category": "Acquisition B2B",
-    "status": "todo"
+    "status": "done",
+    "publishedAt": "2026-09-18",
+    "publishedSlug": "cold-email-delivrabilite-guide"
   },
   {
     "slug": "tunnel-conversion-site-b2b",
