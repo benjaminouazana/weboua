@@ -202,7 +202,9 @@
     "title": "Hébergement web : comment allier performance et sécurité",
     "keyword": "hébergement web performance sécurité",
     "category": "Hébergement",
-    "status": "todo"
+    "status": "done",
+    "publishedAt": "2026-09-29",
+    "publishedSlug": "hebergement-web-performance-securite"
   },
   {
     "slug": "refonte-site-internet-sans-perdre-seo",
