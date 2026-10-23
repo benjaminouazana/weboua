@@ -256,7 +256,9 @@
     "title": "Optimiser la vitesse de votre site web : guide pratique",
     "keyword": "optimiser vitesse site web",
     "category": "Performance",
-    "status": "todo"
+    "status": "done",
+    "publishedAt": "2026-10-23",
+    "publishedSlug": "vitesse-site-web-optimisation"
   },
   {
     "slug": "seo-local-entreprise-multi-sites",
