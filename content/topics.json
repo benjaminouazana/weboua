@@ -265,7 +265,9 @@
     "title": "SEO local pour les entreprises multi-établissements",
     "keyword": "SEO local multi-sites",
     "category": "SEO",
-    "status": "todo"
+    "status": "done",
+    "publishedAt": "2026-10-27",
+    "publishedSlug": "seo-local-entreprise-multi-sites"
   },
   {
     "slug": "email-marketing-b2b-segmentation",
