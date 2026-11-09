@@ -21,6 +21,100 @@ export type LivreBlanc = {
 };
 
 export const livresBlancs: LivreBlanc[] = [
+
+  {
+    slug: 'machine-a-clients-4-leviers',
+    eyebrow: 'Livre blanc gratuit · Génération de leads · 2026',
+    title: 'Les 4 leviers machine à clients',
+    subtitle:
+      "Un site vitrine informe, puis attend. Une machine à clients capte, qualifie, relance — et transforme le trafic en rendez-vous. Les 4 leviers, étape par étape.",
+    metaTitle: 'Livre blanc gratuit — De site vitrine à machine à clients',
+    metaDescription:
+      "Transformez votre site en générateur de leads : capter, qualifier, relancer, transformer. Les 4 leviers concrets et la checklist pour auditer votre site. PDF gratuit.",
+    keywords: ['générer des leads', 'site qui convertit', 'machine à clients', 'tunnel de conversion', 'transformer trafic en clients'],
+    pdf: '/livre-blanc-weboua-machine-a-clients-4-leviers.pdf',
+    cover: '/livre-blanc-cover-machine-a-clients.jpg',
+    pages: 7,
+    publishedAt: '2026-11',
+    inside: [
+      'La différence entre un site qui informe et un site qui vend',
+      'Levier 1 — Capter : transformer un visiteur anonyme en contact',
+      'Levier 2 — Qualifier : trier les bons prospects des curieux',
+      'Levier 3 — Relancer : ne plus jamais laisser un lead refroidir',
+      'Levier 4 — Transformer : mesurer et optimiser ce qui marche',
+      'La checklist pour auditer votre propre site',
+    ],
+  },
+  {
+    slug: 'mesurer-son-site-ga4',
+    eyebrow: 'Livre blanc gratuit · Pilotage & données · 2026',
+    title: 'Savoir enfin ce que fait votre site',
+    subtitle:
+      "D'où viennent vos clients, quelles pages travaillent, où vous perdez les visiteurs. Le guide pour piloter votre site avec des chiffres — sans être technique.",
+    metaTitle: 'Livre blanc gratuit — Mesurer son site (GA4, sans jargon)',
+    metaDescription:
+      "Arrêtez de naviguer à l'aveugle : les 5 chiffres qui comptent, comment installer un suivi fiable (GA4), suivre vos conversions et lire vos résultats. PDF gratuit.",
+    keywords: ['google analytics 4', 'GA4', 'mesurer son site', 'suivi des conversions', 'tableau de bord site web'],
+    pdf: '/livre-blanc-weboua-mesurer-son-site-ga4.pdf',
+    cover: '/livre-blanc-cover-mesurer-ga4.jpg',
+    pages: 7,
+    publishedAt: '2026-11',
+    inside: [
+      "Pourquoi « j'ai des visites » ne veut rien dire",
+      'Les 5 chiffres que tout dirigeant devrait connaître',
+      'Mettre en place un suivi fiable (GA4, sans jargon)',
+      'Suivre les conversions : appels, formulaires, devis',
+      'Lire ses chiffres en 10 minutes par semaine',
+      'La checklist de mise en place',
+    ],
+  },
+  {
+    slug: 'fiche-google-avis-clients',
+    eyebrow: 'Livre blanc gratuit · Visibilité locale · 2026',
+    title: "Votre fiche Google vaut de l'or",
+    subtitle:
+      "Pour une entreprise locale, la fiche Google et les avis pèsent souvent plus que le site lui-même. Le guide pour remonter dans le pack local et transformer les recherches en clients.",
+    metaTitle: 'Livre blanc gratuit — Fiche Google & avis clients',
+    metaDescription:
+      "Remontez dans le pack local : optimiser sa fiche Google Business, récolter des avis sans quémander, répondre aux avis. La méthode complète. PDF gratuit.",
+    keywords: ['fiche google business', 'avis clients google', 'référencement local', 'pack local google', 'e-réputation locale'],
+    pdf: '/livre-blanc-weboua-fiche-google-avis-clients.pdf',
+    cover: '/livre-blanc-cover-fiche-google-avis.jpg',
+    pages: 7,
+    publishedAt: '2026-11',
+    inside: [
+      'Pourquoi la fiche Google décide avant votre site',
+      'Optimiser sa fiche : les éléments qui font la différence',
+      'Les avis : le nerf de la guerre locale',
+      'Récolter des avis sans quémander (et sans tricher)',
+      'Répondre aux avis — même les mauvais',
+      'La checklist fiche Google',
+    ],
+  },
+  {
+    slug: 'site-rapide-plus-de-ventes',
+    eyebrow: 'Livre blanc gratuit · Performance web · 2026',
+    title: 'Un site lent vous coûte des clients',
+    subtitle:
+      "Chaque seconde de chargement fait fuir des visiteurs et des ventes — et pénalise votre référencement. Le guide pour comprendre, mesurer et corriger la vitesse de votre site.",
+    metaTitle: 'Livre blanc gratuit — Un site lent vous coûte des clients',
+    metaDescription:
+      "Chaque seconde de trop fait fuir des ventes et pénalise votre SEO. Les causes de lenteur, comment mesurer la vitesse gratuitement et les corrections à fort impact. PDF gratuit.",
+    keywords: ['vitesse site web', 'site lent', 'core web vitals', 'performance web', 'temps de chargement conversion'],
+    pdf: '/livre-blanc-weboua-site-rapide-plus-de-ventes.pdf',
+    cover: '/livre-blanc-cover-site-rapide.jpg',
+    pages: 7,
+    publishedAt: '2026-11',
+    inside: [
+      "Ce qu'une seconde de trop vous coûte vraiment",
+      'Pourquoi Google favorise les sites rapides',
+      'Les 5 causes les plus fréquentes de lenteur',
+      'Mesurer la vitesse de son site (gratuitement)',
+      'Les corrections à fort impact',
+      'La checklist performance',
+    ],
+  },
+
   {
     slug: 'entreprise-qui-tourne-sans-vous',
     eyebrow: 'Livre blanc gratuit · Automatisation · 2026',
