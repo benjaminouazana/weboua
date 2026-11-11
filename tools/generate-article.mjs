@@ -58,6 +58,8 @@ function buildPrompt(topic) {
 
 Règle absolue : ne dénigre JAMAIS WordPress ni aucune technologie. Weboua accompagne aussi des clients WordPress (audit, réparation, maintenance, optimisation). Sur les sujets WordPress, sois utile et bienveillant : aide le lecteur à résoudre son problème, et positionne Weboua comme l'expert capable de l'aider — quelle que soit sa technologie.
 
+Date du jour : ${todayISO()}. Nous sommes en ${new Date().getFullYear()}. Si tu mentionnes une année (titre, texte, tendances), utilise ${new Date().getFullYear()} — jamais une année passée comme si elle était l'année en cours.
+
 Rédige un article de blog complet et optimisé SEO sur le sujet suivant :
 - Titre indicatif : "${topic.title}"
 - Mot-clé principal à cibler : "${topic.keyword}"
