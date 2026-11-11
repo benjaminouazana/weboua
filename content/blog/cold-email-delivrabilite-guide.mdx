@@ -6,12 +6,12 @@ author: "Weboua"
 category: "Acquisition B2B"
 tags: ["cold email", "délivrabilité", "acquisition B2B", "génération de leads"]
 takeaways:
-  - "Sans SPF, DKIM et DMARC correctement configurés, jusqu'à 80% des cold emails peuvent être filtrés avant même d'atteindre la boîte de réception."
-  - "Un domaine d'envoi doit être 'chauffé' progressivement pendant 2 à 4 semaines avant une campagne de volume, sous peine de blacklistage immédiat."
+  - "Sans SPF, DKIM et DMARC correctement configurés, une grande partie des cold emails peut être filtrée avant même d'atteindre la boîte de réception."
+  - "Un domaine d'envoi doit être 'chauffé' progressivement pendant 2 à 4 semaines avant une campagne de volume, sous peine d'un risque élevé de filtrage."
   - "Le taux de spam signalé ne doit jamais dépasser 0,1% des envois : au-delà, les fournisseurs (Gmail, Outlook) dégradent la réputation du domaine."
   - "Utiliser un domaine secondaire dédié au cold email (et non le domaine principal de l'entreprise) protège la réputation globale de la marque."
-  - "Un rythme d'envoi progressif (50 à 100 emails/jour au démarrage) est plus efficace qu'un envoi massif ponctuel pour préserver la délivrabilité."
-  - "Le taux d'ouverture est un meilleur indicateur de délivrabilité que le taux de clic, car il reflète directement l'arrivée en boîte principale."
+  - "Un rythme d'envoi progressif (10 à 30 emails/jour au démarrage) est plus efficace qu'un envoi massif ponctuel pour préserver la délivrabilité."
+  - "Depuis Apple Mail Privacy Protection (2021), le taux d'ouverture est gonflé et peu fiable : suivez plutôt le taux de réponse, les tests de placement (seed tests) et Google Postmaster Tools."
 draft: false
 ---
 La délivrabilité cold email est le facteur qui détermine si vos messages de prospection atteignent réellement la boîte de réception de vos prospects, ou s'ils disparaissent dans les spams sans jamais être lus. C'est le nerf de la guerre en acquisition B2B : une campagne parfaitement rédigée envoyée à un taux de délivrabilité de 40% produira toujours de mauvais résultats. Ce guide détaille les leviers techniques et comportementaux à activer pour sécuriser vos envois.
@@ -30,7 +30,7 @@ Avant toute campagne, trois protocoles doivent être configurés sur votre domai
 
 - **SPF (Sender Policy Framework)** : indique aux serveurs de réception quels serveurs sont autorisés à envoyer des emails pour votre domaine.
 - **DKIM (DomainKeys Identified Mail)** : signe cryptographiquement vos emails pour prouver qu'ils n'ont pas été altérés.
-- **DMARC (Domain-based Message Authentication)** : définit la politique à appliquer si SPF ou DKIM échouent (quarantaine, rejet).
+- **DMARC (Domain-based Message Authentication, Reporting and Conformance)** : définit la politique à appliquer si SPF ou DKIM échouent (quarantaine, rejet).
 
 Sans ces trois éléments correctement paramétrés dans les enregistrements DNS, une part significative de vos envois sera filtrée automatiquement, indépendamment de la qualité du contenu.
 
@@ -78,12 +78,23 @@ Quelques règles opérationnelles :
 
 Cette discipline opérationnelle est directement liée à la qualité de votre [génération de leads B2B](/leads-b2b) : une base propre et bien segmentée délivre mieux et convertit mieux.
 
+## Le cadre légal du cold email B2B en France
+
+En B2B, la CNIL autorise la prospection par email sans consentement préalable, à trois conditions :
+
+- Le message est en rapport avec la fonction professionnelle du destinataire.
+- L'expéditeur est clairement identifié.
+- Chaque email propose un moyen simple de s'opposer aux envois, typiquement un lien de désinscription, et les demandes d'opposition sont respectées.
+
+Ce lien de désinscription sert aussi votre délivrabilité : un prospect qui peut se désinscrire en un clic signale moins souvent vos emails comme spam.
+
 ## Comment mesurer et surveiller sa délivrabilité
 
-Trois indicateurs doivent être suivis en continu :
+Quatre indicateurs doivent être suivis en continu :
 
 - **Taux de bounce** (emails non délivrés) : doit rester sous 2%.
-- **Taux d'ouverture** : un indicateur fiable de l'arrivée en boîte principale (un taux inférieur à 20% signale souvent un problème de délivrabilité, pas seulement un problème d'objet).
+- **Taux de réponse** : un indicateur indirect mais fiable de l'arrivée en boîte principale. Une chute brutale des réponses signale souvent un problème de délivrabilité, pas seulement un problème de message. Le taux d'ouverture, lui, n'est plus fiable depuis Apple Mail Privacy Protection (2021), qui déclenche des « ouvertures » automatiques : ne l'utilisez pas comme preuve d'arrivée en boîte de réception.
+- **Placement en boîte de réception** : à vérifier par des tests de placement (seed tests) sur des adresses de contrôle Gmail, Outlook, etc.
 - **Taux de plainte spam** : à surveiller via les outils Postmaster de Google et Microsoft SNDS.
 
 Des outils comme Google Postmaster Tools, Mail-Tester ou GlockApps permettent de tester la délivrabilité avant le lancement d'une campagne et de détecter les blacklistages en amont.
@@ -92,9 +103,9 @@ Des outils comme Google Postmaster Tools, Mail-Tester ou GlockApps permettent de
 
 Beaucoup d'entreprises utilisent WordPress pour leur site vitrine, avec un système d'envoi d'emails transactionnels géré par un plugin ou l'hébergeur par défaut. C'est un choix parfaitement viable pour les emails transactionnels (confirmation de formulaire, notifications), mais ce n'est pas l'infrastructure adaptée pour du cold email en volume.
 
-La recommandation : séparer clairement l'envoi transactionnel de votre [création de site internet](/creation-de-sites-internet) et l'envoi de prospection commerciale, qui doit passer par un outil dédié (Instantly, Lemlist, Smartlead) avec des domaines et IP distincts. Cette séparation protège la délivrabilité de vos emails critiques (factures, confirmations) même si votre domaine de prospection rencontre un incident.
+La recommandation : séparer clairement l'envoi transactionnel de votre site et l'envoi de prospection commerciale, qui doit passer par un outil dédié (Instantly, Lemlist, Smartlead) avec des domaines et IP distincts. Cette séparation protège la délivrabilité de vos emails critiques (factures, confirmations) même si votre domaine de prospection rencontre un incident.
 
-Si votre site WordPress actuel présente des problèmes de délivrabilité sur ses emails automatiques, un [audit SEO gratuit](/audit-seo-performance) permet souvent d'identifier des erreurs de configuration DNS ou de plugin qui affectent aussi votre réputation d'envoi globale.
+Si votre site WordPress actuel présente des problèmes de délivrabilité sur ses emails automatiques, [contactez-nous](/contact) pour un diagnostic : des erreurs de configuration DNS ou de plugin affectent souvent aussi votre réputation d'envoi globale.
 
 ## Passez à l'action
 

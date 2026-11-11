@@ -60,13 +60,21 @@ Règle absolue : ne dénigre JAMAIS WordPress ni aucune technologie. Weboua acco
 
 Date du jour : ${todayISO()}. Nous sommes en ${new Date().getFullYear()}. Si tu mentionnes une année (titre, texte, tendances), utilise ${new Date().getFullYear()} — jamais une année passée comme si elle était l'année en cours.
 
+Règles de fiabilité (aussi importantes que le SEO) :
+- Aucun chiffre précis (pourcentage, multiplicateur, durée moyenne) sans sa source nommée dans la phrase (ex. « selon Google », « étude Deloitte »). Ne cite que des études réelles que tu connais avec certitude. Si tu n'as pas de source sûre, formule sans chiffre (« souvent », « nettement », « une part importante »). N'invente jamais de statistique ni de source.
+- Aucune promesse de résultat garanti (positions Google, nombre de leads, gain de temps chiffré). Utilise « peut », « jusqu'à », « limiter le risque ».
+- Pas de cas client, témoignage ou chiffre de résultat attribué à Weboua ou à ses clients.
+- Juridique (RGPD, CNIL, facturation, droit d'auteur, prospection) : n'affirme que ce dont tu es certain, au conditionnel prudent sinon, et renvoie vers un avocat ou la source officielle pour les cas particuliers.
+- L'audit SEO gratuit (/audit-seo-performance) porte uniquement sur le SEO et la performance du site. Pour tout autre sujet (sécurité, e-mail, process, facturation, automatisation), l'appel à l'action pointe vers /contact.
+- Pour les sujets techniques, n'utilise que des informations à jour (ex. : l'INP a remplacé le FID dans les Core Web Vitals en mars 2024).
+
 Rédige un article de blog complet et optimisé SEO sur le sujet suivant :
 - Titre indicatif : "${topic.title}"
 - Mot-clé principal à cibler : "${topic.keyword}"
 - Catégorie : "${topic.category}"
 
 Règles SEO impératives :
-1. Le mot-clé principal doit apparaître dans le titre, la méta-description, le premier paragraphe et au moins un sous-titre (H2).
+1. Le mot-clé principal doit apparaître dans le titre, la méta-description, le premier paragraphe et au moins un sous-titre (H2). Dans les phrases, intègre-le en français correct (avec ses articles et accords, ex. « optimiser la vitesse de son site web ») — jamais collé tel quel quand ce n'est pas grammatical.
 2. 1000 à 1700 mots. Structure claire en sous-titres "## " (H2) et "### " (H3). NE PAS mettre de titre H1 (#) — il est généré automatiquement.
 3. Écris pour l'humain d'abord : utile, précis, crédible. Pas de bourrage de mots-clés.
 4. Intègre 2 à 3 liens internes naturels parmi cette liste (format markdown) :
@@ -80,7 +88,7 @@ En plus de l'article, rédige un post LinkedIn qui en fait la promotion :
 - Termine par une question ou un appel à lire l'article, puis 3 hashtags maximum
 - N'inclus PAS le lien dans le texte (il sera ajouté automatiquement)
 
-En plus, rédige "L'essentiel à retenir" : 5 à 6 points clés, courts et autoportants (chacun se comprend seul, avec le chiffre ou le fait précis). C'est ce que les IA (ChatGPT, Google) citent en priorité — sois factuel et concret.
+En plus, rédige "L'essentiel à retenir" : 5 à 6 points clés, courts et autoportants (chacun se comprend seul). C'est ce que les IA (ChatGPT, Google) citent en priorité — sois factuel et concret. Un point clé peut contenir un chiffre seulement s'il est sourcé (règles de fiabilité ci-dessus) ; sinon, énonce le fait ou le conseil sans chiffre.
 
 Réponds STRICTEMENT avec un objet JSON valide (et rien d'autre, pas de texte autour, pas de balises de code) au format :
 {

@@ -7,13 +7,14 @@ category: "Hébergement"
 tags: ["sécurité WordPress", "site piraté", "maintenance WordPress"]
 takeaways:
   - "Signes d’alerte : redirections suspectes, alertes Search Console, suspension de l’hébergeur, pages inconnues indexées."
-  - "Dans les 24 h : mettre le site hors ligne, changer tous les identifiants (WordPress, FTP, base, email), garder une copie de l’état infecté."
+  - "Dans les 24 h : copier d’abord l’état infecté (fichiers, base, journaux), puis mettre le site hors ligne et changer tous les identifiants (WordPress, FTP, base, email)."
+  - "Si des données personnelles ont pu fuiter (formulaires, comptes clients, WooCommerce), la violation doit être notifiée à la CNIL sous 72 h."
   - "Trois options de nettoyage : restaurer une sauvegarde saine (le plus fiable), nettoyer manuellement (Wordfence), ou confier à un expert."
   - "Après nettoyage : mises à jour systématiques, double authentification, sauvegardes quotidiennes externalisées, hébergement de qualité."
   - "Ne pas négliger le SEO : demander un réexamen dans Search Console, supprimer les pages spam résiduelles, auditer les backlinks toxiques."
 draft: false
 ---
-Votre site WordPress piraté : c'est le scénario que personne ne veut vivre, mais qui arrive plus souvent qu'on ne le croit. Redirections suspectes, pages défigurées, alerte Google, suspension par l'hébergeur… Les signaux varient, mais le stress est toujours le même. Voici un plan d'action structuré pour reprendre le contrôle rapidement — et surtout, pour ne plus jamais revivre cette situation.
+Votre site WordPress piraté : c'est le scénario que personne ne veut vivre, mais qui arrive plus souvent qu'on ne le croit. Redirections suspectes, pages défigurées, alerte Google, suspension par l'hébergeur… Les signaux varient, mais le stress est toujours le même. Voici un plan d'action structuré pour reprendre le contrôle rapidement — et surtout, pour limiter fortement le risque de revivre cette situation.
 
 ## Reconnaître qu'un site WordPress a été piraté
 
@@ -32,24 +33,24 @@ Avant d'agir, encore faut-il identifier ce qui s'est passé. Les attaques ne son
 
 ## Les premières actions à mener dans les 24 heures
 
-### 1. Passez votre site en mode maintenance
+### 1. Faites d'abord une copie de l'état compromis
 
-Premier réflexe : limiter l'exposition. Mettez le site hors ligne ou activez un mode maintenance via votre hébergeur. Cela protège vos visiteurs et stoppe la propagation éventuelle.
+Cela peut sembler contre-intuitif, mais avant de toucher à quoi que ce soit, copiez l'état infecté : fichiers, base de données et journaux (logs serveur et d'accès). Cette copie permet de comprendre l'attaque, d'identifier les fichiers modifiés et de conserver des preuves si nécessaire. Chaque action de nettoyage effacera des traces.
 
-### 2. Changez tous les mots de passe immédiatement
+### 2. Passez votre site en mode maintenance
+
+Ensuite, limitez l'exposition. Mettez le site hors ligne ou activez un mode maintenance via votre hébergeur. Cela protège vos visiteurs et stoppe la propagation éventuelle.
+
+### 3. Changez tous les mots de passe immédiatement
 
 Sans exception :
 - Compte administrateur WordPress
 - Accès FTP / SFTP
-- Base de données (MySQL)
+- Base de données (MySQL) — et mettez-le à jour dans `wp-config.php`, sinon le site ne pourra plus se connecter à sa base
 - Compte hébergeur
 - Adresse email associée au site
 
 Utilisez des mots de passe longs, aléatoires, uniques. Un gestionnaire de mots de passe (Bitwarden, 1Password) est indispensable.
-
-### 3. Faites une sauvegarde de l'état compromis
-
-Cela peut sembler contre-intuitif, mais conserver une copie de l'état infecté permet de comprendre l'attaque, d'identifier les fichiers modifiés et de constituer une preuve si nécessaire.
 
 ### 4. Identifiez le vecteur d'attaque
 
@@ -61,6 +62,10 @@ Les causes les plus fréquentes d'un site WordPress piraté :
 - **Compte FTP compromis**
 - **Fichier `wp-config.php` exposé**
 
+### 5. Données personnelles : prévenir la CNIL sous 72 h
+
+Si des données personnelles ont pu fuiter — formulaires de contact, comptes clients, commandes WooCommerce, liste d'abonnés —, le RGPD vous impose de notifier la violation à la CNIL dans les 72 heures après en avoir pris connaissance (article 33), sauf si elle ne présente pas de risque pour les personnes concernées. Lorsque le risque est élevé, vous devez aussi informer directement les personnes concernées (article 34). Documentez l'incident dans tous les cas : la copie de l'état compromis vous y aidera.
+
 ## Nettoyer le site : méthode rigoureuse
 
 ### Option 1 : restaurer une sauvegarde saine
@@ -70,13 +75,17 @@ Si vous disposez d'une sauvegarde datant d'avant l'infection, c'est la solution 
 Restaurez ensuite dans cet ordre :
 1. Fichiers WordPress (core, thème, plugins)
 2. Base de données
-3. Réinitialisez immédiatement tous les mots de passe
+3. Avant toute remise en ligne, mettez à jour WordPress, les thèmes et les plugins, et corrigez la faille par laquelle l'attaquant est entré : une sauvegarde restaurée telle quelle contient la même vulnérabilité et sera réinfectée
+4. Réinitialisez immédiatement tous les mots de passe et régénérez les clés de sécurité (salts)
 
 ### Option 2 : nettoyage manuel des fichiers infectés
 
 Si aucune sauvegarde fiable n'est disponible, le nettoyage manuel est incontournable. Il exige une maîtrise technique sérieuse :
 
-- **Réinstallez WordPress en version propre** (fichiers core uniquement, sans toucher `wp-content` ni `wp-config.php`)
+- **Réinstallez WordPress en version propre** (fichiers core)
+- **Vérifiez `wp-config.php`** : il est souvent infecté (code injecté en début ou en fin de fichier)
+- **Réinstallez les plugins et les thèmes depuis leurs sources officielles** (wordpress.org ou l'éditeur), plutôt que de conserver les fichiers existants
+- **Régénérez les clés de sécurité (salts)** dans `wp-config.php` : cela déconnecte toutes les sessions ouvertes, y compris celles de l'attaquant
 - **Analysez `wp-content/uploads`** : les hackers y cachent souvent des scripts PHP déguisés en images
 - **Vérifiez les fichiers `.htaccess`** : les redirections malveillantes y sont fréquemment injectées
 - **Scannez la base de données** à la recherche d'injections (liens, scripts, iframes cachés)
@@ -86,7 +95,7 @@ Outils de scan recommandés : **Wordfence** (plugin), **MalCare**, ou **Sucuri S
 
 ### Option 3 : faire appel à un expert
 
-Si l'infection est complexe, si vous n'avez pas les compétences techniques en interne, ou si votre site génère du chiffre d'affaires significatif, déléguer le nettoyage à un professionnel est le choix le plus sûr. Un expert limitera la durée d'interruption et s'assurera qu'aucune backdoor ne subsiste.
+Si l'infection est complexe, si vous n'avez pas les compétences techniques en interne, ou si votre site génère du chiffre d'affaires significatif, déléguer le nettoyage à un professionnel est le choix le plus sûr. Un expert limitera la durée d'interruption et réduira fortement le risque qu'une backdoor subsiste.
 
 ## Après le nettoyage : sécuriser durablement WordPress
 
@@ -102,7 +111,7 @@ Supprimez également tout plugin ou thème inactif : même désactivé, un plugi
 
 - **Double authentification (2FA)** sur tous les comptes administrateurs
 - **Limitation des tentatives de connexion** (plugin Login Lockdown ou équivalent)
-- **Changement de l'URL de connexion** (`/wp-admin` est la cible systématique des bots)
+- **Changement de l'URL de connexion** (`wp-login.php` est la cible principale des attaques par force brute)
 - **Interdire l'accès XML-RPC** si vous ne l'utilisez pas
 
 ### Sauvegardes automatiques et externalisées
@@ -134,6 +143,6 @@ Par ailleurs, si l'incident vous amène à repenser votre infrastructure digital
 - **Agir vite** : chaque heure de site compromis aggrave les dégâts (SEO, réputation, données)
 - **Nettoyer ne suffit pas** : la sécurisation post-incident est aussi importante que le nettoyage
 - **La maintenance régulière est la meilleure prévention** : mises à jour, sauvegardes, authentification forte
-- **Un expert vous fait gagner du temps et des certitudes** : pas de backdoor oublié, pas de récidive dans les semaines suivantes
+- **Un expert vous fait gagner du temps** : il limite fortement le risque d'une backdoor oubliée et d'une récidive dans les semaines suivantes
 
 Votre site WordPress a été piraté, ou vous voulez éviter d'en arriver là ? [Contactez notre équipe](/contact) : nous réalisons un diagnostic de sécurité, nettoyons les infections et mettons en place un plan de maintenance adapté à votre activité.

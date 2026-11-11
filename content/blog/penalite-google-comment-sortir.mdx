@@ -6,10 +6,10 @@ author: "Weboua"
 category: "SEO"
 tags: ["SEO", "Pénalité Google", "Référencement naturel"]
 takeaways:
-  - "Une pénalité Google peut être manuelle (décidée par un humain chez Google) ou algorithmique (déclenchée par une mise à jour comme Penguin ou Panda) — les deux se traitent différemment."
+  - "Une pénalité Google peut être manuelle (décidée par un humain chez Google) ou algorithmique (consécutive à une core update ou aux systèmes anti-spam comme SpamBrain) — les deux se traitent différemment."
   - "La première vérification s'effectue dans Google Search Console, onglet 'Actions manuelles' : une pénalité manuelle y est toujours notifiée explicitement."
   - "Une chute de trafic organique de plus de 20 % coïncidant avec une date de mise à jour Google est le signal d'alerte principal d'une pénalité algorithmique."
-  - "Les causes les plus fréquentes sont : liens entrants toxiques, contenu dupliqué, sur-optimisation des textes d'ancre et pages de faible valeur ajoutée."
+  - "Les causes les plus fréquentes sont : liens artificiels (surtout en cas d'action manuelle), contenu dupliqué, sur-optimisation des textes d'ancre et pages de faible valeur ajoutée."
   - "Le dépôt d'une demande de reconsidération auprès de Google n'est pertinent que pour les pénalités manuelles — les pénalités algorithmiques se résolvent uniquement par des corrections techniques et éditoriales."
   - "La sortie d'une pénalité prend en moyenne 3 à 6 mois selon la gravité : anticiper par un audit SEO régulier est la meilleure protection."
 draft: false
@@ -22,13 +22,13 @@ Le mot « pénalité » est souvent utilisé à tort pour désigner toute baisse
 
 ### Les pénalités manuelles
 
-Elles sont déclenchées par un membre de l'équipe de qualité de Google après vérification humaine. Elles visent des pratiques clairement contraires aux [consignes aux webmasters](https://developers.google.com/search/docs/essentials?hl=fr) : schémas de liens artificiels, contenu généré automatiquement, cloaking, etc.
+Elles sont déclenchées par un membre de l'équipe de qualité de Google après vérification humaine. Elles visent des pratiques clairement contraires aux [l'essentiel de la recherche Google](https://developers.google.com/search/docs/essentials?hl=fr) : schémas de liens artificiels, contenu généré automatiquement, cloaking, etc.
 
 **Avantage** : elles sont visibles et documentées. Vous en êtes averti dans Google Search Console.
 
 ### Les pénalités algorithmiques
 
-Il ne s'agit pas à proprement parler de « pénalités » au sens strict, mais de déclassements consécutifs à une mise à jour de l'algorithme de Google (Core Update, Helpful Content, Penguin, Panda…). Votre site n'est pas sanctionné : il est simplement réévalué, et s'il ne répond plus aux critères de qualité actuels, il perd des positions.
+Il ne s'agit pas à proprement parler de « pénalités » au sens strict, mais de déclassements consécutifs à une mise à jour de l'algorithme de Google (core updates, systèmes anti-spam comme SpamBrain…). Panda, Penguin et le système Helpful Content, longtemps cités comme des mises à jour distinctes, font désormais partie de l'algorithme principal. Votre site n'est pas sanctionné : il est simplement réévalué, et s'il ne répond plus aux critères de qualité actuels, il perd des positions.
 
 **Conséquence** : aucune notification. La détection est plus complexe.
 
@@ -56,7 +56,7 @@ Comparez ensuite cette date avec le calendrier des mises à jour Google. Des out
 
 ### Étape 3 — Auditez votre profil de liens entrants
 
-Les liens toxiques restent l'une des causes les plus fréquentes de déclassement. Via Search Console (Liens > Liens externes) ou un outil comme Ahrefs, identifiez :
+Les liens artificiels peuvent motiver une action manuelle ; en dehors de ce cas, Google se contente le plus souvent de les ignorer. Via Search Console (Liens > Liens externes) ou un outil comme Ahrefs, identifiez :
 
 - Les domaines référents avec un score de confiance très faible
 - Les textes d'ancre sur-optimisés (ex. : « meilleur prix chaussures cuir Paris » répété 200 fois)
@@ -69,7 +69,7 @@ Les liens toxiques restent l'une des causes les plus fréquentes de déclassemen
 - **Contenu de faible qualité ou dupliqué** : pages thin content, fiches produit copiées-collées, articles générés en masse sans valeur réelle
 - **Suroptimisation des ancres** : profil de liens entrants trop homogène ou trop agressif
 - **Pratiques de netlinking artificielles** : achat de liens en masse, échanges croisés entre sites sans rapport thématique
-- **Expérience utilisateur dégradée** : temps de chargement élevé, pages interstitielles intrusives, taux de rebond anormal
+- **Expérience utilisateur dégradée** : temps de chargement élevé, pages interstitielles intrusives
 - **Contenu généré automatiquement** sans supervision éditoriale réelle
 
 Si vous avez un doute sur l'état technique et éditorial de votre site, un [audit SEO gratuit](/audit-seo-performance) vous donnera une vision claire des points à corriger en priorité.
@@ -102,7 +102,7 @@ Les effets se font généralement sentir lors du prochain déploiement de la mis
 
 ## Cas particulier : vous gérez un site WordPress
 
-Les sites WordPress sont particulièrement exposés à certains problèmes pouvant déclencher un déclassement : plugins générateurs de contenu mal paramétrés, thèmes produisant du contenu dupliqué (archives, tags, auteurs), lenteurs liées à un hébergement inadapté ou à des extensions mal optimisées.
+Sur WordPress comme sur tout CMS, surveillez certains problèmes pouvant contribuer à un déclassement : plugins générateurs de contenu mal paramétrés, thèmes produisant du contenu dupliqué (archives, tags, auteurs), lenteurs liées à un hébergement inadapté ou à des extensions mal optimisées.
 
 Ces problèmes ne sont pas une fatalité. Ils se diagnostiquent et se corrigent. Un audit technique ciblé permet d'identifier précisément les points de friction — sans remettre en cause votre choix de technologie.
 
@@ -119,7 +119,7 @@ Soyons directs : il n'y a pas de raccourci. La durée de récupération dépend 
 | Impact algorithmique modéré | 3 à 6 mois |
 | Impact algorithmique sévère | 6 à 18 mois |
 
-La meilleure stratégie reste la **prévention** : un site régulièrement audité et maintenu selon les standards de qualité Google ne devrait jamais se retrouver dans cette situation.
+La meilleure stratégie reste la **prévention** : un site régulièrement audité et maintenu selon les standards de qualité Google limite fortement le risque de se retrouver dans cette situation.
 
 Dans le cadre d'une stratégie plus large, les signaux SEO peuvent être complétés par d'autres leviers d'acquisition comme la **[génération de leads B2B](/leads-b2b)** pour maintenir un flux entrant pendant la période de récupération organique.
 

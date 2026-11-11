@@ -7,10 +7,10 @@ category: "Hébergement"
 tags: ["WordPress", "Hébergement", "Maintenance"]
 takeaways:
   - "L'erreur 500 WordPress (HTTP 500 Internal Server Error) n'a pas une seule cause : fichier .htaccess corrompu, mémoire PHP insuffisante, plugin défaillant ou thème incompatible sont les 4 suspects principaux."
-  - "Augmenter la limite mémoire PHP à 256 Mo dans wp-config.php suffit à résoudre l'erreur 500 dans environ 30 % des cas."
+  - "Augmenter la limite mémoire PHP à 256 Mo dans wp-config.php suffit à résoudre l'erreur 500 dans une partie des cas."
   - "Désactiver tous les plugins en renommant le dossier /wp-content/plugins/ via FTP permet d'identifier un conflit sans accès à l'admin WordPress."
   - "Le fichier journal d'erreurs du serveur (error.log) est la source d'information la plus fiable pour diagnostiquer une erreur 500 : il indique la ligne exacte du code fautif."
-  - "Une erreur 500 non résolue en moins de 2 heures peut faire chuter le référencement naturel d'un site : Google interprète les erreurs serveur répétées comme un signal de faible fiabilité."
+  - "Une courte panne n'affecte pas le classement, mais des erreurs serveur qui durent plusieurs jours peuvent réduire l'exploration de Google et nuire au référencement."
   - "Faire appel à un prestataire expert WordPress permet de traiter l'erreur 500 à la racine, sans risquer d'aggraver la situation en manipulant des fichiers serveur critiques."
 draft: false
 ---
@@ -22,7 +22,7 @@ L'erreur HTTP 500, ou *Internal Server Error*, signifie que le serveur a rencont
 
 Elle n'est pas spécifique à WordPress : c'est une réponse standard du protocole HTTP. Mais WordPress, de par son architecture (PHP, base de données, plugins, thèmes, fichiers de configuration), multiplie les points de défaillance potentiels.
 
-> **À retenir :** une erreur 500 non corrigée rapidement nuit à votre [référencement naturel](/seo-referencement-naturel). Google interprète les erreurs serveur répétées comme un signal de faible fiabilité et peut déclasser vos pages.
+> **À retenir :** une courte panne n'affecte pas votre classement, mais des erreurs serveur qui durent plusieurs jours peuvent réduire l'exploration de votre site par Google et nuire à votre [référencement naturel](/seo-referencement-naturel).
 
 ## Les 4 causes les plus fréquentes
 
@@ -38,9 +38,9 @@ WordPress et ses extensions consomment de la mémoire PHP. Si votre hébergeur f
 
 **Comment corriger :** ouvrez le fichier `wp-config.php` via FTP et ajoutez (ou modifiez) cette ligne avant `/* That's all, stop editing! */` :
 
-
+```php
 define('WP_MEMORY_LIMIT', '256M');
-
+```
 
 Si votre hébergeur bloque cette modification, contactez son support ou envisagez une montée en gamme de votre offre.
 
@@ -48,7 +48,7 @@ Si votre hébergeur bloque cette modification, contactez son support ou envisage
 
 C'est la cause la plus courante après une mise à jour. Un plugin mal codé, incompatible avec la version de PHP ou de WordPress, peut provoquer une erreur fatale qui se traduit par un 500.
 
-**Comment diagnostiquer :** si vous n'avez plus accès au tableau de bord, passez par FTP. Renommez le dossier `/wp-content/plugins/` en `/wp-content/plugins_old/`. WordPress ne trouvant plus les plugins, il les désactivera tous automatiquement. Si le site revient, réactivez les plugins un par un depuis l'administration pour identifier le coupable.
+**Comment diagnostiquer :** si vous n'avez plus accès au tableau de bord, passez par FTP. Renommez le dossier `/wp-content/plugins/` en `/wp-content/plugins_old/`. WordPress ne trouvant plus les plugins, il les désactivera tous automatiquement. Si le site revient, renommez ensuite le dossier en `plugins`, puis réactivez les extensions une par une depuis l'administration pour identifier le coupable.
 
 Même logique pour le thème : renommez le dossier de votre thème actif — WordPress basculera sur le thème par défaut.
 
@@ -70,13 +70,13 @@ Avant de tester chaque hypothèse à l'aveugle, consultez les journaux d'erreur 
 - Via FTP : fichier `error.log` ou `php_error.log` à la racine ou dans `/logs/`
 - En activant le mode débogage WordPress : ajoutez dans `wp-config.php` :
 
-
+```php
 define('WP_DEBUG', true);
 define('WP_DEBUG_LOG', true);
 define('WP_DEBUG_DISPLAY', false);
+```
 
-
-Les erreurs seront consignées dans `/wp-content/debug.log`. **Pensez à désactiver ce mode une fois le problème résolu** — afficher les erreurs en production expose votre site.
+Les erreurs seront consignées dans `/wp-content/debug.log`. **Pensez à désactiver ce mode une fois le problème résolu** — le fichier `debug.log` peut être lisible publiquement à son adresse et exposer des informations sensibles sur votre site.
 
 ## Checklist de diagnostic étape par étape
 
@@ -86,7 +86,7 @@ Voici la séquence à suivre dans l'ordre :
 2. **Régénérez le .htaccess** → renommez l'ancien, régénérez via les Permaliens
 3. **Augmentez la mémoire PHP** → ajoutez `WP_MEMORY_LIMIT` dans wp-config.php
 4. **Désactivez les plugins** → renommez le dossier via FTP, réactivez un par un
-5. **Changez de thème temporairement** → basculez sur Twenty Twenty-Four
+5. **Changez de thème temporairement** → basculez sur un thème par défaut récent (Twenty Twenty-Five, par exemple)
 6. **Vérifiez les permissions** → 755 pour les dossiers, 644 pour les fichiers
 7. **Contactez votre hébergeur** → si rien n'y fait, le problème peut venir du serveur lui-même
 
@@ -111,11 +111,11 @@ Une fois l'erreur résolue, quelques bonnes pratiques limitent le risque de réc
 
 - **Mettez à jour WordPress, les thèmes et les plugins régulièrement** — mais sur un environnement de staging avant la production
 - **Faites des sauvegardes automatiques quotidiennes** (UpdraftPlus, BlogVault, ou solution hébergeur)
-- **Choisissez un hébergeur avec PHP 8.x et une limite mémoire d'au moins 256 Mo**
+- **Choisissez un hébergeur avec PHP 8.3 ou plus récent et une limite mémoire d'au moins 256 Mo**
 - **Limitez le nombre de plugins actifs** — chaque plugin est un point de défaillance potentiel
-- **Surveillez votre site** avec un outil de monitoring (UptimeRobot, Better Uptime) qui vous alerte en cas de panne
+- **Surveillez votre site** avec un outil de monitoring (UptimeRobot, Better Stack) qui vous alerte en cas de panne
 
-Un site WordPress bien maintenu est un site stable, rapide et optimisé pour le référencement. C'est aussi un outil de [création de site internet](/creation-de-sites-internet) qui travaille pour vous — pas contre vous.
+Un site WordPress bien maintenu est un site stable, rapide et optimisé pour le référencement. C'est aussi un site qui travaille pour vous — pas contre vous.
 
 ---
 

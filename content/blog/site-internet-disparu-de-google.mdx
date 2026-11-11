@@ -28,7 +28,7 @@ Tapez `site:votredomaine.fr` dans la barre de recherche Google. Si aucun résult
 
 C'est ici que tout se passe. Dans la Search Console, vérifiez :
 
-- L'onglet **Couverture** (ou Indexation) : nombre de pages indexées, erreurs, pages exclues
+- Le rapport **« Indexation des pages »** (anciennement « Couverture ») : nombre de pages indexées, erreurs, pages exclues
 - L'onglet **Actions manuelles** : si Google a appliqué une pénalité, c'est écrit noir sur blanc ici
 - Les **rapports de performances** : une chute brutale du trafic organique à une date précise est souvent corrélée à une mise à jour d'algorithme
 
@@ -38,7 +38,7 @@ Si vous n'avez pas encore accès à la Search Console pour votre site, c'est la 
 
 ### 1. Un fichier robots.txt qui bloque tout
 
-C'est l'une des erreurs les plus courantes après une refonte de site. Une seule ligne mal configurée — `Disallow: /` — suffit à dire à Google de ne pas explorer votre site. Résultat : désindexation progressive, voire totale. Ce type d'erreur passe souvent inaperçu pendant des semaines si personne ne surveille.
+C'est l'une des erreurs les plus courantes après une refonte de site. Une seule ligne mal configurée — `Disallow: /` — suffit à dire à Google de ne pas explorer votre site. Attention : cette directive bloque l'exploration, pas l'indexation. Résultat : vos pages peuvent disparaître peu à peu des résultats, ou y rester sans description, Google ne pouvant plus lire leur contenu. Ce type d'erreur passe souvent inaperçu pendant des semaines si personne ne surveille.
 
 ### 2. La balise noindex activée par erreur
 
@@ -50,7 +50,7 @@ Google peut sanctionner un site manuellement lorsqu'il détecte des pratiques co
 
 ### 4. Une mise à jour d'algorithme
 
-Google déploie plusieurs mises à jour majeures par an (Core Updates, Helpful Content, spam updates…). Certains sites perdent 30 à 80 % de leur trafic organique en quelques jours sans avoir commis la moindre faute technique. Le problème est alors éditorial ou lié à l'autorité du domaine : contenu de faible valeur, manque d'expertise perçue, mauvais signaux E-E-A-T.
+Google déploie plusieurs mises à jour majeures par an (core updates, spam updates…). Certains sites perdent une grande partie de leur trafic organique en quelques jours sans avoir commis la moindre faute technique. Le problème est alors éditorial ou lié à la crédibilité du site : contenu de faible valeur, manque d'expertise perçue, mauvais signaux E-E-A-T.
 
 > **À retenir :** si votre chute de trafic coïncide avec une date annoncée par Google comme mise à jour, vous n'êtes pas seul — mais il faut agir vite pour ne pas laisser la position à vos concurrents.
 
@@ -65,7 +65,7 @@ Google considère qu'un site inaccessible ou non sécurisé n'est pas digne d'ê
 
 ### 6. Une pénalité algorithmique liée aux liens
 
-Si votre profil de liens entrants est constitué de liens toxiques — achetés, échangés en masse, provenant de sites spam — Google peut dégrader votre autorité de domaine progressivement. Ce n'est pas une pénalité manuelle, donc aucune notification : vous voyez juste vos positions chuter inexorablement.
+Si votre profil de liens entrants est constitué de liens toxiques — achetés, échangés en masse, provenant de sites spam —, sachez que depuis Penguin 4.0 (2016), Google ignore le plus souvent ces liens au lieu de pénaliser tout le site : ils ne vous apportent simplement plus rien, et si vos positions reposaient dessus, elles baissent. En cas de pratique manifeste d'achat ou d'échange de liens, Google peut en revanche appliquer une action manuelle, notifiée dans la Search Console.
 
 ## Comment revenir dans les résultats Google : le plan d'action
 
@@ -75,7 +75,7 @@ Pas de correction possible sans diagnostic rigoureux. L'[audit SEO gratuit](/aud
 
 ### Étape 2 : Corriger les erreurs techniques en priorité
 
-Si la cause est technique (robots.txt, noindex, erreur serveur, SSL), la correction est souvent rapide. Ce qui prend du temps, c'est la re-exploration du site par Google — comptez en général **1 à 4 semaines** pour que les pages soient à nouveau indexées après correction. Utilisez l'outil d'inspection d'URL de la Search Console pour forcer la demande de réindexation sur vos pages clés.
+Si la cause est technique (robots.txt, noindex, erreur serveur, SSL), la correction est souvent rapide. Ce qui prend du temps, c'est la re-exploration du site par Google — comptez en général **1 à 4 semaines** pour que les pages soient à nouveau indexées après correction. Utilisez l'outil d'inspection d'URL de la Search Console pour demander la réindexation de vos pages clés.
 
 ### Étape 3 : Traiter une pénalité manuelle
 
