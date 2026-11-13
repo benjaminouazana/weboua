@@ -310,7 +310,9 @@
     "title": "Sécurité d'un site web d'entreprise : les fondamentaux à maîtriser",
     "keyword": "sécurité site web entreprise",
     "category": "Hébergement",
-    "status": "todo"
+    "status": "done",
+    "publishedAt": "2026-11-13",
+    "publishedSlug": "securite-site-web-entreprise"
   },
   {
     "slug": "ia-seo-redaction-contenu",
