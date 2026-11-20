@@ -319,7 +319,9 @@
     "title": "IA et SEO : comment l'intelligence artificielle change la rédaction web",
     "keyword": "IA et SEO",
     "category": "SEO",
-    "status": "todo"
+    "status": "done",
+    "publishedAt": "2026-11-20",
+    "publishedSlug": "ia-seo-redaction-contenu"
   },
   {
     "slug": "acquisition-client-b2b-canaux",
