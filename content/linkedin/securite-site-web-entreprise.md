@@ -6,7 +6,7 @@ Pas de sauvegarde testée.
 Accès partagés depuis des années.
 Aucun monitoring.
 
-La sécurité site web entreprise n'est pas un sujet IT secondaire. C'est un enjeu de continuité d'activité, de réputation et de conformité RGPD.
+La sécurité d'un site web d'entreprise n'est pas un sujet IT secondaire. C'est un enjeu de continuité d'activité, de réputation et de conformité RGPD.
 
 Dans notre dernier article, on détaille les fondamentaux concrets :
 

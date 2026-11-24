@@ -74,7 +74,7 @@ Rédige un article de blog complet et optimisé SEO sur le sujet suivant :
 - Catégorie : "${topic.category}"
 
 Règles SEO impératives :
-1. Le mot-clé principal doit apparaître dans le titre, la méta-description, le premier paragraphe et au moins un sous-titre (H2). Dans les phrases, intègre-le en français correct (avec ses articles et accords, ex. « optimiser la vitesse de son site web ») — jamais collé tel quel quand ce n'est pas grammatical.
+1. Le mot-clé principal doit apparaître dans le titre, la méta-description, le premier paragraphe et au moins un sous-titre (H2). Dans les phrases, intègre-le en français correct (avec ses articles et accords, ex. « optimiser la vitesse de son site web ») — jamais collé tel quel quand ce n'est pas grammatical. Cela vaut aussi pour le titre, la méta-description, les H2 et le post LinkedIn : Google comprend la forme naturelle (« sécurité d'un site web d'entreprise » plutôt que « sécurité site web entreprise »).
 2. 1000 à 1700 mots. Structure claire en sous-titres "## " (H2) et "### " (H3). NE PAS mettre de titre H1 (#) — il est généré automatiquement.
 3. Écris pour l'humain d'abord : utile, précis, crédible. Pas de bourrage de mots-clés.
 4. Intègre 2 à 3 liens internes naturels parmi cette liste (format markdown) :
@@ -92,7 +92,7 @@ En plus, rédige "L'essentiel à retenir" : 5 à 6 points clés, courts et autop
 
 Réponds STRICTEMENT avec un objet JSON valide (et rien d'autre, pas de texte autour, pas de balises de code) au format :
 {
-  "title": "Titre final optimisé, max 60 caractères, contenant le mot-clé",
+  "title": "Titre final optimisé, max 60 caractères, contenant le mot-clé sous une forme française correcte. S'il annonce un nombre (« 7 fondamentaux »), le corps doit en traiter exactement autant",
   "description": "Méta-description vendeuse de 140 à 160 caractères, contenant le mot-clé",
   "tags": ["tag1", "tag2", "tag3"],
   "takeaways": ["point clé 1", "point clé 2", "point clé 3", "point clé 4", "point clé 5"],
