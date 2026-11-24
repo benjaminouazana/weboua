@@ -49,7 +49,32 @@ function slugify(str) {
     .replace(/(^-|-$)/g, '');
 }
 
+// Formats d'article : champ optionnel "format" d'un sujet de content/topics.json.
+// Sans format (ou format inconnu), l'article reste un guide classique.
+const FORMATS = {
+  checklist:
+    "une checklist actionnable. Chaque point est une vérification concrète que le lecteur peut faire seul, avec une phrase qui dit pourquoi elle compte. Termine par la liste récapitulative, à cocher.",
+  comparatif:
+    "un comparatif honnête. Présente chaque option avec ses forces et ses limites, inclus un tableau Markdown de synthèse, puis une section « Choisissez X si… / Choisissez Y si… ». Aucune option n'est dénigrée : chacune a ses bons cas d'usage.",
+  erreurs:
+    "les erreurs les plus fréquentes. Pour chacune : comment la repérer, ce qu'elle coûte (sans chiffre inventé), et comment la corriger.",
+  faq:
+    "des questions-réponses. Chaque sous-titre H2 est une question que se pose réellement un dirigeant, et la réponse commence par une phrase directe avant de détailler.",
+  'pas-a-pas':
+    "un tutoriel pas à pas. Des étapes numérotées dans l'ordre où on les réalise, chacune avec l'action à faire et le résultat attendu.",
+  decryptage:
+    "un décryptage. Pars des idées reçues ou de la question que tout le monde se pose, démêle le vrai du faux, puis prends une position claire et nuancée.",
+  secteur:
+    "un article métier. Adapte le vocabulaire, les exemples et les priorités à ce métier précis. Tout exemple est présenté comme une situation type, jamais comme un cas client réel.",
+};
+
 function buildPrompt(topic) {
+  const format = FORMATS[topic.format]
+    ? `\n- Format de l'article : ${FORMATS[topic.format]}`
+    : '';
+  const audience = topic.audience
+    ? `\n- Lecteur visé pour cet article (il remplace le lecteur habituel) : ${topic.audience}. Adapte le niveau de langage et les exemples à ce lecteur.`
+    : '';
   const links = Object.entries(INTERNAL_LINKS)
     .map(([href, label]) => `- [${label}](${href})`)
     .join('\n');
@@ -71,7 +96,7 @@ Règles de fiabilité (aussi importantes que le SEO) :
 Rédige un article de blog complet et optimisé SEO sur le sujet suivant :
 - Titre indicatif : "${topic.title}"
 - Mot-clé principal à cibler : "${topic.keyword}"
-- Catégorie : "${topic.category}"
+- Catégorie : "${topic.category}"${format}${audience}
 
 Règles SEO impératives :
 1. Le mot-clé principal doit apparaître dans le titre, la méta-description, le premier paragraphe et au moins un sous-titre (H2). Dans les phrases, intègre-le en français correct (avec ses articles et accords, ex. « optimiser la vitesse de son site web ») — jamais collé tel quel quand ce n'est pas grammatical. Cela vaut aussi pour le titre, la méta-description, les H2 et le post LinkedIn : Google comprend la forme naturelle (« sécurité d'un site web d'entreprise » plutôt que « sécurité site web entreprise »).

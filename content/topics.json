@@ -329,5 +329,167 @@
     "keyword": "acquisition client B2B canaux",
     "category": "Acquisition B2B",
     "status": "todo"
+  },
+  {
+    "slug": "prix-site-internet-facteurs",
+    "title": "Prix d'un site internet : ce qui fait vraiment varier le devis",
+    "keyword": "prix site internet",
+    "category": "Création de sites",
+    "format": "decryptage",
+    "status": "todo"
+  },
+  {
+    "slug": "fiche-google-business-optimiser",
+    "title": "Fiche Google Business Profile : l'optimiser pas à pas",
+    "keyword": "fiche Google Business Profile",
+    "category": "SEO local",
+    "format": "pas-a-pas",
+    "status": "todo"
+  },
+  {
+    "slug": "chatbot-site-internet-utile",
+    "title": "Chatbot sur un site internet : utile ou gadget ?",
+    "keyword": "chatbot site internet",
+    "category": "Automatisation & IA",
+    "format": "decryptage",
+    "status": "todo"
+  },
+  {
+    "slug": "google-ads-ou-seo-budget",
+    "title": "Google Ads ou SEO : où mettre son budget en premier ?",
+    "keyword": "Google Ads ou SEO",
+    "category": "Acquisition",
+    "format": "comparatif",
+    "status": "todo"
+  },
+  {
+    "slug": "site-internet-artisan-devis",
+    "title": "Site internet pour artisan : ce qu'il faut pour recevoir des demandes de devis",
+    "keyword": "site internet artisan",
+    "category": "Création de sites",
+    "format": "secteur",
+    "audience": "des artisans et dirigeants de petites entreprises du bâtiment (plombier, électricien, menuisier, couvreur…), peu à l'aise avec le jargon web",
+    "status": "todo"
+  },
+  {
+    "slug": "maintenance-site-internet-contrat",
+    "title": "Maintenance de site internet : ce que doit contenir un bon contrat",
+    "keyword": "maintenance site internet",
+    "category": "Maintenance",
+    "format": "checklist",
+    "status": "todo"
+  },
+  {
+    "slug": "seo-combien-de-temps-resultats",
+    "title": "SEO : combien de temps avant les premiers résultats ?",
+    "keyword": "SEO combien de temps",
+    "category": "SEO",
+    "format": "faq",
+    "status": "todo"
+  },
+  {
+    "slug": "crm-pme-comment-choisir",
+    "title": "CRM pour PME : comment choisir sans monter une usine à gaz",
+    "keyword": "CRM PME",
+    "category": "Automatisation & IA",
+    "format": "guide",
+    "status": "todo"
+  },
+  {
+    "slug": "formulaire-de-contact-erreurs",
+    "title": "Formulaire de contact : les erreurs qui vous font perdre des demandes",
+    "keyword": "formulaire de contact",
+    "category": "Conversion",
+    "format": "erreurs",
+    "status": "todo"
+  },
+  {
+    "slug": "wordpress-ou-site-sur-mesure",
+    "title": "WordPress ou site sur mesure : comment choisir",
+    "keyword": "WordPress ou site sur mesure",
+    "category": "Création de sites",
+    "format": "comparatif",
+    "status": "todo"
+  },
+  {
+    "slug": "avis-clients-google-obtenir",
+    "title": "Avis clients Google : comment en obtenir plus, sans tricher",
+    "keyword": "avis clients Google",
+    "category": "SEO local",
+    "format": "pas-a-pas",
+    "status": "todo"
+  },
+  {
+    "slug": "linkedin-dirigeant-profil-ou-page",
+    "title": "LinkedIn pour dirigeants : profil personnel ou page entreprise ?",
+    "keyword": "LinkedIn dirigeant",
+    "category": "Acquisition",
+    "format": "comparatif",
+    "status": "todo"
+  },
+  {
+    "slug": "nom-de-domaine-choisir-proteger",
+    "title": "Nom de domaine : bien le choisir et ne jamais le perdre",
+    "keyword": "nom de domaine",
+    "category": "Maintenance",
+    "format": "guide",
+    "status": "todo"
+  },
+  {
+    "slug": "referencement-chatgpt-ia-geo",
+    "title": "Être cité par ChatGPT et les IA : le référencement GEO expliqué simplement",
+    "keyword": "référencement ChatGPT",
+    "category": "SEO",
+    "format": "decryptage",
+    "status": "todo"
+  },
+  {
+    "slug": "onboarding-client-automatiser",
+    "title": "Onboarding client : automatiser l'accueil d'un nouveau client",
+    "keyword": "onboarding client automatisé",
+    "category": "Automatisation & IA",
+    "format": "pas-a-pas",
+    "status": "todo"
+  },
+  {
+    "slug": "choisir-agence-web-questions",
+    "title": "Choisir une agence web : les questions à poser avant de signer",
+    "keyword": "choisir une agence web",
+    "category": "Stratégie digitale",
+    "format": "checklist",
+    "status": "todo"
+  },
+  {
+    "slug": "newsletter-entreprise-lancer",
+    "title": "Newsletter d'entreprise : la lancer et la tenir dans la durée",
+    "keyword": "newsletter entreprise",
+    "category": "Acquisition",
+    "format": "pas-a-pas",
+    "status": "todo"
+  },
+  {
+    "slug": "site-internet-cabinet-conseil",
+    "title": "Site internet d'un cabinet de conseil : inspirer confiance avant le premier rendez-vous",
+    "keyword": "site internet cabinet de conseil",
+    "category": "Création de sites",
+    "format": "secteur",
+    "audience": "des consultants indépendants et dirigeants de petits cabinets de conseil, qui vendent une expertise et dont les clients arrivent surtout par recommandation",
+    "status": "todo"
+  },
+  {
+    "slug": "cahier-des-charges-site-internet",
+    "title": "Cahier des charges d'un site internet : le modèle simple pour bien briefer",
+    "keyword": "cahier des charges site internet",
+    "category": "Création de sites",
+    "format": "pas-a-pas",
+    "status": "todo"
+  },
+  {
+    "slug": "refondre-ou-optimiser-son-site",
+    "title": "Refondre son site ou l'optimiser : comment décider",
+    "keyword": "refonte ou optimisation site internet",
+    "category": "Stratégie digitale",
+    "format": "decryptage",
+    "status": "todo"
   }
 ]
